@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>GLM Analysis (Measured) &#8212; MNE-NIRS 0.5.dev0 documentation</title>
+    <title>GLM Analysis (Measured) &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   <script>
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
@@ -478,14 +478,7 @@ stimulus interval.</p>
 <a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.resample" title="mne.io.BaseRaw.resample" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_intensity</span><span class="o">.</span><span class="n">resample</span></a><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using default location ~/mne_data for fnirs_motor...
-
-  0%|                                              | 0.00/17.9M [00:00&lt;?, ?B/s]
- 38%|██████████████                       | 6.82M/17.9M [00:00&lt;00:00, 68.2MB/s]
- 89%|████████████████████████████████▊    | 15.9M/17.9M [00:00&lt;00:00, 81.2MB/s]
-  0%|                                              | 0.00/17.9M [00:00&lt;?, ?B/s]
-100%|█████████████████████████████████████| 17.9M/17.9M [00:00&lt;00:00, 30.4GB/s]
-Loading /home/circleci/mne_data/MNE-fNIRS-motor-data/Participant-1
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading /home/circleci/mne_data/MNE-fNIRS-motor-data/Participant-1
 Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 </pre></div>
 </div>
@@ -1027,7 +1020,7 @@ cortical surface</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="../../generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.copy" title="mne_nirs.statistics.RegressionResults.copy" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-method"><span class="n">glm_est</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">surface_projection</span><span class="p">(</span><span class="n">condition</span><span class="o">=</span><span class="s2">&quot;Tapping_Right&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="s2">&quot;dorsal&quot;</span><span class="p">,</span> <span class="n">chroma</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_11_hrf_measured_008.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_008.png" alt="plot 11 hrf measured" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne.viz._brain._brain.Brain object at 0x7f9a3c45b130&gt;
+<img src="../../_images/sphx_glr_plot_11_hrf_measured_008.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_008.png" alt="plot 11 hrf measured" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne.viz._brain._brain.Brain object at 0x7f0ffc786b80&gt;
 </pre></div>
 </div>
 </section>
@@ -1452,8 +1445,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  20.886 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  209 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.996 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  222 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_11_hrf_measured.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -1612,7 +1605,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
     
 <p class="copyright">
 
-    &copy; Copyright 2012–2022, MNE Developers. Last updated &lt;time datetime=&#34;2022-11-30T17:33:17.622942+00:00&#34; class=&#34;localized&#34;&gt;2022-11-30 17:33 UTC&lt;/time&gt;
+    &copy; Copyright 2012–2022, MNE Developers. Last updated &lt;time datetime=&#34;2022-12-23T15:50:33.213735+00:00&#34; class=&#34;localized&#34;&gt;2022-12-23 15:50 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.<br>
 
 </p>
