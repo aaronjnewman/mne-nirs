@@ -207,7 +207,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f10af747550>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f6b21d2fe50>
 
 
 
@@ -242,7 +242,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f0fbd287c10>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f6ba459f0d0>
 
 
 
@@ -279,7 +279,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f1088cc3310>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f6c07d60040>
 
 
 
@@ -540,9 +540,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.722 seconds)
+   **Total running time of the script:** ( 0 minutes  10.139 seconds)
 
-**Estimated memory usage:**  10 MB
+**Estimated memory usage:**  41 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_99_bad.py:

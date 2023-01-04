@@ -349,7 +349,7 @@
 
 <div class="viewcode-block" id="read_raw_boxy"><a class="viewcode-back" href="../../../../generated/mne.io.read_raw_boxy.html#mne.io.read_raw_boxy">[docs]</a><span class="nd">@fill_doc</span>
 <span class="k">def</span> <span class="nf">read_raw_boxy</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Reader for an optical imaging recording.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reader for an optical imaging recording.</span>
 
 <span class="sd">    This function has been tested using the ISS Imagent I and II systems</span>
 <span class="sd">    and versions 0.40/0.84 of the BOXY recording software.</span>
@@ -375,7 +375,7 @@
 
 <span class="nd">@fill_doc</span>
 <span class="k">class</span> <span class="nc">RawBOXY</span><span class="p">(</span><span class="n">BaseRaw</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Raw object from a BOXY optical imaging file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Raw object from a BOXY optical imaging file.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -484,7 +484,7 @@
                         <span class="p">(</span><span class="s1">&#39;AC&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_fd_ac_amplitude&#39;</span><span class="p">),</span>
                         <span class="p">(</span><span class="s1">&#39;Ph&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_fd_phase&#39;</span><span class="p">)]:</span>
                     <span class="n">ch_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s1">&#39;S</span><span class="si">{</span><span class="n">src_num</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s1">_D</span><span class="si">{</span><span class="n">det_num</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">i_type</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                        <span class="sa">f</span><span class="s1">&#39;S</span><span class="si">{</span><span class="n">src_num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">_D</span><span class="si">{</span><span class="n">det_num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">i_type</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
                     <span class="n">ch_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ch_type</span><span class="p">)</span>
                     <span class="n">cals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.</span> <span class="k">if</span> <span class="n">i_type</span> <span class="o">==</span> <span class="s1">&#39;Ph&#39;</span> <span class="k">else</span> <span class="mf">1.</span><span class="p">)</span>
 
@@ -525,7 +525,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">set_annotations</span><span class="p">(</span><span class="n">annot</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_read_segment_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">fi</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">cals</span><span class="p">,</span> <span class="n">mult</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Read a segment of data from a file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Read a segment of data from a file.</span>
 
 <span class="sd">        Boxy file organises data in two ways, parsed or un-parsed.</span>
 <span class="sd">        Regardless of type, output has (n_montages x n_sources x n_detectors</span>
@@ -587,7 +587,7 @@
                 <span class="nb">len</span><span class="p">(</span><span class="n">detectors</span><span class="p">)</span> <span class="o">*</span> <span class="n">source_num</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">assert</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s1">&#39;parsed&#39;</span>
-            <span class="n">ch_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i_type</span><span class="si">}{</span><span class="n">si</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">ch_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i_type</span><span class="si">}{</span><span class="n">si</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
                        <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span>
                        <span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">source_num</span><span class="p">)</span>
                        <span class="k">for</span> <span class="n">i_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DC&#39;</span><span class="p">,</span> <span class="s1">&#39;AC&#39;</span><span class="p">,</span> <span class="s1">&#39;Ph&#39;</span><span class="p">]]</span>
@@ -653,7 +653,7 @@
     
 <p class="copyright">
 
-    &copy; Copyright 2012–2022, MNE Developers. Last updated &lt;time datetime=&#34;2022-12-23T15:50:33.213735+00:00&#34; class=&#34;localized&#34;&gt;2022-12-23 15:50 UTC&lt;/time&gt;
+    &copy; Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-01-04T04:07:11.089538+00:00&#34; class=&#34;localized&#34;&gt;2023-01-04 04:07 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.<br>
 
 </p>

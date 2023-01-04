@@ -352,7 +352,7 @@
 
 <div class="viewcode-block" id="source_detector_distances"><a class="viewcode-back" href="../../../../generated/mne.preprocessing.nirs.source_detector_distances.html#mne.preprocessing.nirs.source_detector_distances">[docs]</a><span class="nd">@fill_doc</span>
 <span class="k">def</span> <span class="nf">source_detector_distances</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Determine the distance between NIRS source and detectors.</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Determine the distance between NIRS source and detectors.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -373,7 +373,7 @@
 
 <div class="viewcode-block" id="short_channels"><a class="viewcode-back" href="../../../../generated/mne.preprocessing.nirs.short_channels.html#mne.preprocessing.nirs.short_channels">[docs]</a><span class="nd">@fill_doc</span>
 <span class="k">def</span> <span class="nf">short_channels</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Determine which NIRS channels are short.</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Determine which NIRS channels are short.</span>
 
 <span class="sd">    Channels with a source to detector distance of less than</span>
 <span class="sd">    ``threshold`` are reported as short. The default threshold is 0.01 m.</span>
@@ -394,7 +394,7 @@
 
 
 <span class="k">def</span> <span class="nf">_channel_frequencies</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the light frequency for each channel.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the light frequency for each channel.&quot;&quot;&quot;</span>
     <span class="c1"># Only valid for fNIRS data before conversion to haemoglobin</span>
     <span class="n">picks</span> <span class="o">=</span> <span class="n">_picks_to_idx</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;fnirs_cw_amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_od&#39;</span><span class="p">],</span>
                           <span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">allow_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -406,7 +406,7 @@
 
 
 <span class="k">def</span> <span class="nf">_channel_chromophore</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the chromophore of each channel.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the chromophore of each channel.&quot;&quot;&quot;</span>
     <span class="c1"># Only valid for fNIRS data after conversion to haemoglobin</span>
     <span class="n">picks</span> <span class="o">=</span> <span class="n">_picks_to_idx</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">],</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">allow_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">chroma</span> <span class="o">=</span> <span class="p">[]</span>
@@ -417,7 +417,7 @@
 
 <span class="k">def</span> <span class="nf">_check_channels_ordered</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">pair_vals</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">throw_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                             <span class="n">check_bads</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Check channels follow expected fNIRS format.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check channels follow expected fNIRS format.</span>
 
 <span class="sd">    If the channels are correctly ordered then an array of valid picks</span>
 <span class="sd">    will be returned.</span>
@@ -553,7 +553,7 @@
 
 <span class="k">def</span> <span class="nf">_validate_nirs_info</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">throw_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fnirs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="n">check_bads</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allow_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Apply all checks to fNIRS info. Works on all continuous wave types.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply all checks to fNIRS info. Works on all continuous wave types.&quot;&quot;&quot;</span>
     <span class="n">_validate_type</span><span class="p">(</span><span class="n">fnirs</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span> <span class="s1">&#39;fnirs&#39;</span><span class="p">)</span>
     <span class="n">kinds</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
         <span class="n">od</span><span class="o">=</span><span class="s1">&#39;optical density&#39;</span><span class="p">,</span>
@@ -579,7 +579,7 @@
 
 
 <span class="k">def</span> <span class="nf">_fnirs_spread_bads</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Spread bad labeling across fnirs channels.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Spread bad labeling across fnirs channels.&quot;&quot;&quot;</span>
     <span class="c1"># For an optode pair if any component (light frequency or chroma) is marked</span>
     <span class="c1"># as bad, then they all should be. This function will find any pairs marked</span>
     <span class="c1"># as bad and spread the bad marking to all components of the optode pair.</span>
@@ -597,7 +597,7 @@
 
 
 <span class="k">def</span> <span class="nf">_fnirs_optode_names</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return list of unique optode names.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return list of unique optode names.&quot;&quot;&quot;</span>
     <span class="n">picks_wave</span> <span class="o">=</span> <span class="n">_picks_to_idx</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;fnirs_cw_amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_od&#39;</span><span class="p">],</span>
                                <span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">allow_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">picks_chroma</span> <span class="o">=</span> <span class="n">_picks_to_idx</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">],</span>
@@ -622,7 +622,7 @@
 
 
 <span class="k">def</span> <span class="nf">_optode_position</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">optode</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Find the position of an optode.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find the position of an optode.&quot;&quot;&quot;</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">optode</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">ch_names</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="s2">&quot;S&quot;</span> <span class="ow">in</span> <span class="n">optode</span><span class="p">:</span>
@@ -702,7 +702,7 @@
     
 <p class="copyright">
 
-    &copy; Copyright 2012–2022, MNE Developers. Last updated &lt;time datetime=&#34;2022-12-23T15:50:33.213735+00:00&#34; class=&#34;localized&#34;&gt;2022-12-23 15:50 UTC&lt;/time&gt;
+    &copy; Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-01-04T04:07:11.089538+00:00&#34; class=&#34;localized&#34;&gt;2023-01-04 04:07 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.<br>
 
 </p>

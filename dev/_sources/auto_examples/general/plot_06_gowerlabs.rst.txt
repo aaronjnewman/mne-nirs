@@ -267,7 +267,7 @@ and signal annotations.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f106d51e160>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f6bf71e9b80>
 
 
 
@@ -354,55 +354,55 @@ the annotations to a dataframe.
         <tr>
           <th>0</th>
           <td>2000-01-01 00:00:04.617</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>A</td>
         </tr>
         <tr>
           <th>1</th>
           <td>2000-01-01 00:00:06.067</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>A</td>
         </tr>
         <tr>
           <th>2</th>
           <td>2000-01-01 00:00:07.317</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>A</td>
         </tr>
         <tr>
           <th>3</th>
           <td>2000-01-01 00:00:11.901</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>Cat</td>
         </tr>
         <tr>
           <th>4</th>
           <td>2000-01-01 00:00:15.518</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>Dog</td>
         </tr>
         <tr>
           <th>5</th>
           <td>2000-01-01 00:00:17.318</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>Dog</td>
         </tr>
         <tr>
           <th>6</th>
           <td>2000-01-01 00:00:21.868</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>A</td>
         </tr>
         <tr>
           <th>7</th>
           <td>2000-01-01 00:00:23.418</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>A</td>
         </tr>
         <tr>
           <th>8</th>
           <td>2000-01-01 00:00:24.802</td>
-          <td>1.0</td>
+          <td>0.0</td>
           <td>A</td>
         </tr>
       </tbody>
@@ -804,9 +804,9 @@ From here you can use your favorite analysis technique such as
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  42.227 seconds)
+   **Total running time of the script:** ( 1 minutes  2.259 seconds)
 
-**Estimated memory usage:**  211 MB
+**Estimated memory usage:**  182 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_06_gowerlabs.py:
