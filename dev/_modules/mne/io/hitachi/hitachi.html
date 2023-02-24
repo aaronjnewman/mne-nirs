@@ -406,7 +406,9 @@
             <span class="n">fname</span> <span class="o">=</span> <span class="p">[</span><span class="n">fname</span><span class="p">]</span>
         <span class="n">fname</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>  <span class="c1"># our own list that we can modify</span>
         <span class="k">for</span> <span class="n">fi</span><span class="p">,</span> <span class="n">this_fname</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-            <span class="n">fname</span><span class="p">[</span><span class="n">fi</span><span class="p">]</span> <span class="o">=</span> <span class="n">_check_fname</span><span class="p">(</span><span class="n">this_fname</span><span class="p">,</span> <span class="s1">&#39;read&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;fname[</span><span class="si">{</span><span class="n">fi</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+            <span class="n">fname</span><span class="p">[</span><span class="n">fi</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+                <span class="n">_check_fname</span><span class="p">(</span><span class="n">this_fname</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fname[</span><span class="si">{</span><span class="n">fi</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="n">infos</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">probes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">last_samps</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -720,7 +722,7 @@
     
 <p class="copyright">
 
-    &copy; Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-01-09T16:43:50.045635+00:00&#34; class=&#34;localized&#34;&gt;2023-01-09 16:43 UTC&lt;/time&gt;
+    &copy; Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-02-24T06:57:57.442349+00:00&#34; class=&#34;localized&#34;&gt;2023-02-24 06:57 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.<br>
 
 </p>

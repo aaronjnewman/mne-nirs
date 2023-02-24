@@ -455,9 +455,9 @@ Migrating from other software packages
    :hidden:
    :includehidden:
 
+
    /auto_examples/general/index.rst
    /auto_examples/migration/index.rst
-
 
 
 .. only:: html
