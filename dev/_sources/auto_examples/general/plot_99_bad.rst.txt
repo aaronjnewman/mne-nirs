@@ -207,7 +207,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f4b15802550>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7fb480f20550>
 
 
 
@@ -242,7 +242,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f4a407bc3a0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7fb481a112d0>
 
 
 
@@ -279,7 +279,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f4aa40e9310>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7fb4b57270a0>
 
 
 
@@ -540,9 +540,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.188 seconds)
+   **Total running time of the script:** ( 0 minutes  9.410 seconds)
 
-**Estimated memory usage:**  41 MB
+**Estimated memory usage:**  10 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_99_bad.py:
@@ -558,6 +558,8 @@ approach, and the benefits of the GLM style of analysis
         :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_99_bad.ipynb
         :alt: Launch binder
         :width: 150 px
+
+
 
     .. container:: sphx-glr-download sphx-glr-download-python
 

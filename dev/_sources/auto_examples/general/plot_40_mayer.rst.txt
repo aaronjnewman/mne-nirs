@@ -270,7 +270,7 @@ it matches well to the data.
  .. code-block:: none
 
 
-    ([<matplotlib.axis.XTick object at 0x7f4ab4812070>, <matplotlib.axis.XTick object at 0x7f4ab4812160>, <matplotlib.axis.XTick object at 0x7f4ab4812700>, <matplotlib.axis.XTick object at 0x7f4a6407cd30>, <matplotlib.axis.XTick object at 0x7f4a6407ccd0>, <matplotlib.axis.XTick object at 0x7f4a640cc3a0>, <matplotlib.axis.XTick object at 0x7f4a640cc640>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
+    ([<matplotlib.axis.XTick object at 0x7fb48111b220>, <matplotlib.axis.XTick object at 0x7fb48111bf70>, <matplotlib.axis.XTick object at 0x7fb481119330>, <matplotlib.axis.XTick object at 0x7fb481771a50>, <matplotlib.axis.XTick object at 0x7fb481773460>, <matplotlib.axis.XTick object at 0x7fb494402020>, <matplotlib.axis.XTick object at 0x7fb481770880>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
 
 
 
@@ -380,7 +380,7 @@ Bibliography
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.097 seconds)
+   **Total running time of the script:** ( 0 minutes  3.945 seconds)
 
 **Estimated memory usage:**  9 MB
 
@@ -398,6 +398,8 @@ Bibliography
         :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_40_mayer.ipynb
         :alt: Launch binder
         :width: 150 px
+
+
 
     .. container:: sphx-glr-download sphx-glr-download-python
 

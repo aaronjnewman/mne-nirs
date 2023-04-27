@@ -125,6 +125,8 @@ https://github.com/mne-tools/mne-nirs/issues
         :alt: Launch binder
         :width: 150 px
 
+
+
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_02_nirstoolbox.py <plot_02_nirstoolbox.py>`
