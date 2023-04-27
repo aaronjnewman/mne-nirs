@@ -6,48 +6,48 @@
 
 Computation times
 =================
-**07:35.534** total execution time for **auto_examples_general** files:
+**05:59.691** total execution time for **auto_examples_general** files:
 
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_01_data_io.py` (``plot_01_data_io.py``)                 | 01:50.523 | 490.8 MB |
+| :ref:`sphx_glr_auto_examples_general_plot_70_visualise_brain.py` (``plot_70_visualise_brain.py``) | 00:50.291 | 35.2 MB  |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_70_visualise_brain.py` (``plot_70_visualise_brain.py``) | 00:51.127 | 35.5 MB  |
+| :ref:`sphx_glr_auto_examples_general_plot_06_gowerlabs.py` (``plot_06_gowerlabs.py``)             | 00:39.572 | 266.6 MB |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_06_gowerlabs.py` (``plot_06_gowerlabs.py``)             | 00:48.126 | 299.9 MB |
+| :ref:`sphx_glr_auto_examples_general_plot_12_group_glm.py` (``plot_12_group_glm.py``)             | 00:38.052 | 468.0 MB |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_12_group_glm.py` (``plot_12_group_glm.py``)             | 00:35.420 | 503.8 MB |
+| :ref:`sphx_glr_auto_examples_general_plot_30_frequency.py` (``plot_30_frequency.py``)             | 00:30.896 | 8.9 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_30_frequency.py` (``plot_30_frequency.py``)             | 00:30.537 | 9.3 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_15_waveform.py` (``plot_15_waveform.py``)               | 00:26.930 | 28.5 MB  |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_22_quality.py` (``plot_22_quality.py``)                 | 00:27.409 | 9.6 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_22_quality.py` (``plot_22_quality.py``)                 | 00:25.655 | 9.5 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_15_waveform.py` (``plot_15_waveform.py``)               | 00:24.398 | 13.9 MB  |
+| :ref:`sphx_glr_auto_examples_general_plot_13_fir_glm.py` (``plot_13_fir_glm.py``)                 | 00:21.786 | 9.6 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_11_hrf_measured.py` (``plot_11_hrf_measured.py``)       | 00:22.648 | 217.5 MB |
+| :ref:`sphx_glr_auto_examples_general_plot_11_hrf_measured.py` (``plot_11_hrf_measured.py``)       | 00:21.548 | 258.6 MB |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_13_fir_glm.py` (``plot_13_fir_glm.py``)                 | 00:17.607 | 9.3 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_14_glm_components.py` (``plot_14_glm_components.py``)   | 00:19.092 | 8.8 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_14_glm_components.py` (``plot_14_glm_components.py``)   | 00:17.261 | 8.9 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_01_data_io.py` (``plot_01_data_io.py``)                 | 00:15.676 | 455.7 MB |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_16_waveform_group.py` (``plot_16_waveform_group.py``)   | 00:11.176 | 8.9 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_16_waveform_group.py` (``plot_16_waveform_group.py``)   | 00:12.338 | 8.8 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_99_bad.py` (``plot_99_bad.py``)                         | 00:09.410 | 9.6 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_99_bad.py` (``plot_99_bad.py``)                         | 00:09.396 | 9.4 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_60_aux_data.py` (``plot_60_aux_data.py``)               | 00:08.578 | 9.5 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_80_save_read_glm.py` (``plot_80_save_read_glm.py``)     | 00:07.714 | 14.8 MB  |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_80_save_read_glm.py` (``plot_80_save_read_glm.py``)     | 00:07.787 | 15.1 MB  |
+| :ref:`sphx_glr_auto_examples_general_plot_60_aux_data.py` (``plot_60_aux_data.py``)               | 00:07.628 | 8.8 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_10_hrf_simulation.py` (``plot_10_hrf_simulation.py``)   | 00:06.300 | 11.2 MB  |
+| :ref:`sphx_glr_auto_examples_general_plot_50_decoding.py` (``plot_50_decoding.py``)               | 00:06.045 | 9.0 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_19_snirf.py` (``plot_19_snirf.py``)                     | 00:05.793 | 8.9 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_10_hrf_simulation.py` (``plot_10_hrf_simulation.py``)   | 00:05.726 | 11.0 MB  |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_50_decoding.py` (``plot_50_decoding.py``)               | 00:05.676 | 9.2 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_19_snirf.py` (``plot_19_snirf.py``)                     | 00:05.414 | 9.5 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_21_artifacts.py` (``plot_21_artifacts.py``)             | 00:05.149 | 9.6 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_20_enhance.py` (``plot_20_enhance.py``)                 | 00:05.203 | 8.8 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_20_enhance.py` (``plot_20_enhance.py``)                 | 00:04.890 | 8.9 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_21_artifacts.py` (``plot_21_artifacts.py``)             | 00:05.027 | 9.6 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_40_mayer.py` (``plot_40_mayer.py``)                     | 00:03.945 | 8.9 MB   |
+| :ref:`sphx_glr_auto_examples_general_plot_40_mayer.py` (``plot_40_mayer.py``)                     | 00:04.239 | 9.0 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
-| :ref:`sphx_glr_auto_examples_general_plot_05_datasets.py` (``plot_05_datasets.py``)               | 00:01.773 | 10.0 MB  |
+| :ref:`sphx_glr_auto_examples_general_plot_05_datasets.py` (``plot_05_datasets.py``)               | 00:01.463 | 9.9 MB   |
 +---------------------------------------------------------------------------------------------------+-----------+----------+
