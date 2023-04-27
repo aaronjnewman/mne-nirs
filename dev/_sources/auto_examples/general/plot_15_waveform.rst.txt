@@ -272,7 +272,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f51e8bb11b0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f7e68f9c670>
 
 
 
@@ -307,7 +307,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f5178ea05e0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f7e69011ab0>
 
 
 
@@ -415,7 +415,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f51e96311b0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f7dfcc76dd0>
 
 
 
@@ -1008,16 +1008,16 @@ driving the topographic plot above.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f52467fa980>
+    <matplotlib.legend.Legend object at 0x7f7e9c530280>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.930 seconds)
+   **Total running time of the script:** ( 0 minutes  25.108 seconds)
 
-**Estimated memory usage:**  29 MB
+**Estimated memory usage:**  28 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:
