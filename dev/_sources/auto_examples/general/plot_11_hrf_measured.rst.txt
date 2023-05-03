@@ -629,7 +629,7 @@ estimates for two channels you would call:
  .. code-block:: none
 
 
-    [3.6359501281260763e-11, 9.482010775760916e-12]
+    [3.6359501281260763e-11, 9.482010775760918e-12]
 
 
 
@@ -656,7 +656,7 @@ you would call:
  .. code-block:: none
 
 
-    [9.482010775760916e-12]
+    [9.482010775760918e-12]
 
 
 
@@ -1019,7 +1019,7 @@ cortical surface
  .. code-block:: none
 
 
-    <mne.viz._brain._brain.Brain object at 0x7f653afe4ac0>
+    <mne.viz._brain._brain.Brain object at 0x7f5d80ca0130>
 
 
 
@@ -1534,9 +1534,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.852 seconds)
+   **Total running time of the script:** ( 0 minutes  20.755 seconds)
 
-**Estimated memory usage:**  277 MB
+**Estimated memory usage:**  271 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:

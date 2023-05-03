@@ -272,7 +272,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f657d49ef00>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5dd3fa0c40>
 
 
 
@@ -307,7 +307,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f657d26bc40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5da3b40b80>
 
 
 
@@ -415,7 +415,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f657d20dfc0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5d70810d00>
 
 
 
@@ -621,14 +621,14 @@ the HbO peak.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
          :class: sphx-glr-multi-img
 
@@ -676,14 +676,14 @@ that it does not show the expected morphology.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
          :class: sphx-glr-multi-img
 
@@ -739,6 +739,13 @@ motor cortex, and all channels show a similar pattern in the data.
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+
 
 
 
@@ -785,6 +792,10 @@ the two signals.
 
  .. code-block:: none
 
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     combining channels using "mean"
     combining channels using "mean"
     combining channels using "mean"
@@ -825,7 +836,9 @@ Next we view how the topographic activity changes throughout the response.
 
  .. code-block:: none
 
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     No projector specified for this dataset. Please consider the method self.add_proj.
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
     <Figure size 800x420 with 10 Axes>
 
@@ -875,6 +888,8 @@ the location of activity. First we visualise the HbO activity.
 
  .. code-block:: none
 
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
     <MNEFigure size 1200x220 with 8 Axes>
 
@@ -919,6 +934,8 @@ And we also view the HbR activity for the two conditions.
 
  .. code-block:: none
 
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
     <MNEFigure size 1200x220 with 8 Axes>
 
@@ -971,6 +988,13 @@ And we can plot the comparison at a single time point for two conditions.
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+
 
 
 
@@ -1007,17 +1031,19 @@ driving the topographic plot above.
 
  .. code-block:: none
 
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
+    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
-    <matplotlib.legend.Legend object at 0x7f650c79c220>
+    <matplotlib.legend.Legend object at 0x7f5d4a4a6320>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.168 seconds)
+   **Total running time of the script:** ( 0 minutes  25.528 seconds)
 
-**Estimated memory usage:**  28 MB
+**Estimated memory usage:**  30 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:

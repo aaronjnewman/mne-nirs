@@ -463,16 +463,16 @@ document.write(`
 
     <span class="nd">@verbose</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Loading </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">fname</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="p">)</span>
 
         <span class="c1"># Read header file and grab some info.</span>
         <span class="n">start_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
         <span class="n">col_names</span> <span class="o">=</span> <span class="n">mrk_col</span> <span class="o">=</span> <span class="n">filetype</span> <span class="o">=</span> <span class="n">mrk_data</span> <span class="o">=</span> <span class="n">end_line</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">raw_extras</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-        <span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;offsets&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>  <span class="c1"># keep track of our offsets</span>
+        <span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>  <span class="c1"># keep track of our offsets</span>
         <span class="n">sfreq</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">fname</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">_check_fname</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;read&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;fname&quot;</span><span class="p">))</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fid</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fid</span><span class="p">:</span>
             <span class="n">line_num</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="n">i_line</span> <span class="o">=</span> <span class="n">fid</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
             <span class="k">while</span> <span class="n">i_line</span><span class="p">:</span>
@@ -480,67 +480,71 @@ document.write(`
                 <span class="k">if</span> <span class="n">line_num</span> <span class="o">&gt;=</span> <span class="n">start_line</span><span class="p">:</span>
                     <span class="k">assert</span> <span class="n">col_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
                     <span class="k">assert</span> <span class="n">filetype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-                    <span class="k">if</span> <span class="s1">&#39;#DATA ENDS&#39;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">&quot;#DATA ENDS&quot;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
                         <span class="c1"># Data ends just before this.</span>
                         <span class="n">end_line</span> <span class="o">=</span> <span class="n">line_num</span>
                         <span class="k">break</span>
                     <span class="k">if</span> <span class="n">mrk_col</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s1">&#39;non-parsed&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s2">&quot;non-parsed&quot;</span><span class="p">:</span>
                             <span class="c1"># Non-parsed files have different lines lengths.</span>
-                            <span class="n">crnt_line</span> <span class="o">=</span> <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                            <span class="n">temp_data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
-                                <span class="sa">r</span><span class="s1">&#39;[-+]?\d*\.?\d+&#39;</span><span class="p">,</span> <span class="n">crnt_line</span><span class="p">)</span>
+                            <span class="n">crnt_line</span> <span class="o">=</span> <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                            <span class="n">temp_data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[-+]?\d*\.?\d+&quot;</span><span class="p">,</span> <span class="n">crnt_line</span><span class="p">)</span>
                             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_data</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_names</span><span class="p">):</span>
-                                <span class="n">mrk_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span>
-                                    <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[-+]?\d*\.?\d+&#39;</span><span class="p">,</span> <span class="n">crnt_line</span><span class="p">)</span>
-                                    <span class="p">[</span><span class="n">mrk_col</span><span class="p">]))</span>
+                                <span class="n">mrk_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                                    <span class="nb">float</span><span class="p">(</span>
+                                        <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[-+]?\d*\.?\d+&quot;</span><span class="p">,</span> <span class="n">crnt_line</span><span class="p">)[</span>
+                                            <span class="n">mrk_col</span>
+                                        <span class="p">]</span>
+                                    <span class="p">)</span>
+                                <span class="p">)</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="n">crnt_line</span> <span class="o">=</span> <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                            <span class="n">mrk_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
-                                <span class="sa">r</span><span class="s1">&#39;[-+]?\d*\.?\d+&#39;</span><span class="p">,</span> <span class="n">crnt_line</span><span class="p">)[</span><span class="n">mrk_col</span><span class="p">]))</span>
-                    <span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;offsets&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fid</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+                            <span class="n">crnt_line</span> <span class="o">=</span> <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                            <span class="n">mrk_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                                <span class="nb">float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[-+]?\d*\.?\d+&quot;</span><span class="p">,</span> <span class="n">crnt_line</span><span class="p">)[</span><span class="n">mrk_col</span><span class="p">])</span>
+                            <span class="p">)</span>
+                    <span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fid</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
                 <span class="c1"># now proceed with more standard header parsing</span>
-                <span class="k">elif</span> <span class="s1">&#39;BOXY.EXE:&#39;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
-                    <span class="n">boxy_ver</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d*\.\d+&#39;</span><span class="p">,</span>
-                                          <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="s2">&quot;BOXY.EXE:&quot;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
+                    <span class="n">boxy_ver</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d*\.\d+&quot;</span><span class="p">,</span> <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
                     <span class="c1"># Check that the BOXY version is supported</span>
-                    <span class="k">if</span> <span class="n">boxy_ver</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;0.40&#39;</span><span class="p">,</span> <span class="s1">&#39;0.84&#39;</span><span class="p">]:</span>
-                        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;MNE has not been tested with BOXY &#39;</span>
-                                           <span class="s1">&#39;version (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">boxy_ver</span><span class="p">)</span>
-                <span class="k">elif</span> <span class="s1">&#39;Detector Channels&#39;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
-                    <span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;detect_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-                <span class="k">elif</span> <span class="s1">&#39;External MUX Channels&#39;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
-                    <span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;source_num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-                <span class="k">elif</span> <span class="s1">&#39;Update Rate (Hz)&#39;</span> <span class="ow">in</span> <span class="n">i_line</span> <span class="ow">or</span> \
-                        <span class="s1">&#39;Updata Rate (Hz)&#39;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">boxy_ver</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;0.40&quot;</span><span class="p">,</span> <span class="s2">&quot;0.84&quot;</span><span class="p">]:</span>
+                        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                            <span class="s2">&quot;MNE has not been tested with BOXY &quot;</span>
+                            <span class="s2">&quot;version (</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n">boxy_ver</span>
+                        <span class="p">)</span>
+                <span class="k">elif</span> <span class="s2">&quot;Detector Channels&quot;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
+                    <span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;detect_num&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">elif</span> <span class="s2">&quot;External MUX Channels&quot;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
+                    <span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;source_num&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">elif</span> <span class="s2">&quot;Update Rate (Hz)&quot;</span> <span class="ow">in</span> <span class="n">i_line</span> <span class="ow">or</span> <span class="s2">&quot;Updata Rate (Hz)&quot;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
                     <span class="c1"># Version 0.40 of the BOXY recording software</span>
                     <span class="c1"># (and possibly other versions lower than 0.84) contains a</span>
                     <span class="c1"># typo in the raw data file where &#39;Update Rate&#39; is spelled</span>
                     <span class="c1"># &quot;Updata Rate. This will account for this typo.</span>
-                    <span class="n">sfreq</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-                <span class="k">elif</span> <span class="s1">&#39;#DATA BEGINS&#39;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
+                    <span class="n">sfreq</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">elif</span> <span class="s2">&quot;#DATA BEGINS&quot;</span> <span class="ow">in</span> <span class="n">i_line</span><span class="p">:</span>
                     <span class="c1"># Data should start a couple lines later.</span>
                     <span class="n">start_line</span> <span class="o">=</span> <span class="n">line_num</span> <span class="o">+</span> <span class="mi">3</span>
                 <span class="k">elif</span> <span class="n">line_num</span> <span class="o">==</span> <span class="n">start_line</span> <span class="o">-</span> <span class="mi">2</span><span class="p">:</span>
                     <span class="c1"># Grab names for each column of data.</span>
-                    <span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;col_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col_names</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
-                        <span class="sa">r</span><span class="s1">&#39;\w+\-\w+|\w+\-\d+|\w+&#39;</span><span class="p">,</span> <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-                    <span class="k">if</span> <span class="s1">&#39;exmux&#39;</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
+                    <span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;col_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col_names</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
+                        <span class="sa">r</span><span class="s2">&quot;\w+\-\w+|\w+\-\d+|\w+&quot;</span><span class="p">,</span> <span class="n">i_line</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="p">)</span>
+                    <span class="k">if</span> <span class="s2">&quot;exmux&quot;</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
                         <span class="c1"># Change filetype based on data organisation.</span>
-                        <span class="n">filetype</span> <span class="o">=</span> <span class="s1">&#39;non-parsed&#39;</span>
+                        <span class="n">filetype</span> <span class="o">=</span> <span class="s2">&quot;non-parsed&quot;</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">filetype</span> <span class="o">=</span> <span class="s1">&#39;parsed&#39;</span>
-                    <span class="k">if</span> <span class="s1">&#39;digaux&#39;</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
-                        <span class="n">mrk_col</span> <span class="o">=</span> <span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;digaux&#39;</span><span class="p">)</span>
+                        <span class="n">filetype</span> <span class="o">=</span> <span class="s2">&quot;parsed&quot;</span>
+                    <span class="k">if</span> <span class="s2">&quot;digaux&quot;</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
+                        <span class="n">mrk_col</span> <span class="o">=</span> <span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;digaux&quot;</span><span class="p">)</span>
                         <span class="n">mrk_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
                     <span class="c1"># raw_extras[&#39;offsets&#39;].append(fid.tell())</span>
                 <span class="k">elif</span> <span class="n">line_num</span> <span class="o">==</span> <span class="n">start_line</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;offsets&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fid</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
+                    <span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fid</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>
                 <span class="n">line_num</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="n">i_line</span> <span class="o">=</span> <span class="n">fid</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
         <span class="k">assert</span> <span class="n">sfreq</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-        <span class="n">raw_extras</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
-            <span class="n">filetype</span><span class="o">=</span><span class="n">filetype</span><span class="p">,</span> <span class="n">start_line</span><span class="o">=</span><span class="n">start_line</span><span class="p">,</span> <span class="n">end_line</span><span class="o">=</span><span class="n">end_line</span><span class="p">)</span>
+        <span class="n">raw_extras</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">filetype</span><span class="o">=</span><span class="n">filetype</span><span class="p">,</span> <span class="n">start_line</span><span class="o">=</span><span class="n">start_line</span><span class="p">,</span> <span class="n">end_line</span><span class="o">=</span><span class="n">end_line</span><span class="p">)</span>
 
         <span class="c1"># Label each channel in our data, for each data type (DC, AC, Ph).</span>
         <span class="c1"># Data is organised by channels x timepoint, where the first</span>
@@ -549,30 +553,36 @@ document.write(`
         <span class="n">ch_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">ch_types</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">cals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">det_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;detect_num&#39;</span><span class="p">]):</span>
-            <span class="k">for</span> <span class="n">src_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;source_num&#39;</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">det_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;detect_num&quot;</span><span class="p">]):</span>
+            <span class="k">for</span> <span class="n">src_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;source_num&quot;</span><span class="p">]):</span>
                 <span class="k">for</span> <span class="n">i_type</span><span class="p">,</span> <span class="n">ch_type</span> <span class="ow">in</span> <span class="p">[</span>
-                        <span class="p">(</span><span class="s1">&#39;DC&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_cw_amplitude&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;AC&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_fd_ac_amplitude&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;Ph&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_fd_phase&#39;</span><span class="p">)]:</span>
-                    <span class="n">ch_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s1">&#39;S</span><span class="si">{</span><span class="n">src_num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">_D</span><span class="si">{</span><span class="n">det_num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">i_type</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="p">(</span><span class="s2">&quot;DC&quot;</span><span class="p">,</span> <span class="s2">&quot;fnirs_cw_amplitude&quot;</span><span class="p">),</span>
+                    <span class="p">(</span><span class="s2">&quot;AC&quot;</span><span class="p">,</span> <span class="s2">&quot;fnirs_fd_ac_amplitude&quot;</span><span class="p">),</span>
+                    <span class="p">(</span><span class="s2">&quot;Ph&quot;</span><span class="p">,</span> <span class="s2">&quot;fnirs_fd_phase&quot;</span><span class="p">),</span>
+                <span class="p">]:</span>
+                    <span class="n">ch_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;S</span><span class="si">{</span><span class="n">src_num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">_D</span><span class="si">{</span><span class="n">det_num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">i_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                     <span class="n">ch_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ch_type</span><span class="p">)</span>
-                    <span class="n">cals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.</span> <span class="k">if</span> <span class="n">i_type</span> <span class="o">==</span> <span class="s1">&#39;Ph&#39;</span> <span class="k">else</span> <span class="mf">1.</span><span class="p">)</span>
+                    <span class="n">cals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span> <span class="k">if</span> <span class="n">i_type</span> <span class="o">==</span> <span class="s2">&quot;Ph&quot;</span> <span class="k">else</span> <span class="mf">1.0</span><span class="p">)</span>
 
         <span class="c1"># Create info structure.</span>
         <span class="n">info</span> <span class="o">=</span> <span class="n">create_info</span><span class="p">(</span><span class="n">ch_names</span><span class="p">,</span> <span class="n">sfreq</span><span class="p">,</span> <span class="n">ch_types</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">ch</span><span class="p">,</span> <span class="n">cal</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;chs&#39;</span><span class="p">],</span> <span class="n">cals</span><span class="p">):</span>
-            <span class="n">ch</span><span class="p">[</span><span class="s1">&#39;cal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cal</span>
+        <span class="k">for</span> <span class="n">ch</span><span class="p">,</span> <span class="n">cal</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;chs&quot;</span><span class="p">],</span> <span class="n">cals</span><span class="p">):</span>
+            <span class="n">ch</span><span class="p">[</span><span class="s2">&quot;cal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cal</span>
 
         <span class="c1"># Determine how long our data is.</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">end_line</span> <span class="o">-</span> <span class="n">start_line</span>
-        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;offsets&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="n">delta</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s1">&#39;non-parsed&#39;</span><span class="p">:</span>
-            <span class="n">delta</span> <span class="o">//=</span> <span class="p">(</span><span class="n">raw_extras</span><span class="p">[</span><span class="s1">&#39;source_num&#39;</span><span class="p">])</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="n">delta</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s2">&quot;non-parsed&quot;</span><span class="p">:</span>
+            <span class="n">delta</span> <span class="o">//=</span> <span class="n">raw_extras</span><span class="p">[</span><span class="s2">&quot;source_num&quot;</span><span class="p">]</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">RawBOXY</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="n">info</span><span class="p">,</span> <span class="n">preload</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="n">fname</span><span class="p">],</span> <span class="n">first_samps</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="n">last_samps</span><span class="o">=</span><span class="p">[</span><span class="n">delta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">raw_extras</span><span class="o">=</span><span class="p">[</span><span class="n">raw_extras</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
+            <span class="n">info</span><span class="p">,</span>
+            <span class="n">preload</span><span class="p">,</span>
+            <span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="n">fname</span><span class="p">],</span>
+            <span class="n">first_samps</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">last_samps</span><span class="o">=</span><span class="p">[</span><span class="n">delta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">raw_extras</span><span class="o">=</span><span class="p">[</span><span class="n">raw_extras</span><span class="p">],</span>
+            <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="p">)</span>
 
         <span class="c1"># Now let&#39;s grab our markers, if they are present.</span>
         <span class="k">if</span> <span class="n">mrk_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -603,33 +613,33 @@ document.write(`
 <span class="sd">        Regardless of type, output has (n_montages x n_sources x n_detectors</span>
 <span class="sd">        + n_marker_channels) rows, and (n_timepoints x n_blocks) columns.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">source_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s1">&#39;source_num&#39;</span><span class="p">]</span>
-        <span class="n">detect_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s1">&#39;detect_num&#39;</span><span class="p">]</span>
-        <span class="n">start_line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s1">&#39;start_line&#39;</span><span class="p">]</span>
-        <span class="n">end_line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s1">&#39;end_line&#39;</span><span class="p">]</span>
-        <span class="n">filetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s1">&#39;filetype&#39;</span><span class="p">]</span>
-        <span class="n">col_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s1">&#39;col_names&#39;</span><span class="p">]</span>
-        <span class="n">offsets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s1">&#39;offsets&#39;</span><span class="p">]</span>
+        <span class="n">source_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s2">&quot;source_num&quot;</span><span class="p">]</span>
+        <span class="n">detect_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s2">&quot;detect_num&quot;</span><span class="p">]</span>
+        <span class="n">start_line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s2">&quot;start_line&quot;</span><span class="p">]</span>
+        <span class="n">end_line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s2">&quot;end_line&quot;</span><span class="p">]</span>
+        <span class="n">filetype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s2">&quot;filetype&quot;</span><span class="p">]</span>
+        <span class="n">col_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s2">&quot;col_names&quot;</span><span class="p">]</span>
+        <span class="n">offsets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_extras</span><span class="p">[</span><span class="n">fi</span><span class="p">][</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span>
         <span class="n">boxy_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filenames</span><span class="p">[</span><span class="n">fi</span><span class="p">]</span>
 
         <span class="c1"># Non-parsed multiplexes sources, so we need source_num times as many</span>
         <span class="c1"># lines in that case</span>
-        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s1">&#39;parsed&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s2">&quot;parsed&quot;</span><span class="p">:</span>
             <span class="n">start_read</span> <span class="o">=</span> <span class="n">start_line</span> <span class="o">+</span> <span class="n">start</span>
             <span class="n">stop_read</span> <span class="o">=</span> <span class="n">start_read</span> <span class="o">+</span> <span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">assert</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s1">&#39;non-parsed&#39;</span>
+            <span class="k">assert</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s2">&quot;non-parsed&quot;</span>
             <span class="n">start_read</span> <span class="o">=</span> <span class="n">start_line</span> <span class="o">+</span> <span class="n">start</span> <span class="o">*</span> <span class="n">source_num</span>
             <span class="n">stop_read</span> <span class="o">=</span> <span class="n">start_read</span> <span class="o">+</span> <span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">*</span> <span class="n">source_num</span>
         <span class="k">assert</span> <span class="n">start_read</span> <span class="o">&gt;=</span> <span class="n">start_line</span>
         <span class="k">assert</span> <span class="n">stop_read</span> <span class="o">&lt;=</span> <span class="n">end_line</span>
 
         <span class="c1"># Possible detector names.</span>
-        <span class="n">detectors</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span class="p">[:</span><span class="n">detect_num</span><span class="p">]</span>
+        <span class="n">detectors</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span><span class="p">[:</span><span class="n">detect_num</span><span class="p">]</span>
 
         <span class="c1"># Loop through our data.</span>
         <span class="n">one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">col_names</span><span class="p">),</span> <span class="n">stop_read</span> <span class="o">-</span> <span class="n">start_read</span><span class="p">))</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">boxy_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fid</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">boxy_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fid</span><span class="p">:</span>
             <span class="c1"># Just a more efficient version of this:</span>
             <span class="c1"># ii = 0</span>
             <span class="c1"># for line_num, i_line in enumerate(fid):</span>
@@ -643,26 +653,36 @@ document.write(`
             <span class="n">fid</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offsets</span><span class="p">[</span><span class="n">start_read</span> <span class="o">-</span> <span class="n">start_line</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">oo</span> <span class="ow">in</span> <span class="n">one</span><span class="o">.</span><span class="n">T</span><span class="p">:</span>
                 <span class="n">i_data</span> <span class="o">=</span> <span class="n">fid</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-                <span class="n">oo</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">i_data</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i_data</span>
+                <span class="n">oo</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">i_data</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i_data</span>
 
         <span class="c1"># in theory we could index in the loop above, but it&#39;s painfully slow,</span>
         <span class="c1"># so let&#39;s just take a hopefully minor memory hit</span>
-        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s1">&#39;non-parsed&#39;</span><span class="p">:</span>
-            <span class="n">ch_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i_type</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-                       <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span>
-                       <span class="k">for</span> <span class="n">i_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DC&#39;</span><span class="p">,</span> <span class="s1">&#39;AC&#39;</span><span class="p">,</span> <span class="s1">&#39;Ph&#39;</span><span class="p">]]</span>
-            <span class="n">one</span> <span class="o">=</span> <span class="n">one</span><span class="p">[</span><span class="n">ch_idxs</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>  <span class="c1"># each &quot;time point&quot; multiplexes srcs</span>
-                <span class="nb">len</span><span class="p">(</span><span class="n">detectors</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">source_num</span>
-            <span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span>  <span class="c1"># reorganize into (det, source, DC/AC/Ph, t) order</span>
-                <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-            <span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>  <span class="c1"># reshape the way we store it (det x source x DAP, t)</span>
-                <span class="nb">len</span><span class="p">(</span><span class="n">detectors</span><span class="p">)</span> <span class="o">*</span> <span class="n">source_num</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s2">&quot;non-parsed&quot;</span><span class="p">:</span>
+            <span class="n">ch_idxs</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">i_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span>
+                <span class="k">for</span> <span class="n">i_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;DC&quot;</span><span class="p">,</span> <span class="s2">&quot;AC&quot;</span><span class="p">,</span> <span class="s2">&quot;Ph&quot;</span><span class="p">]</span>
+            <span class="p">]</span>
+            <span class="n">one</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">one</span><span class="p">[</span><span class="n">ch_idxs</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">reshape</span><span class="p">(</span>  <span class="c1"># each &quot;time point&quot; multiplexes srcs</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="n">detectors</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">source_num</span>
+                <span class="p">)</span>
+                <span class="o">.</span><span class="n">transpose</span><span class="p">(</span>  <span class="c1"># reorganize into (det, source, DC/AC/Ph, t) order</span>
+                    <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+                <span class="p">)</span>
+                <span class="o">.</span><span class="n">reshape</span><span class="p">(</span>  <span class="c1"># reshape the way we store it (det x source x DAP, t)</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="n">detectors</span><span class="p">)</span> <span class="o">*</span> <span class="n">source_num</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">assert</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s1">&#39;parsed&#39;</span>
-            <span class="n">ch_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i_type</span><span class="si">}{</span><span class="n">si</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-                       <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span>
-                       <span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">source_num</span><span class="p">)</span>
-                       <span class="k">for</span> <span class="n">i_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DC&#39;</span><span class="p">,</span> <span class="s1">&#39;AC&#39;</span><span class="p">,</span> <span class="s1">&#39;Ph&#39;</span><span class="p">]]</span>
+            <span class="k">assert</span> <span class="n">filetype</span> <span class="o">==</span> <span class="s2">&quot;parsed&quot;</span>
+            <span class="n">ch_idxs</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">col_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">i_type</span><span class="si">}{</span><span class="n">si</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span>
+                <span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">source_num</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;DC&quot;</span><span class="p">,</span> <span class="s2">&quot;AC&quot;</span><span class="p">,</span> <span class="s2">&quot;Ph&quot;</span><span class="p">]</span>
+            <span class="p">]</span>
             <span class="n">one</span> <span class="o">=</span> <span class="n">one</span><span class="p">[</span><span class="n">ch_idxs</span><span class="p">]</span>
 
         <span class="c1"># Place our data into the data object in place.</span>
@@ -707,7 +727,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-04-28T06:36:19.550313+00:00&#34; class=&#34;localized&#34;&gt;2023-04-28 06:36 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-03T05:33:29.405346+00:00&#34; class=&#34;localized&#34;&gt;2023-05-03 05:33 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

@@ -428,7 +428,8 @@ document.write(`
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    raw : instance of Raw</span>
-<span class="sd">        Data to write to file. Must contain only `fnirs_cw_amplitude` type.</span>
+<span class="sd">        Data to write to file. Can be either continuous wave</span>
+<span class="sd">        (`fnirs_cw_amplitude`) or processed (`fnirs_od`).</span>
 <span class="sd">    fname : str</span>
 <span class="sd">        Path to the SNIRF data file.</span>
 <span class="sd">    add_montage : bool</span>
@@ -436,8 +437,12 @@ document.write(`
 <span class="sd">        facilitate compatibility with AtlasViewer.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">picks</span> <span class="o">=</span> <span class="n">_picks_to_idx</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="s1">&#39;fnirs_cw_amplitude&#39;</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[])</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">picks</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">),</span> <span class="s1">&#39;Data must be fnirs_cw_amplitude&#39;</span>
+    <span class="n">supported_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fnirs_cw_amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;fnirs_od&#39;</span><span class="p">]</span>
+    <span class="n">picks</span> <span class="o">=</span> <span class="n">_picks_to_idx</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">supported_types</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[])</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">picks</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">),</span>\
+        <span class="s1">&#39;Data must only be of type fnirs_cw_amplitude or fnirs_od&#39;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">get_channel_types</span><span class="p">()))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>\
+        <span class="s1">&#39;All channels must be of the same type&#39;</span>
 
     <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">nirs</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s1">&#39;/nirs&#39;</span><span class="p">)</span>
@@ -558,9 +563,17 @@ document.write(`
         <span class="n">ch_group</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;wavelengthIndex&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">wavelength_idx</span><span class="p">,</span>
                                 <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
 
-        <span class="c1"># Set dataType and dataTypeIndex for CW Amplitude measurements</span>
-        <span class="n">ch_group</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;dataType&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
+        <span class="c1"># The data type coding is described at</span>
+        <span class="c1"># https://github.com/fNIRS/snirf/blob/master/snirf_specification.md#appendix</span>
+        <span class="c1"># The currently implemented data types are:</span>
+        <span class="c1"># 1 = Continuous Wave</span>
+        <span class="c1"># 99999 = Processed</span>
+        <span class="n">data_type</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="s1">&#39;fnirs_cw_amplitude&#39;</span> <span class="ow">in</span> <span class="n">raw</span> <span class="k">else</span> <span class="mi">99999</span>
+
+        <span class="n">ch_group</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;dataType&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data_type</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
         <span class="n">ch_group</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;dataTypeIndex&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;fnirs_od&#39;</span> <span class="ow">in</span> <span class="n">raw</span><span class="p">:</span>
+            <span class="n">ch_group</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;dataTypeLabel&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;dOD&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_add_probe_info</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">nirs</span><span class="p">,</span> <span class="n">add_montage</span><span class="p">):</span>
@@ -822,7 +835,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-04-28T06:36:19.550313+00:00&#34; class=&#34;localized&#34;&gt;2023-04-28 06:36 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-03T05:33:29.405346+00:00&#34; class=&#34;localized&#34;&gt;2023-05-03 05:33 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     
