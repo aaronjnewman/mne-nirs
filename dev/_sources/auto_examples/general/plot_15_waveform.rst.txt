@@ -272,7 +272,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5dd3fa0c40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27216f54c0>
 
 
 
@@ -307,7 +307,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5da3b40b80>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27acae3400>
 
 
 
@@ -415,7 +415,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5d70810d00>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27a4eaef80>
 
 
 
@@ -621,14 +621,14 @@ the HbO peak.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
          :class: sphx-glr-multi-img
 
@@ -676,14 +676,14 @@ that it does not show the expected morphology.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
          :class: sphx-glr-multi-img
 
@@ -1034,16 +1034,16 @@ driving the topographic plot above.
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
-    <matplotlib.legend.Legend object at 0x7f5d4a4a6320>
+    <matplotlib.legend.Legend object at 0x7f2781870d00>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  25.528 seconds)
+   **Total running time of the script:** ( 0 minutes  25.176 seconds)
 
-**Estimated memory usage:**  30 MB
+**Estimated memory usage:**  27 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:
