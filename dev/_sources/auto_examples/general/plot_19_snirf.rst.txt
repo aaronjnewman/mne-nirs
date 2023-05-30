@@ -32,8 +32,11 @@ SNIRF Support in MNE
 
 SNIRF is a file format for storing functional near-infrared spectroscopy (fNIRS)
 data. The specification is maintained by the society for functional near infrared
-spectroscopy. In this tutorial we demonstrate how to convert your MNE data to
-the SNIRF  and also how to read SNIRF files. We also demonstrate how to validate
+spectroscopy.
+
+MNE Python and MNE-NIRS can be used to read and write SNIRF files respectively.
+In this tutorial we demonstrate how to convert your MNE data to
+SNIRF and write it to disk and also how to read SNIRF files. We also demonstrate how to validate
 that a SNIRF file conforms to the SNIRF specification.
 
 You can read the SNIRF protocol at the official site https://github.com/fNIRS/snirf.
@@ -42,7 +45,7 @@ You can read the SNIRF protocol at the official site https://github.com/fNIRS/sn
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-42
+.. GENERATED FROM PYTHON SOURCE LINES 30-46
 
 .. code-block:: default
 
@@ -57,6 +60,7 @@ You can read the SNIRF protocol at the official site https://github.com/fNIRS/sn
     import snirf
 
     from mne.io import read_raw_nirx, read_raw_snirf
+    from mne.preprocessing.nirs import optical_density, beer_lambert_law
     from mne_nirs.io import write_raw_snirf
     from numpy.testing import assert_allclose
 
@@ -68,14 +72,14 @@ You can read the SNIRF protocol at the official site https://github.com/fNIRS/sn
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-47
+.. GENERATED FROM PYTHON SOURCE LINES 47-51
 
 Import raw NIRS data from vendor
 --------------------------------
 
 First we import some example data recorded with a NIRX device.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-54
+.. GENERATED FROM PYTHON SOURCE LINES 51-58
 
 .. code-block:: default
 
@@ -93,14 +97,14 @@ First we import some example data recorded with a NIRX device.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-59
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 Write data as SNIRF
 -------------------
 
 Now we can write this data back to disk in the SNIRF format.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-63
+.. GENERATED FROM PYTHON SOURCE LINES 63-67
 
 .. code-block:: default
 
@@ -115,14 +119,14 @@ Now we can write this data back to disk in the SNIRF format.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-68
+.. GENERATED FROM PYTHON SOURCE LINES 68-72
 
 Read back SNIRF file
 --------------------
 
 Next we can read back the snirf file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-72
+.. GENERATED FROM PYTHON SOURCE LINES 72-76
 
 .. code-block:: default
 
@@ -137,7 +141,7 @@ Next we can read back the snirf file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-78
+.. GENERATED FROM PYTHON SOURCE LINES 77-82
 
 Compare files
 -------------
@@ -145,7 +149,7 @@ Compare files
 Finally we can compare the data of the original to the SNIRF format and
 ensure that the values are the same.
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-84
+.. GENERATED FROM PYTHON SOURCE LINES 82-88
 
 .. code-block:: default
 
@@ -179,11 +183,11 @@ ensure that the values are the same.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f94fdc20e40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68d5db1bc0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-93
+.. GENERATED FROM PYTHON SOURCE LINES 89-97
 
 Validate SNIRF File
 -------------------
@@ -194,7 +198,7 @@ called ``snirf``. Detailed instructions for this program can be found at
 https://github.com/BUNPC/pysnirf2. Below we demonstrate that the files created
 by MNE-NIRS are compliant with the specification.
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-97
+.. GENERATED FROM PYTHON SOURCE LINES 97-103
 
 .. code-block:: default
 
@@ -206,11 +210,13 @@ by MNE-NIRS are compliant with the specification.
 
 
 
+
+
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
 
-    <snirf.pysnirf2.ValidationResult object at 0x7f952e4949d0>
+    <snirf.pysnirf2.ValidationResult object at 0x7f686ce6e9b0>
 
     Found 304 OK      (hidden)
     Found 522 INFO    (hidden)
@@ -222,10 +228,88 @@ by MNE-NIRS are compliant with the specification.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 104-108
+
+Optical Density
+-------------------
+
+MNE-NIRS cal also be used to write optical density data to SNIRF files.
+
+.. GENERATED FROM PYTHON SOURCE LINES 108-117
+
+.. code-block:: default
+
+
+    raw_od = optical_density(raw_intensity)
+    write_raw_snirf(raw_od, 'test_raw_od.snirf')
+
+    result = snirf.validateSnirf('test_raw_od.snirf')
+    assert result.is_valid()
+    result.display()
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    <snirf.pysnirf2.ValidationResult object at 0x7f68e9d99000>
+
+    Found 360 OK      (hidden)
+    Found 466 INFO    (hidden)
+    Found 0 WARNING
+    Found 0 FATAL  
+
+    File is VALID
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 118-122
+
+Haemoglobin
+-------------------
+
+And it can write valid haemoglobin data to SNIRF files.
+
+.. GENERATED FROM PYTHON SOURCE LINES 122-129
+
+.. code-block:: default
+
+
+    raw_hb = beer_lambert_law(raw_od)
+    write_raw_snirf(raw_hb, 'test_raw_hb.snirf')
+
+    result = snirf.validateSnirf('test_raw_hb.snirf')
+    assert result.is_valid()
+    result.display()
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    <snirf.pysnirf2.ValidationResult object at 0x7f68e9d42770>
+
+    Found 360 OK      (hidden)
+    Found 466 INFO    (hidden)
+    Found 0 WARNING
+    Found 0 FATAL  
+
+    File is VALID
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.203 seconds)
+   **Total running time of the script:** ( 0 minutes  7.454 seconds)
 
 **Estimated memory usage:**  9 MB
 

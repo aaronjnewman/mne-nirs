@@ -471,8 +471,10 @@ function. See <a class="github reference external" href="https://github.com/fNIR
 </aside>
 <p>SNIRF is a file format for storing functional near-infrared spectroscopy (fNIRS)
 data. The specification is maintained by the society for functional near infrared
-spectroscopy. In this tutorial we demonstrate how to convert your MNE data to
-the SNIRF  and also how to read SNIRF files. We also demonstrate how to validate
+spectroscopy.</p>
+<p>MNE Python and MNE-NIRS can be used to read and write SNIRF files respectively.
+In this tutorial we demonstrate how to convert your MNE data to
+SNIRF and write it to disk and also how to read SNIRF files. We also demonstrate how to validate
 that a SNIRF file conforms to the SNIRF specification.</p>
 <p>You can read the SNIRF protocol at the official site <a class="github reference external" href="https://github.com/fNIRS/snirf">fNIRS/snirf</a>.</p>
 <nav class="contents local" id="page-contents">
@@ -483,6 +485,8 @@ that a SNIRF file conforms to the SNIRF specification.</p>
 <li><p><a class="reference internal" href="#read-back-snirf-file" id="id3">Read back SNIRF file</a></p></li>
 <li><p><a class="reference internal" href="#compare-files" id="id4">Compare files</a></p></li>
 <li><p><a class="reference internal" href="#validate-snirf-file" id="id5">Validate SNIRF File</a></p></li>
+<li><p><a class="reference internal" href="#optical-density" id="id6">Optical Density</a></p></li>
+<li><p><a class="reference internal" href="#haemoglobin" id="id7">Haemoglobin</a></p></li>
 </ul>
 </nav>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -494,6 +498,7 @@ that a SNIRF file conforms to the SNIRF specification.</p>
 <span class="kn">import</span> <span class="nn">snirf</span>
 
 <span class="kn">from</span> <span class="nn">mne.io</span> <span class="kn">import</span> <a href="https://mne.tools/stable/generated/mne.io.read_raw_nirx.html#mne.io.read_raw_nirx" title="mne.io.read_raw_nirx" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-function"><span class="n">read_raw_nirx</span></a><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf" title="mne.io.read_raw_snirf" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-function"><span class="n">read_raw_snirf</span></a>
+<span class="kn">from</span> <span class="nn">mne.preprocessing.nirs</span> <span class="kn">import</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">optical_density</span></a><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">beer_lambert_law</span></a>
 <span class="kn">from</span> <span class="nn">mne_nirs.io</span> <span class="kn">import</span> <span class="n">write_raw_snirf</span>
 <span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="kn">import</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.testing.assert_allclose.html#numpy.testing.assert_allclose" title="numpy.testing.assert_allclose" class="sphx-glr-backref-module-numpy-testing sphx-glr-backref-type-py-function"><span class="n">assert_allclose</span></a>
 </pre></div>
@@ -541,7 +546,7 @@ ensure that the values are the same.</p>
     ind = w.currentIndex()
 RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f94fdc20e40&gt;
+&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68d5db1bc0&gt;
 </pre></div>
 </div>
 </section>
@@ -557,7 +562,7 @@ by MNE-NIRS are compliant with the specification.</p>
 <span class="n">result</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;snirf.pysnirf2.ValidationResult object at 0x7f952e4949d0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;snirf.pysnirf2.ValidationResult object at 0x7f686ce6e9b0&gt;
 
 Found 304 OK      (hidden)
 Found 522 INFO    (hidden)
@@ -567,7 +572,51 @@ Found 0 FATAL
 File is VALID
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.203 seconds)</p>
+</section>
+<section id="optical-density">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Optical Density</a><a class="headerlink" href="#optical-density" title="Permalink to this heading">#</a></h2>
+<p>MNE-NIRS cal also be used to write optical density data to SNIRF files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raw_od</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">optical_density</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">)</span>
+<span class="n">write_raw_snirf</span><span class="p">(</span><span class="n">raw_od</span><span class="p">,</span> <span class="s1">&#39;test_raw_od.snirf&#39;</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">snirf</span><span class="o">.</span><span class="n">validateSnirf</span><span class="p">(</span><span class="s1">&#39;test_raw_od.snirf&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">is_valid</span><span class="p">()</span>
+<span class="n">result</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;snirf.pysnirf2.ValidationResult object at 0x7f68e9d99000&gt;
+
+Found 360 OK      (hidden)
+Found 466 INFO    (hidden)
+Found 0 WARNING
+Found 0 FATAL
+
+File is VALID
+</pre></div>
+</div>
+</section>
+<section id="haemoglobin">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Haemoglobin</a><a class="headerlink" href="#haemoglobin" title="Permalink to this heading">#</a></h2>
+<p>And it can write valid haemoglobin data to SNIRF files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raw_hb</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">beer_lambert_law</span></a><span class="p">(</span><span class="n">raw_od</span><span class="p">)</span>
+<span class="n">write_raw_snirf</span><span class="p">(</span><span class="n">raw_hb</span><span class="p">,</span> <span class="s1">&#39;test_raw_hb.snirf&#39;</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">snirf</span><span class="o">.</span><span class="n">validateSnirf</span><span class="p">(</span><span class="s1">&#39;test_raw_hb.snirf&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">is_valid</span><span class="p">()</span>
+<span class="n">result</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;snirf.pysnirf2.ValidationResult object at 0x7f68e9d42770&gt;
+
+Found 360 OK      (hidden)
+Found 466 INFO    (hidden)
+Found 0 WARNING
+Found 0 FATAL
+
+File is VALID
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.454 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-19-snirf-py">
 <div class="binder-badge docutils container">
@@ -630,6 +679,8 @@ File is VALID
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-back-snirf-file">Read back SNIRF file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-files">Compare files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-snirf-file">Validate SNIRF File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-density">Optical Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#haemoglobin">Haemoglobin</a></li>
 </ul>
   </nav></div>
 
@@ -659,7 +710,7 @@ File is VALID
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-30T11:30:00.009147+00:00&#34; class=&#34;localized&#34;&gt;2023-05-30 11:30 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-30T11:55:52.423841+00:00&#34; class=&#34;localized&#34;&gt;2023-05-30 11:55 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

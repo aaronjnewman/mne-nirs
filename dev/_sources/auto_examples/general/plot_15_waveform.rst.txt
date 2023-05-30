@@ -282,7 +282,7 @@ To achieve this we pick all the channels that are not considered to be short.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952e491740>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f69114aeec0>
 
 
 
@@ -327,7 +327,7 @@ The raw intensity values are then converted to optical density.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952c549740>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68eae762c0>
 
 
 
@@ -445,7 +445,7 @@ the modified Beer-Lambert law.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952c4f0ac0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f69113b0d80>
 
 
 
@@ -1064,16 +1064,16 @@ driving the topographic plot above.
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
-    <matplotlib.legend.Legend object at 0x7f94fddbf640>
+    <matplotlib.legend.Legend object at 0x7f68d517caf0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  28.265 seconds)
+   **Total running time of the script:** ( 0 minutes  23.898 seconds)
 
-**Estimated memory usage:**  24 MB
+**Estimated memory usage:**  28 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:
