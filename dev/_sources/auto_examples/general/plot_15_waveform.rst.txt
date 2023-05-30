@@ -271,8 +271,18 @@ To achieve this we pick all the channels that are not considered to be short.
 
  .. code-block:: none
 
+    Traceback (most recent call last):
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
+        return lambda *args: self.widgetChanged(w, *args)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
+        v2 = self.readWidget(w)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
+        val = getFunc(w)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
+        ind = w.currentIndex()
+    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27216f54c0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952e491740>
 
 
 
@@ -306,8 +316,18 @@ The raw intensity values are then converted to optical density.
 
  .. code-block:: none
 
+    Traceback (most recent call last):
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
+        return lambda *args: self.widgetChanged(w, *args)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
+        v2 = self.readWidget(w)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
+        val = getFunc(w)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
+        ind = w.currentIndex()
+    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27acae3400>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952c549740>
 
 
 
@@ -414,8 +434,18 @@ the modified Beer-Lambert law.
 
  .. code-block:: none
 
+    Traceback (most recent call last):
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
+        return lambda *args: self.widgetChanged(w, *args)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
+        v2 = self.readWidget(w)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
+        val = getFunc(w)
+      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
+        ind = w.currentIndex()
+    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27a4eaef80>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952c4f0ac0>
 
 
 
@@ -621,14 +651,14 @@ the HbO peak.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
          :class: sphx-glr-multi-img
 
@@ -676,14 +706,14 @@ that it does not show the expected morphology.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
          :class: sphx-glr-multi-img
 
@@ -1034,16 +1064,16 @@ driving the topographic plot above.
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
-    <matplotlib.legend.Legend object at 0x7f2781870d00>
+    <matplotlib.legend.Legend object at 0x7f94fddbf640>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  25.176 seconds)
+   **Total running time of the script:** ( 0 minutes  28.265 seconds)
 
-**Estimated memory usage:**  27 MB
+**Estimated memory usage:**  24 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:

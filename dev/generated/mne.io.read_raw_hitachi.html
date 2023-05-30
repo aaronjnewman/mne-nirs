@@ -522,7 +522,7 @@ on the hard drive (slower, requires less memory).</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">bool | str | int | None</span></dt><dd><p>Control verbosity of the logging output. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, use the default
 verbosity level. See the <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib2.html#tut-logging" title="(in Python v3.11)"><span class="xref std std-ref">logging documentation</span></a> and
-<a class="reference external" href="https://mne.tools/stable/generated/mne.verbose.html#mne.verbose" title="(in MNE v1.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a> for details. Should only be passed as a keyword
+<a class="reference external" href="https://mne.tools/stable/generated/mne.verbose.html#mne.verbose" title="(in MNE v1.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a> for details. Should only be passed as a keyword
 argument.</p>
 </dd>
 </dl>
@@ -530,7 +530,7 @@ argument.</p>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>raw</strong><span class="classifier">instance of RawHitachi</span></dt><dd><p>A Raw object containing Hitachi data.
-See <a class="reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="(in MNE v1.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.io.Raw</span></code></a> for documentation of attributes and methods.</p>
+See <a class="reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="(in MNE v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.io.Raw</span></code></a> for documentation of attributes and methods.</p>
 </dd>
 </dl>
 </dd>
@@ -538,14 +538,14 @@ See <a class="reference external" href="https://mne.tools/stable/generated/mne.i
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="(in MNE v1.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mne.io.Raw</span></code></a></dt><dd><p>Documentation of attributes and methods of RawHitachi.</p>
+<dt><a class="reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="(in MNE v1.4)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mne.io.Raw</span></code></a></dt><dd><p>Documentation of attributes and methods of RawHitachi.</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
 <p>Hitachi does not encode their channel positions, so you will need to
-create a suitable mapping using <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="(in MNE v1.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_standard_montage()</span></code></a>
-or <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_dig_montage.html#mne.channels.make_dig_montage" title="(in MNE v1.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_dig_montage()</span></code></a> like (for a 3x5/ETG-7000 example):</p>
+create a suitable mapping using <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="(in MNE v1.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_standard_montage()</span></code></a>
+or <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_dig_montage.html#mne.channels.make_dig_montage" title="(in MNE v1.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_dig_montage()</span></code></a> like (for a 3x5/ETG-7000 example):</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mon</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">make_standard_montage</span><span class="p">(</span><span class="s1">&#39;standard_1020&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">need</span> <span class="o">=</span> <span class="s1">&#39;S1 D1 S2 D2 S3 D3 S4 D4 S5 D5 S6 D6 S7 D7 S8&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">have</span> <span class="o">=</span> <span class="s1">&#39;F3 FC3 C3 CP3 P3 F5 FC5 C5 CP5 P5 F7 FT7 T7 TP7 P7&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -668,7 +668,7 @@ then the second row, etc.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-04T20:21:03.680707+00:00&#34; class=&#34;localized&#34;&gt;2023-05-04 20:21 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-30T11:30:00.009147+00:00&#34; class=&#34;localized&#34;&gt;2023-05-30 11:30 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

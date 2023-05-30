@@ -473,7 +473,7 @@ relevant material is easily accessible to users.</p>
 (fNIRS) data from raw measurements to relative oxyhaemoglobin (HbO) and
 deoxyhaemoglobin (HbR) concentration, view the average waveform, and
 topographic representation of the response.</p>
-<p>Here we will work with the <a class="reference external" href="https://mne.tools/stable/overview/datasets_index.html#fnirs-motor-dataset" title="(in MNE v1.3)"><span class="xref std std-ref">fNIRS motor data</span></a>.</p>
+<p>Here we will work with the <a class="reference external" href="https://mne.tools/stable/overview/datasets_index.html#fnirs-motor-dataset" title="(in MNE v1.4)"><span class="xref std std-ref">fNIRS motor data</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 14</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -624,7 +624,18 @@ To achieve this we pick all the channels that are not considered to be short.</p
                    <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_15_waveform_002.png" srcset="../../_images/sphx_glr_plot_15_waveform_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27216f54c0&gt;
+<img src="../../_images/sphx_glr_plot_15_waveform_002.png" srcset="../../_images/sphx_glr_plot_15_waveform_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 221, in &lt;lambda&gt;
+    return lambda *args: self.widgetChanged(w, *args)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 226, in widgetChanged
+    v2 = self.readWidget(w)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 257, in readWidget
+    val = getFunc(w)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 35, in comboState
+    ind = w.currentIndex()
+RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
+
+&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952e491740&gt;
 </pre></div>
 </div>
 </section>
@@ -636,7 +647,18 @@ To achieve this we pick all the channels that are not considered to be short.</p
             <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_15_waveform_003.png" srcset="../../_images/sphx_glr_plot_15_waveform_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27acae3400&gt;
+<img src="../../_images/sphx_glr_plot_15_waveform_003.png" srcset="../../_images/sphx_glr_plot_15_waveform_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 221, in &lt;lambda&gt;
+    return lambda *args: self.widgetChanged(w, *args)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 226, in widgetChanged
+    v2 = self.readWidget(w)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 257, in readWidget
+    val = getFunc(w)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 35, in comboState
+    ind = w.currentIndex()
+RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
+
+&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952c549740&gt;
 </pre></div>
 </div>
 </section>
@@ -665,7 +687,7 @@ coupling index.</p>
 </div>
 <p>At this stage it is appropriate to inspect your data
 (for instructions on how to use the interactive data visualisation tool
-see <a class="reference external" href="https://mne.tools/stable/auto_tutorials/raw/40_visualize_raw.html#tut-visualize-raw" title="(in MNE v1.3)"><span>Built-in plotting methods for Raw objects</span></a>)
+see <a class="reference external" href="https://mne.tools/stable/auto_tutorials/raw/40_visualize_raw.html#tut-visualize-raw" title="(in MNE v1.4)"><span>Built-in plotting methods for Raw objects</span></a>)
 to ensure that channels with poor scalp coupling have been removed.
 If your data contains lots of artifacts you may decide to apply
 artifact reduction techniques as described in <a class="reference internal" href="plot_21_artifacts.html#ex-fnirs-artifacts"><span class="std std-ref">Artifact Correction Techniques</span></a>.</p>
@@ -679,7 +701,18 @@ the modified Beer-Lambert law.</p>
                <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_15_waveform_005.png" srcset="../../_images/sphx_glr_plot_15_waveform_005.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f27a4eaef80&gt;
+<img src="../../_images/sphx_glr_plot_15_waveform_005.png" srcset="../../_images/sphx_glr_plot_15_waveform_005.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 221, in &lt;lambda&gt;
+    return lambda *args: self.widgetChanged(w, *args)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 226, in widgetChanged
+    v2 = self.readWidget(w)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 257, in readWidget
+    val = getFunc(w)
+  File &quot;/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py&quot;, line 35, in comboState
+    ind = w.currentIndex()
+RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
+
+&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f952c4f0ac0&gt;
 </pre></div>
 </div>
 </section>
@@ -792,8 +825,8 @@ the HbO peak.</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_15_waveform_010.png" srcset="../../_images/sphx_glr_plot_15_waveform_010.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_15_waveform_011.png" srcset="../../_images/sphx_glr_plot_15_waveform_011.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_010.png" srcset="../../_images/sphx_glr_plot_15_waveform_010.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_011.png" srcset="../../_images/sphx_glr_plot_15_waveform_011.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Not setting metadata
 55 matching events found
@@ -817,8 +850,8 @@ that it does not show the expected morphology.</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_15_waveform_012.png" srcset="../../_images/sphx_glr_plot_15_waveform_012.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_15_waveform_013.png" srcset="../../_images/sphx_glr_plot_15_waveform_013.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_012.png" srcset="../../_images/sphx_glr_plot_15_waveform_012.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_013.png" srcset="../../_images/sphx_glr_plot_15_waveform_013.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Not setting metadata
 29 matching events found
@@ -995,11 +1028,11 @@ driving the topographic plot above.</p>
 <img src="../../_images/sphx_glr_plot_15_waveform_022.png" srcset="../../_images/sphx_glr_plot_15_waveform_022.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
-&lt;matplotlib.legend.Legend object at 0x7f2781870d00&gt;
+&lt;matplotlib.legend.Legend object at 0x7f94fddbf640&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  25.176 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  27 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  28.265 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  24 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-15-waveform-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_15_waveform.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -1098,7 +1131,7 @@ NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-04T20:21:03.680707+00:00&#34; class=&#34;localized&#34;&gt;2023-05-04 20:21 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-30T11:30:00.009147+00:00&#34; class=&#34;localized&#34;&gt;2023-05-30 11:30 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     
