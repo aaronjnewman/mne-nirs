@@ -138,7 +138,7 @@ We then convert the data to optical density and plot the raw signal.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68e9b2bc40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f9999c06a80>
 
 
 
@@ -261,7 +261,7 @@ channels are now displayed in grey to indicate they are bad.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68d5241a00>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f9979d55ac0>
 
 
 
@@ -490,7 +490,7 @@ has been added.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68eafa8c40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99c5fe0380>
 
 
 
@@ -588,7 +588,7 @@ on S2-D4).
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68d598c080>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f999995dac0>
 
 
 
@@ -633,7 +633,7 @@ and bad time segments are marked in red.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68e9af4180>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99aca51580>
 
 
 
@@ -653,7 +653,7 @@ are treated in downstream analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.825 seconds)
+   **Total running time of the script:** ( 0 minutes  25.659 seconds)
 
 **Estimated memory usage:**  9 MB
 

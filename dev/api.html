@@ -368,10 +368,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="generated/mne.io.read_raw_boxy.html">mne.io.read_raw_boxy</a></li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generated/mne_nirs.io.snirf.write_raw_snirf.html">mne_nirs.io.snirf.write_raw_snirf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generated/mne_nirs.io.snirf.read_snirf_aux_data.html">mne_nirs.io.snirf.read_snirf_aux_data</a></li>
-</ul>
-<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generated/mne_nirs.io.write_raw_snirf.html">mne_nirs.io.write_raw_snirf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/mne_nirs.io.read_snirf_aux_data.html">mne_nirs.io.read_snirf_aux_data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/mne_nirs.io.fold_landmark_specificity.html">mne_nirs.io.fold_landmark_specificity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/mne_nirs.io.fold_channel_specificity.html">mne_nirs.io.fold_channel_specificity</a></li>
 </ul>
@@ -535,20 +533,16 @@ epoching, visualisation, etc is not included here and can be found in the
 </tbody>
 </table>
 </section>
-<section id="module-mne_nirs.io.snirf">
-<span id="mne-nirs"></span><h3>MNE-NIRS<a class="headerlink" href="#module-mne_nirs.io.snirf" title="Permalink to this heading">#</a></h3>
+<section id="module-mne_nirs.io">
+<span id="mne-nirs"></span><h3>MNE-NIRS<a class="headerlink" href="#module-mne_nirs.io" title="Permalink to this heading">#</a></h3>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.snirf.write_raw_snirf.html#mne_nirs.io.snirf.write_raw_snirf" title="mne_nirs.io.snirf.write_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_raw_snirf</span></code></a>(raw, fname[, add_montage])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.write_raw_snirf.html#mne_nirs.io.write_raw_snirf" title="mne_nirs.io.write_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_raw_snirf</span></code></a>(raw, fname[, add_montage])</p></td>
 <td><p>Write continuous wave data to disk in SNIRF format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.io.snirf.read_snirf_aux_data.html#mne_nirs.io.snirf.read_snirf_aux_data" title="mne_nirs.io.snirf.read_snirf_aux_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_snirf_aux_data</span></code></a>(fname, raw)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.io.read_snirf_aux_data.html#mne_nirs.io.read_snirf_aux_data" title="mne_nirs.io.read_snirf_aux_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_snirf_aux_data</span></code></a>(fname, raw)</p></td>
 <td><p>Read auxiliary data from SNIRF file.</p></td>
 </tr>
-</tbody>
-</table>
-<span class="target" id="module-mne_nirs.io"></span><table class="autosummary longtable table autosummary">
-<tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.fold_landmark_specificity.html#mne_nirs.io.fold_landmark_specificity" title="mne_nirs.io.fold_landmark_specificity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fold_landmark_specificity</span></code></a>(raw, landmark[, ...])</p></td>
 <td><p>Return the specificity of each channel to a specified brain landmark.</p></td>
 </tr>
@@ -869,9 +863,7 @@ the data, then provide the path to the data.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output">Input/Output</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">MNE-Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-mne_nirs.io.snirf">MNE-NIRS</a><ul class="nav section-nav flex-column">
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#module-mne_nirs.io">MNE-NIRS</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="nav section-nav flex-column">
@@ -926,7 +918,7 @@ the data, then provide the path to the data.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-30T11:55:52.423841+00:00&#34; class=&#34;localized&#34;&gt;2023-05-30 11:55 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-05-31T12:16:04.625306+00:00&#34; class=&#34;localized&#34;&gt;2023-05-31 12:16 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

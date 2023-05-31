@@ -183,7 +183,7 @@ ensure that the values are the same.
         ind = w.currentIndex()
     RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f68d5db1bc0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f9979c0c600>
 
 
 
@@ -216,7 +216,7 @@ by MNE-NIRS are compliant with the specification.
 
  .. code-block:: none
 
-    <snirf.pysnirf2.ValidationResult object at 0x7f686ce6e9b0>
+    <snirf.pysnirf2.ValidationResult object at 0x7f99ac80a560>
 
     Found 304 OK      (hidden)
     Found 522 INFO    (hidden)
@@ -256,7 +256,7 @@ MNE-NIRS cal also be used to write optical density data to SNIRF files.
 
  .. code-block:: none
 
-    <snirf.pysnirf2.ValidationResult object at 0x7f68e9d99000>
+    <snirf.pysnirf2.ValidationResult object at 0x7f99ac682470>
 
     Found 360 OK      (hidden)
     Found 466 INFO    (hidden)
@@ -294,7 +294,7 @@ And it can write valid haemoglobin data to SNIRF files.
 
  .. code-block:: none
 
-    <snirf.pysnirf2.ValidationResult object at 0x7f68e9d42770>
+    <snirf.pysnirf2.ValidationResult object at 0x7f99c5868d00>
 
     Found 360 OK      (hidden)
     Found 466 INFO    (hidden)
@@ -309,7 +309,7 @@ And it can write valid haemoglobin data to SNIRF files.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.454 seconds)
+   **Total running time of the script:** ( 0 minutes  7.265 seconds)
 
 **Estimated memory usage:**  9 MB
 
