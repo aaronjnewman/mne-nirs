@@ -98,7 +98,7 @@ The simulated signal is plotted below.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a74665580>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f288a52ea80>
 
 
 
@@ -436,7 +436,7 @@ model of the noise can improve the accuracy of the response estimate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.386 seconds)
+   **Total running time of the script:** (0 minutes 5.112 seconds)
 
 **Estimated memory usage:**  11 MB
 

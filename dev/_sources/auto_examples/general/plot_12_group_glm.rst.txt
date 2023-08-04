@@ -426,7 +426,7 @@ and that the responses look to be contralateral to the tapping hand.
     /home/circleci/python_env/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
       self._figure.tight_layout(*args, **kwargs)
 
-    <seaborn.axisgrid.FacetGrid object at 0x7f7a74560fd0>
+    <seaborn.axisgrid.FacetGrid object at 0x7f299b8db0d0>
 
 
 
@@ -694,7 +694,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     /home/circleci/python_env/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
       self._figure.tight_layout(*args, **kwargs)
 
-    <seaborn.axisgrid.FacetGrid object at 0x7f7a6df1d1b0>
+    <seaborn.axisgrid.FacetGrid object at 0x7f288a0ca710>
 
 
 
@@ -1730,9 +1730,9 @@ hand of tapping and most likely originate from the primary motor cortex.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 36.995 seconds)
+   **Total running time of the script:** (0 minutes 36.099 seconds)
 
-**Estimated memory usage:**  463 MB
+**Estimated memory usage:**  611 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
