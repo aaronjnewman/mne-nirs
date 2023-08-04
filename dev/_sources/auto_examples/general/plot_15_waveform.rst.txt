@@ -271,18 +271,8 @@ To achieve this we pick all the channels that are not considered to be short.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99ac5a9700>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7ac1ef6540>
 
 
 
@@ -316,18 +306,8 @@ The raw intensity values are then converted to optical density.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99c5fd7180>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f796c669b00>
 
 
 
@@ -434,18 +414,8 @@ the modified Beer-Lambert law.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99237bf180>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a77351300>
 
 
 
@@ -515,12 +485,7 @@ in the data.
     - Upper transition bandwidth: 0.20 Hz (-6 dB cutoff frequency: 0.80 Hz)
     - Filter length: 1291 samples (165.248 s)
 
-    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.0s remaining:    0.0s
-    [Parallel(n_jobs=1)]: Done   2 out of   2 | elapsed:    0.0s remaining:    0.0s
-    [Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:    0.0s remaining:    0.0s
-    [Parallel(n_jobs=1)]: Done   4 out of   4 | elapsed:    0.0s remaining:    0.0s
-    [Parallel(n_jobs=1)]: Done  40 out of  40 | elapsed:    0.1s finished
+    [Parallel(n_jobs=1)]: Done  17 tasks      | elapsed:    0.0s
     NOTE: plot_psd() is a legacy function. New code should use .compute_psd().plot().
     Effective window size : 262.144 (s)
 
@@ -1064,16 +1029,16 @@ driving the topographic plot above.
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
-    <matplotlib.legend.Legend object at 0x7f9979cde470>
+    <matplotlib.legend.Legend object at 0x7f7a608c70a0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.218 seconds)
+   **Total running time of the script:** (0 minutes 28.439 seconds)
 
-**Estimated memory usage:**  30 MB
+**Estimated memory usage:**  25 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:

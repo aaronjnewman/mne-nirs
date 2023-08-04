@@ -88,18 +88,8 @@ and plot these signals.
  .. code-block:: none
 
     Loading /home/circleci/mne_data/MNE-fNIRS-motor-data/Participant-1
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99ac822800>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a60823040>
 
 
 
@@ -152,18 +142,8 @@ seconds to the data.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99acbddac0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a6c4b3180>
 
 
 
@@ -197,18 +177,8 @@ for any user-supplied parameters FishburnEtAl2019.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f99380f7180>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a6c567400>
 
 
 
@@ -231,9 +201,9 @@ for fNIRS. NeuroImage,
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.220 seconds)
+   **Total running time of the script:** (0 minutes 4.510 seconds)
 
-**Estimated memory usage:**  9 MB
+**Estimated memory usage:**  10 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_21_artifacts.py:

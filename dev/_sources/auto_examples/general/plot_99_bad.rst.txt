@@ -206,18 +206,8 @@ To achieve this we pick all the channels that are not considered to be short.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f9999d53200>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a607b0440>
 
 
 
@@ -251,18 +241,8 @@ The raw intensity values are then converted to optical density.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f997a7a5c00>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a60731540>
 
 
 
@@ -298,18 +278,8 @@ the modified Beer-Lambert law.
 
  .. code-block:: none
 
-    Traceback (most recent call last):
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 221, in <lambda>
-        return lambda *args: self.widgetChanged(w, *args)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 226, in widgetChanged
-        v2 = self.readWidget(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 257, in readWidget
-        val = getFunc(w)
-      File "/home/circleci/python_env/lib/python3.10/site-packages/pyqtgraph/WidgetGroup.py", line 35, in comboState
-        ind = w.currentIndex()
-    RuntimeError: Internal C++ object (PySide6.QtWidgets.QComboBox) already deleted.
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f9979db2540>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f7a77855140>
 
 
 
@@ -570,7 +540,7 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.498 seconds)
+   **Total running time of the script:** (0 minutes 9.687 seconds)
 
 **Estimated memory usage:**  9 MB
 
