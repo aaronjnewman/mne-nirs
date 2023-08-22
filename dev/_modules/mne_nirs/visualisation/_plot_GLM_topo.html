@@ -415,10 +415,10 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.axes_divider</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
 
-<span class="kn">from</span> <span class="nn">mne</span> <span class="kn">import</span> <span class="n">Info</span>
+<span class="kn">from</span> <span class="nn">mne</span> <span class="kn">import</span> <span class="n">Info</span><span class="p">,</span> <span class="n">pick_info</span>
 <span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">warn</span>
 <span class="kn">from</span> <span class="nn">mne.channels.layout</span> <span class="kn">import</span> <span class="n">_merge_ch_data</span>
-<span class="kn">from</span> <span class="nn">mne.io.pick</span> <span class="kn">import</span> <span class="n">_picks_to_idx</span><span class="p">,</span> <span class="n">_get_channel_types</span><span class="p">,</span> <span class="n">pick_info</span>
+<span class="kn">from</span> <span class="nn">mne.io.pick</span> <span class="kn">import</span> <span class="n">_picks_to_idx</span>
 <span class="kn">from</span> <span class="nn">mne.viz</span> <span class="kn">import</span> <span class="n">plot_topomap</span>
 
 
@@ -443,7 +443,7 @@ document.write(`
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">glm_estimates</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
         <span class="n">estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">glm_estimates</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">theta</span><span class="o">.</span><span class="n">T</span>
 
-    <span class="n">types</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">_get_channel_types</span><span class="p">(</span><span class="n">info</span><span class="p">))</span>
+    <span class="n">types</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">get_channel_types</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="n">requested_conditions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">requested_conditions</span> <span class="o">=</span> <span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span>
@@ -505,7 +505,7 @@ document.write(`
     <span class="n">info</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">inst</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">Info</span><span class="p">)</span> <span class="k">else</span> <span class="n">inst</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
 
     <span class="c1"># Extract types. One subplot is created per type (hbo/hbr)</span>
-    <span class="n">types</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">_get_channel_types</span><span class="p">(</span><span class="n">info</span><span class="p">))</span>
+    <span class="n">types</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">get_channel_types</span><span class="p">())</span>
 
     <span class="c1"># Extract values to plot and rescale to uM</span>
     <span class="n">estimates</span> <span class="o">=</span> <span class="n">contrast</span><span class="o">.</span><span class="n">effect</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -771,7 +771,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-04T01:58:44.905163+00:00&#34; class=&#34;localized&#34;&gt;2023-08-04 01:58 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

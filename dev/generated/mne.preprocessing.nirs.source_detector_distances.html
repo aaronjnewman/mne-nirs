@@ -506,13 +506,13 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>info</strong><span class="classifier">mne.Info</span></dt><dd><p>The <a class="reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="(in MNE v1.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.Info</span></code></a> object with information about the sensors and methods of measurement.</p>
+<dt><strong>info</strong><span class="classifier">mne.Info</span></dt><dd><p>The <a class="reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="(in MNE v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.Info</span></code></a> object with information about the sensors and methods of measurement.</p>
 </dd>
 <dt><strong>picks</strong><span class="classifier">str | array-like | slice | None</span></dt><dd><p>Channels to include. Slices and lists of integers will be interpreted as 
 channel indices. In lists, channel <em>type</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> 
 <span class="pre">'eeg']</span></code>) will pick channels of those types, channel <em>name</em> strings (e.g., 
 <code class="docutils literal notranslate"><span class="pre">['MEG0111',</span> <span class="pre">'MEG2623']</span></code> will pick the given channels. Can also be the 
-string values “all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v1.4)"><span class="xref std std-term">data 
+string values “all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v1.5)"><span class="xref std std-term">data 
 channels</span></a>. None (default) will pick all data channels. Note that channels 
 in <code class="docutils literal notranslate"><span class="pre">info['bads']</span></code> <em>will be included</em> if their names or indices are 
 explicitly provided.</p>
@@ -602,7 +602,7 @@ Of shape equal to number of channels, or shape of picks if supplied.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-04T01:58:44.905163+00:00&#34; class=&#34;localized&#34;&gt;2023-08-04 01:58 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

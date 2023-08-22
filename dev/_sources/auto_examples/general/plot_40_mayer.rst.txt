@@ -269,8 +269,16 @@ it matches well to the data.
 
  .. code-block:: none
 
+    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/trf.py:234: RuntimeWarning: divide by zero encountered in divide
+      Delta = norm(x0 * scale_inv / v**0.5)
+    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/trf.py:363: RuntimeWarning: invalid value encountered in scalar divide
+      alpha *= Delta / Delta_new
+    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/trf.py:363: RuntimeWarning: invalid value encountered in scalar multiply
+      alpha *= Delta / Delta_new
+    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/common.py:398: RuntimeWarning: invalid value encountered in cast
+      return min_step, np.equal(steps, min_step) * np.sign(s).astype(int)
 
-    ([<matplotlib.axis.XTick object at 0x7f299bb26530>, <matplotlib.axis.XTick object at 0x7f299bb25e70>, <matplotlib.axis.XTick object at 0x7f299bb27850>, <matplotlib.axis.XTick object at 0x7f299b870190>, <matplotlib.axis.XTick object at 0x7f299b870340>, <matplotlib.axis.XTick object at 0x7f299b870880>, <matplotlib.axis.XTick object at 0x7f299b873c10>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
+    ([<matplotlib.axis.XTick object at 0x7f29a9e367d0>, <matplotlib.axis.XTick object at 0x7f29a9e37f40>, <matplotlib.axis.XTick object at 0x7f29a9e37e20>, <matplotlib.axis.XTick object at 0x7f29aa260be0>, <matplotlib.axis.XTick object at 0x7f29aa263190>, <matplotlib.axis.XTick object at 0x7f29a9c08f40>, <matplotlib.axis.XTick object at 0x7f29aa263790>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
 
 
 
@@ -380,7 +388,7 @@ Bibliography
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.257 seconds)
+   **Total running time of the script:** (0 minutes 3.884 seconds)
 
 **Estimated memory usage:**  9 MB
 
