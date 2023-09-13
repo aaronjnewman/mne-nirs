@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Utilising Anatomical Information &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
@@ -465,12 +465,12 @@ to download the full example code or to run this example in your browser via Bin
 <p>This example demonstrates how you can utilise anatomical and sensor position
 information in your analysis pipeline. This information can be used to
 verify measurement/analysis and also improve analysis accuracy
-<a class="footnote-reference brackets" href="#footcite-novi2020integration" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<a class="footnote-reference brackets" href="#footcite-novi2020integration" id="id1">1</a>.</p>
 <p>This example demonstrates how to plot your data on a 3D brain
 and overlay the sensor locations and regions of interest.</p>
 <p>This tutorial glosses over the processing details, see the
 <a class="reference internal" href="plot_11_hrf_measured.html#tut-fnirs-hrf"><span class="std std-ref">GLM tutorial</span></a> for details on the preprocessing.</p>
-<nav class="contents local" id="page-contents">
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#download-example-data" id="id4">Download example data</a></p>
@@ -488,7 +488,7 @@ and overlay the sensor locations and regions of interest.</p>
 <li><p><a class="reference internal" href="#plot-surface-projection-of-glm-results" id="id13">Plot surface projection of GLM results</a></p></li>
 <li><p><a class="reference internal" href="#bibliography" id="id14">Bibliography</a></p></li>
 </ul>
-</nav>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 5</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -515,10 +515,10 @@ and overlay the sensor locations and regions of interest.</p>
 </pre></div>
 </div>
 <section id="download-example-data">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Download example data</a><a class="headerlink" href="#download-example-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4">Download example data</a><a class="headerlink" href="#download-example-data" title="Permalink to this heading">#</a></h2>
 <p>First, the data required data for this tutorial is downloaded.</p>
 <section id="download-example-fnirs-data">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Download example fNIRS data</a><a class="headerlink" href="#download-example-fnirs-data" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5">Download example fNIRS data</a><a class="headerlink" href="#download-example-fnirs-data" title="Permalink to this heading">#</a></h3>
 <p>Download the <code class="docutils literal notranslate"><span class="pre">audio_or_visual_speech</span></code> dataset and load the first measurement.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">root</span></a> <span class="o">=</span> <a href="../../generated/mne_nirs.datasets.audio_or_visual_speech.data_path.html#mne_nirs.datasets.audio_or_visual_speech.data_path" title="mne_nirs.datasets.audio_or_visual_speech.data_path" class="sphx-glr-backref-module-mne_nirs-datasets-audio_or_visual_speech sphx-glr-backref-type-py-function"><span class="n">mne_nirs</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">audio_or_visual_speech</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a> <span class="o">=</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class"><span class="n">BIDSPath</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">root</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">root</span></a><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;nirs&quot;</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s2">&quot;.snirf&quot;</span><span class="p">,</span> <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;04&quot;</span><span class="p">,</span>
@@ -535,7 +535,7 @@ and overlay the sensor locations and regions of interest.</p>
 </div>
 </section>
 <section id="download-annotation-information">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">Download annotation information</a><a class="headerlink" href="#download-annotation-information" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6">Download annotation information</a><a class="headerlink" href="#download-annotation-information" title="Permalink to this heading">#</a></h3>
 <p>Download the HCP-MMP parcellation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download anatomical locations</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39;/subjects&#39;</span>
@@ -547,7 +547,7 @@ and overlay the sensor locations and regions of interest.</p>
 </section>
 </section>
 <section id="verify-placement-of-sensors">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Verify placement of sensors</a><a class="headerlink" href="#verify-placement-of-sensors" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7">Verify placement of sensors</a><a class="headerlink" href="#verify-placement-of-sensors" title="Permalink to this heading">#</a></h2>
 <p>The first thing we can do is plot the location of the optodes and channels
 over an average brain surface to verify the data, specifically the 3D coordinates,
 have been loaded correctly. The sources are represented as red dots,
@@ -562,7 +562,7 @@ auditory cortex, planum temporale, and occipital lobe.</p>
 </div>
 <img src="../../_images/sphx_glr_plot_70_visualise_brain_001.png" srcset="../../_images/sphx_glr_plot_70_visualise_brain_001.png" alt="plot 70 visualise brain" class = "sphx-glr-single-img"/></section>
 <section id="plot-sensor-channel-numbers">
-<span id="tut-fnirs-vis-brain-plot-3d-montage"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">Plot sensor channel numbers</a><a class="headerlink" href="#plot-sensor-channel-numbers" title="Permalink to this heading">#</a></h2>
+<span id="tut-fnirs-vis-brain-plot-3d-montage"></span><h2><a class="toc-backref" href="#id8">Plot sensor channel numbers</a><a class="headerlink" href="#plot-sensor-channel-numbers" title="Permalink to this heading">#</a></h2>
 <p>Often for publications and sanity checking, it’s convenient to create an
 image showing the channel numbers along with the (typically) 10-20 location
 in the correct locations in a 3D view. The function
@@ -580,7 +580,7 @@ specify which views to use to show each channel pair:</p>
 </div>
 <img src="../../_images/sphx_glr_plot_70_visualise_brain_002.png" srcset="../../_images/sphx_glr_plot_70_visualise_brain_002.png" alt="plot 70 visualise brain" class = "sphx-glr-single-img"/></section>
 <section id="plot-sensor-channels-and-anatomical-region-of-interest">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Plot sensor channels and anatomical region of interest</a><a class="headerlink" href="#plot-sensor-channels-and-anatomical-region-of-interest" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9">Plot sensor channels and anatomical region of interest</a><a class="headerlink" href="#plot-sensor-channels-and-anatomical-region-of-interest" title="Permalink to this heading">#</a></h2>
 <p>Once the data has been loaded we can highlight anatomical regions of interest
 to ensure that the sensors are appropriately placed to measure from
 the relevant brain structures.
@@ -596,7 +596,7 @@ and we can see that a number of channels are placed over this structure.</p>
 </div>
 <img src="../../_images/sphx_glr_plot_70_visualise_brain_003.png" srcset="../../_images/sphx_glr_plot_70_visualise_brain_003.png" alt="plot 70 visualise brain" class = "sphx-glr-single-img"/></section>
 <section id="plot-channels-sensitive-to-anatomical-region-of-interest">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Plot channels sensitive to anatomical region of interest</a><a class="headerlink" href="#plot-channels-sensitive-to-anatomical-region-of-interest" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10">Plot channels sensitive to anatomical region of interest</a><a class="headerlink" href="#plot-channels-sensitive-to-anatomical-region-of-interest" title="Permalink to this heading">#</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">fOLD Toolbox</p>
 <p>You should use the fOLD toolbox to pick your optode locations
@@ -609,7 +609,7 @@ Be sure to cite the authors if you use their tool or data:</p>
 quantify the specificity of each channel to the anatomical region of interest
 and select channels that are sufficiently sensitive for further analysis.
 In this example we highlight the left inferior frontal gyrus (IFG) and
-use data from the fOLD toolbox <a class="footnote-reference brackets" href="#footcite-morais2018fnirs" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.
+use data from the fOLD toolbox <a class="footnote-reference brackets" href="#footcite-morais2018fnirs" id="id2">2</a>.
 To see more details about how to use the fOLD data see
 <a class="reference internal" href="plot_12_group_glm.html#tut-fnirs-group-relating"><span class="std std-ref">this tutorial</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return specificity of each channel to the Left IFG</span>
@@ -641,7 +641,7 @@ It should be updated in the near future.</p>
 </div>
 <img src="../../_images/sphx_glr_plot_70_visualise_brain_005.png" srcset="../../_images/sphx_glr_plot_70_visualise_brain_005.png" alt="plot 70 visualise brain" class = "sphx-glr-single-img"/></section>
 <section id="anatomically-informed-weighting-in-region-of-interest-analysis">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Anatomically informed weighting in region of interest analysis</a><a class="headerlink" href="#anatomically-informed-weighting-in-region-of-interest-analysis" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11">Anatomically informed weighting in region of interest analysis</a><a class="headerlink" href="#anatomically-informed-weighting-in-region-of-interest-analysis" title="Permalink to this heading">#</a></h2>
 <p>As observed above, some channels have greater specificity to the desired
 brain region than other channels.
 Thus, when doing a region of interest analysis you may wish to give extra
@@ -780,7 +780,7 @@ technique to load any custom weighting, including weights exported from
 other software.</p>
 </section>
 <section id="preprocess-fnirs-data">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Preprocess fNIRS data</a><a class="headerlink" href="#preprocess-fnirs-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12">Preprocess fNIRS data</a><a class="headerlink" href="#preprocess-fnirs-data" title="Permalink to this heading">#</a></h2>
 <p>We can also use the 3D information to project the results on to the cortical surface.
 First, we process the fNIRS data. This is a duplication of the GLM tutorial
 analysis. The details will not be described here, instead view the
@@ -852,7 +852,7 @@ analysis. The details will not be described here, instead view the
 </div>
 </section>
 <section id="plot-surface-projection-of-glm-results">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Plot surface projection of GLM results</a><a class="headerlink" href="#plot-surface-projection-of-glm-results" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id13">Plot surface projection of GLM results</a><a class="headerlink" href="#plot-surface-projection-of-glm-results" title="Permalink to this heading">#</a></h2>
 <p>Finally, we can project the GLM results from each channel to the nearest cortical surface
 and overlay the sensor positions and two different regions of interest.
 In this example we also highlight the premotor cortex and auditory association cortex
@@ -874,19 +874,18 @@ in green and blue respectively.</p>
 </div>
 <img src="../../_images/sphx_glr_plot_70_visualise_brain_006.png" srcset="../../_images/sphx_glr_plot_70_visualise_brain_006.png" alt="plot 70 visualise brain" class = "sphx-glr-single-img"/></section>
 <section id="bibliography">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id14">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this heading">#</a></h2>
 <div class="docutils container" id="id3">
-<aside class="footnote brackets" id="footcite-novi2020integration" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Sergio Luiz Novi, Edwin Johan Forero, Jose Angel Ivan Rubianes Silva, Nicolas Gabriel SR de Souza, Giovani Grisotti Martins, Andres Quiroga, Shin-Ting Wu, and Rickson C Mesquita. Integration of spatial information increases reproducibility in functional near-infrared spectroscopy. <em>Frontiers in neuroscience</em>, 2020. <a class="reference external" href="https://doi.org/10.3389/fnins.2020.00746">doi:10.3389/fnins.2020.00746</a>.</p>
-</aside>
-<aside class="footnote brackets" id="footcite-morais2018fnirs" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Guilherme Augusto Zimeo Morais, Joana Bisol Balardin, and João Ricardo Sato. Fnirs optodes’ location decider (fold): a toolbox for probe arrangement guided by brain regions-of-interest. <em>Scientific reports</em>, 8(1):1–11, 2018.</p>
-</aside>
-</aside>
+<dl class="footnote brackets">
+<dt class="label" id="footcite-novi2020integration"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Sergio Luiz Novi, Edwin Johan Forero, Jose Angel Ivan Rubianes Silva, Nicolas Gabriel SR de Souza, Giovani Grisotti Martins, Andres Quiroga, Shin-Ting Wu, and Rickson C Mesquita. Integration of spatial information increases reproducibility in functional near-infrared spectroscopy. <em>Frontiers in neuroscience</em>, 2020. <a class="reference external" href="https://doi.org/10.3389/fnins.2020.00746">doi:10.3389/fnins.2020.00746</a>.</p>
+</dd>
+<dt class="label" id="footcite-morais2018fnirs"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Guilherme Augusto Zimeo Morais, Joana Bisol Balardin, and João Ricardo Sato. Fnirs optodes’ location decider (fold): a toolbox for probe arrangement guided by brain regions-of-interest. <em>Scientific reports</em>, 8(1):1–11, 2018.</p>
+</dd>
+</dl>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 48.411 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 35.896 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  33 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-70-visualise-brain-py">
 <div class="binder-badge docutils container">
@@ -986,7 +985,7 @@ in green and blue respectively.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

@@ -412,14 +412,14 @@ document.write(`
 <span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">BaseRaw</span>
-<span class="kn">from</span> <span class="nn">..meas_info</span> <span class="kn">import</span> <span class="n">create_info</span><span class="p">,</span> <span class="n">_format_dig_points</span>
-<span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">_mult_cal_one</span>
+<span class="kn">from</span> <span class="nn">..nirx.nirx</span> <span class="kn">import</span> <span class="n">_convert_fnirs_to_head</span>
+<span class="kn">from</span> <span class="nn">..._fiff.meas_info</span> <span class="kn">import</span> <span class="n">create_info</span><span class="p">,</span> <span class="n">_format_dig_points</span>
+<span class="kn">from</span> <span class="nn">..._fiff.utils</span> <span class="kn">import</span> <span class="n">_mult_cal_one</span>
 <span class="kn">from</span> <span class="nn">...annotations</span> <span class="kn">import</span> <span class="n">Annotations</span>
 <span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">logger</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">fill_doc</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">_check_fname</span><span class="p">,</span> <span class="n">_import_h5py</span>
-<span class="kn">from</span> <span class="nn">..constants</span> <span class="kn">import</span> <span class="n">FIFF</span>
-<span class="kn">from</span> <span class="nn">.._digitization</span> <span class="kn">import</span> <span class="n">_make_dig_points</span>
+<span class="kn">from</span> <span class="nn">..._fiff.constants</span> <span class="kn">import</span> <span class="n">FIFF</span>
+<span class="kn">from</span> <span class="nn">..._fiff._digitization</span> <span class="kn">import</span> <span class="n">_make_dig_points</span>
 <span class="kn">from</span> <span class="nn">...transforms</span> <span class="kn">import</span> <span class="n">_frame_to_str</span><span class="p">,</span> <span class="n">apply_trans</span>
-<span class="kn">from</span> <span class="nn">..nirx.nirx</span> <span class="kn">import</span> <span class="n">_convert_fnirs_to_head</span>
 <span class="kn">from</span> <span class="nn">..._freesurfer</span> <span class="kn">import</span> <span class="n">get_mni_fiducials</span>
 
 
@@ -507,7 +507,7 @@ document.write(`
                 <span class="n">optode_frame</span> <span class="o">=</span> <span class="s2">&quot;head&quot;</span>
 
             <span class="n">snirf_data_type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-                <span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nirs/data1/measurementList1&quot;</span> <span class="s2">&quot;/dataType&quot;</span><span class="p">)</span>
+                <span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nirs/data1/measurementList1/dataType&quot;</span><span class="p">)</span>
             <span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">snirf_data_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">99999</span><span class="p">]:</span>
                 <span class="c1"># 1 = Continuous Wave</span>
@@ -848,9 +848,9 @@ document.write(`
                 <span class="n">info</span><span class="p">[</span><span class="s2">&quot;meas_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meas_date</span>
 
             <span class="k">if</span> <span class="s2">&quot;DateOfBirth&quot;</span> <span class="ow">in</span> <span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nirs/metaDataTags/&quot;</span><span class="p">):</span>
-                <span class="n">str_birth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/metaDataTags/&quot;</span> <span class="s2">&quot;DateOfBirth&quot;</span><span class="p">)))[</span>
-                    <span class="mi">0</span>
-                <span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+                <span class="n">str_birth</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/metaDataTags/DateOfBirth&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+                <span class="p">)</span>
                 <span class="n">birth_matched</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+)-(\d+)-(\d+)&quot;</span><span class="p">,</span> <span class="n">str_birth</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">birth_matched</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">birthday</span> <span class="o">=</span> <span class="p">(</span>
@@ -876,7 +876,7 @@ document.write(`
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dat</span><span class="p">[</span><span class="s2">&quot;nirs&quot;</span><span class="p">]:</span>
                 <span class="k">if</span> <span class="s2">&quot;stim&quot;</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
                     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/&quot;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;/data&quot;</span><span class="p">)))</span>
-                    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
                         <span class="n">desc</span> <span class="o">=</span> <span class="n">_correct_shape</span><span class="p">(</span>
                             <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/&quot;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;/name&quot;</span><span class="p">))</span>
                         <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -1002,7 +1002,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

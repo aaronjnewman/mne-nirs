@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Group Level Waveform Analysis &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
@@ -499,7 +499,7 @@ information about triggers, condition names, etc.</p>
 <p class="admonition-title">Note</p>
 <p>This tutorial uses data stored using
 <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/11-near-infrared-spectroscopy.html">the BIDS format</a>
-<a class="footnote-reference brackets" href="#footcite-luke2023bids" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<a class="footnote-reference brackets" href="#footcite-luke2023bids" id="id2">1</a>.</p>
 <p>MNE-Python allows you to process fNIRS data that is not in BIDS format.
 Simply modify the <code class="docutils literal notranslate"><span class="pre">read_raw_</span></code> function to match your data type.
 See <a class="reference internal" href="plot_01_data_io.html#tut-importing-fnirs-data"><span class="std std-ref">data importing tutorial</span></a> to learn how
@@ -517,7 +517,7 @@ Participants tapped their thumb to their fingers for the entire 5 sec.
 Conditions were presented in a random order with a randomised inter-
 stimulus interval.</p>
 </div>
-<nav class="contents local" id="page-contents">
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#define-individual-analysis" id="id4">Define individual analysis</a></p></li>
@@ -530,7 +530,7 @@ stimulus interval.</p>
 <li><p><a class="reference internal" href="#research-question-1-comparison-of-conditions" id="id11">Research question 1: Comparison of conditions</a></p></li>
 <li><p><a class="reference internal" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" id="id12">Research question 2: Are responses larger on the contralateral side to tapping?</a></p></li>
 </ul>
-</nav>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -571,7 +571,7 @@ stimulus interval.</p>
 </pre></div>
 </div>
 <section id="define-individual-analysis">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Define individual analysis</a><a class="headerlink" href="#define-individual-analysis" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4">Define individual analysis</a><a class="headerlink" href="#define-individual-analysis" title="Permalink to this heading">#</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Individual analysis procedures</p>
 <p><a class="reference internal" href="plot_15_waveform.html#tut-fnirs-processing"><span class="std std-ref">Waveform individual analysis</span></a></p>
@@ -620,7 +620,7 @@ As such, this example will skim over the individual-level details.</p>
 </div>
 </section>
 <section id="run-analysis-on-all-data">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Run analysis on all data</a><a class="headerlink" href="#run-analysis-on-all-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5">Run analysis on all data</a><a class="headerlink" href="#run-analysis-on-all-data" title="Permalink to this heading">#</a></h2>
 <p>Next, we loop through the five participants’ measurements and run the
 individual analysis on each. For each individual, the function
 returns the raw data and an epoch structure. The epoch structure is
@@ -683,7 +683,7 @@ that is generated from the average of all 30 trials and epoched from -5 to
 </div>
 </section>
 <section id="view-average-waveform">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">View average waveform</a><a class="headerlink" href="#view-average-waveform" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6">View average waveform</a><a class="headerlink" href="#view-average-waveform" title="Permalink to this heading">#</a></h2>
 <p>Next, a grand average epoch waveform is generated for each condition.
 This is generated using all of the standard (long) fNIRS channels,
 as illustrated by the head inset in the top right corner of the figure.</p>
@@ -701,7 +701,7 @@ as illustrated by the head inset in the top right corner of the figure.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Oxyhaemoglobin&quot;</span><span class="p">,</span> <span class="s2">&quot;Deoxyhaemoglobin&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="15.0, Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f29a8436830&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="15.0, Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fee5c28cd90&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
@@ -710,7 +710,7 @@ control condition (similar for when tapping occurred with the left hand).
 We test if this is the case in the analysis below.</p>
 </section>
 <section id="generate-regions-of-interest">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Generate regions of interest</a><a class="headerlink" href="#generate-regions-of-interest" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7">Generate regions of interest</a><a class="headerlink" href="#generate-regions-of-interest" title="Permalink to this heading">#</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Relevant literature</p>
 <p>Zimeo Morais, G.A., Balardin, J.B. &amp; Sato, J.R.
@@ -747,7 +747,7 @@ and one for the right motor cortex. These are called <cite>Left_Hemisphere</cite
 </div>
 </section>
 <section id="create-average-waveform-per-roi">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Create average waveform per ROI</a><a class="headerlink" href="#create-average-waveform-per-roi" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8">Create average waveform per ROI</a><a class="headerlink" href="#create-average-waveform-per-roi" title="Permalink to this heading">#</a></h2>
 <p>Next, an average waveform is generated per condition per region of interest.
 This allows the researcher to view the responses elicited in different
 regions of the brain for each condition.</p>
@@ -774,7 +774,7 @@ regions of the brain for each condition.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Oxyhaemoglobin&quot;</span><span class="p">,</span> <span class="s2">&quot;Deoxyhaemoglobin&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f28a87efdc0&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fee5c579c00&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to tapping appears
@@ -782,7 +782,7 @@ largest in the brain region that is contralateral to the hand
 that is tapping. We test if this is the case in the analysis below.</p>
 </section>
 <section id="extract-evoked-amplitude">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Extract evoked amplitude</a><a class="headerlink" href="#extract-evoked-amplitude" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9">Extract evoked amplitude</a><a class="headerlink" href="#extract-evoked-amplitude" title="Permalink to this heading">#</a></h2>
 <p>The waveforms above provide a qualitative overview of the data.
 It is also useful to perform a quantitative analysis based on the relevant
 features in the dataset.
@@ -891,7 +891,7 @@ We also demonstrate two example analyses on these values below.</p>
 <br />
 <br /></section>
 <section id="view-individual-results">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">View individual results</a><a class="headerlink" href="#view-individual-results" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10">View individual results</a><a class="headerlink" href="#view-individual-results" title="Permalink to this heading">#</a></h2>
 <p>This figure simply summarises the information in the dataframe created above.
 We observe that the values extracted from the waveform for the control
 condition generally sit around 0. Whereas the tapping conditions have
@@ -904,15 +904,12 @@ single ROI between conditions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Condition&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbo&#39;&quot;</span><span class="p">),</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_003.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_003.png" alt="plot 16 waveform group" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/python_env/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-  self._figure.tight_layout(*args, **kwargs)
-
-&lt;seaborn.axisgrid.FacetGrid object at 0x7f29aa1f67d0&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_003.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_003.png" alt="plot 16 waveform group" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid object at 0x7fee6f17c400&gt;
 </pre></div>
 </div>
 </section>
 <section id="research-question-1-comparison-of-conditions">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Research question 1: Comparison of conditions</a><a class="headerlink" href="#research-question-1-comparison-of-conditions" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11">Research question 1: Comparison of conditions</a><a class="headerlink" href="#research-question-1-comparison-of-conditions" title="Permalink to this heading">#</a></h2>
 <p>In this example question we ask: is the HbO response in the
 left ROI to tapping with the right hand larger
 than the response when not tapping (control)?
@@ -970,7 +967,7 @@ ROI, that the tapping condition with the right hand evokes
 a 9.0 μMol larger response than the control condition.</p>
 </section>
 <section id="research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Research question 2: Are responses larger on the contralateral side to tapping?</a><a class="headerlink" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12">Research question 2: Are responses larger on the contralateral side to tapping?</a><a class="headerlink" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" title="Permalink to this heading">#</a></h2>
 <p>In this example question we ask: when tapping, is the brain region on the
 contralateral side of the brain to the tapping hand larger than the
 ipsilateral side?</p>
@@ -1039,7 +1036,7 @@ conditions and the model is applied.</p>
 <br /><p>The model indicates that for the oxyhaemoglobin (HbO) data, the ipsilateral
 responses are 4.2 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 11.672 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 13.179 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
 <div class="binder-badge docutils container">
@@ -1135,7 +1132,7 @@ hand that is tapping.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

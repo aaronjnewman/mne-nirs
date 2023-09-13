@@ -195,7 +195,7 @@ The analysis is run on each individual subject measurement.
 The individual results are then appended to a dataframe for
 group-level analysis below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-170
+.. GENERATED FROM PYTHON SOURCE LINES 154-169
 
 .. code-block:: default
 
@@ -218,7 +218,6 @@ group-level analysis below.
 
 
 
-
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
@@ -232,7 +231,7 @@ group-level analysis below.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-177
+.. GENERATED FROM PYTHON SOURCE LINES 170-176
 
 Tidy the dataframe
 ---------------------------------------------------------------------
@@ -241,7 +240,7 @@ For simplicity we only examine the data from the right hand
 tapping condition. The code below retains only the relevant information
 from the dataframe and design matrix for the following statistical analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-197
+.. GENERATED FROM PYTHON SOURCE LINES 176-197
 
 .. code-block:: default
 
@@ -254,6 +253,7 @@ from the dataframe and design matrix for the following statistical analysis.
     df = df.query("isDelay in [True]")
     df = df.query("isTapping in [True]")
     # Make a new column that stores the condition name for tidier model below
+    df.loc[:, "TidyCond"] = ""
     df.loc[df["isTapping"] == True, "TidyCond"] = "Tapping"
     # Finally, extract the FIR delay in to its own column in data frame
     df.loc[:, "delay"] = [n.split('_')[-1] for n in df.Condition]
@@ -586,7 +586,7 @@ per chromophore (HbR not shown in first two facets).
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f29a9fda170>
+    <matplotlib.legend.Legend object at 0x7fee6f86ed70>
 
 
 
@@ -653,7 +653,7 @@ Plot the response with confidence intervals
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 16.198 seconds)
+   **Total running time of the script:** (0 minutes 17.967 seconds)
 
 **Estimated memory usage:**  11 MB
 

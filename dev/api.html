@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>API &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
@@ -517,6 +517,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <h3>MNE-Python<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <span class="target" id="module-mne.io"></span><p>IO module for reading raw data.</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.io.read_raw_hitachi.html#mne.io.read_raw_hitachi" title="mne.io.read_raw_hitachi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_hitachi</span></code></a>(fname[, preload, verbose])</p></td>
 <td><p>Reader for a Hitachi fNIRS recording.</p></td>
@@ -536,6 +540,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <section id="module-mne_nirs.io">
 <span id="mne-nirs"></span><h3>MNE-NIRS<a class="headerlink" href="#module-mne_nirs.io" title="Permalink to this heading">#</a></h3>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.write_raw_snirf.html#mne_nirs.io.write_raw_snirf" title="mne_nirs.io.write_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_raw_snirf</span></code></a>(raw, fname[, add_montage])</p></td>
 <td><p>Write continuous wave data to disk in SNIRF format.</p></td>
@@ -559,6 +567,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <h3>MNE-Python<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <span class="target" id="module-mne.preprocessing.nirs"></span><p>NIRS specific preprocessing functions.</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optical_density</span></code></a>(raw, *[, verbose])</p></td>
 <td><p>Convert NIRS raw data to optical density.</p></td>
@@ -585,6 +597,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <h3>MNE-NIRS<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>Signal Enhancement</p>
 <span class="target" id="module-mne_nirs.signal_enhancement"></span><table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.enhance_negative_correlation.html#mne_nirs.signal_enhancement.enhance_negative_correlation" title="mne_nirs.signal_enhancement.enhance_negative_correlation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enhance_negative_correlation</span></code></a>(raw)</p></td>
 <td><p>Apply negative correlation enhancement algorithm.</p></td>
@@ -596,6 +612,10 @@ epoching, visualisation, etc is not included here and can be found in the
 </table>
 <p>Data quality evaluation.</p>
 <span class="target" id="module-mne_nirs.preprocessing"></span><table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.preprocessing.peak_power.html#mne_nirs.preprocessing.peak_power" title="mne_nirs.preprocessing.peak_power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_power</span></code></a>(raw[, time_window, threshold, ...])</p></td>
 <td><p>Compute peak spectral power metric for each channel and time window.</p></td>
@@ -613,6 +633,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <section id="module-mne_nirs.experimental_design">
 <span id="experimental-design"></span><h2>Experimental Design<a class="headerlink" href="#module-mne_nirs.experimental_design" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_first_level_design_matrix</span></code></a>(raw[, ...])</p></td>
 <td><p>Generate a design matrix based on annotations and model HRF.</p></td>
@@ -635,6 +659,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <h3>First level analysis<a class="headerlink" href="#first-level-analysis" title="Permalink to this heading">#</a></h3>
 <p>Individual (first) level analysis functions.</p>
 <span class="target" id="module-mne_nirs.statistics"></span><table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.run_glm.html#mne_nirs.statistics.run_glm" title="mne_nirs.statistics.run_glm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_glm</span></code></a>(raw, design_matrix[, noise_model, ...])</p></td>
 <td><p>GLM fit for an MNE structure containing fNIRS data.</p></td>
@@ -643,6 +671,10 @@ epoching, visualisation, etc is not included here and can be found in the
 </table>
 <p>Individual (first) level result classes.</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults" title="mne_nirs.statistics.RegressionResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults</span></code></a>(info, data, design)</p></td>
 <td><p>Class containing GLM regression results.</p></td>
@@ -658,6 +690,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <p>Individual (first) level result class methods.
 View the class documentation above for a detailed list of methods.</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.compute_contrast" title="mne_nirs.statistics.RegressionResults.compute_contrast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.compute_contrast</span></code></a>(contrast)</p></td>
 <td><p>Compute contrasts on regression results.</p></td>
@@ -702,6 +738,10 @@ View the class documentation above for a detailed list of methods.</p>
 <h3>Second level analysis<a class="headerlink" href="#second-level-analysis" title="Permalink to this heading">#</a></h3>
 <p>Group (second) level analysis functions.</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">statsmodels_to_results</span></code></a>(model[, order])</p></td>
 <td><p>Convert statsmodels summary to a dataframe.</p></td>
@@ -714,6 +754,10 @@ View the class documentation above for a detailed list of methods.</p>
 <h2>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this heading">#</a></h2>
 <p>fNIRS specific data visualisation.</p>
 <span class="target" id="module-mne_nirs.visualisation"></span><table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_3d_montage.html#mne_nirs.visualisation.plot_3d_montage" title="mne_nirs.visualisation.plot_3d_montage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_3d_montage</span></code></a>(info, view_map, *[, ...])</p></td>
 <td><p>Plot a 3D sensor montage.</p></td>
@@ -725,6 +769,10 @@ View the class documentation above for a detailed list of methods.</p>
 </table>
 <p>GLM result visualisation.</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_group_topo</span></code></a>(inst, statsmodel_df[, ...])</p></td>
 <td><p>Plot topomap of NIRS group level GLM results.</p></td>
@@ -736,6 +784,10 @@ View the class documentation above for a detailed list of methods.</p>
 </table>
 <p>Data quality visualisation.</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_timechannel_quality_metric.html#mne_nirs.visualisation.plot_timechannel_quality_metric" title="mne_nirs.visualisation.plot_timechannel_quality_metric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_timechannel_quality_metric</span></code></a>(raw, scores, ...)</p></td>
 <td><p>Plot time x channel based quality metrics.</p></td>
@@ -746,6 +798,10 @@ View the class documentation above for a detailed list of methods.</p>
 <section id="module-mne_nirs.simulation">
 <span id="simulation"></span><h2>Simulation<a class="headerlink" href="#module-mne_nirs.simulation" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.simulation.simulate_nirs_raw.html#mne_nirs.simulation.simulate_nirs_raw" title="mne_nirs.simulation.simulate_nirs_raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_nirs_raw</span></code></a>([sfreq, amplitude, ...])</p></td>
 <td><p>Create simulated fNIRS data.</p></td>
@@ -757,6 +813,10 @@ View the class documentation above for a detailed list of methods.</p>
 <h2>Channels<a class="headerlink" href="#channels" title="Permalink to this heading">#</a></h2>
 <p>Functions to help with handling channel information.</p>
 <span class="target" id="module-mne_nirs.channels"></span><table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.channels.list_sources.html#mne_nirs.channels.list_sources" title="mne_nirs.channels.list_sources"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_sources</span></code></a>(raw)</p></td>
 <td><p>List all the sources in the fNIRS montage.</p></td>
@@ -795,6 +855,10 @@ The software will automatically download and extract
 the data, then provide the path to the data.</p>
 <span class="target" id="module-mne_nirs.datasets.fnirs_motor_group"></span><p><strong>fNIRS dataset with finger tapping task</strong></p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.datasets.fnirs_motor_group.data_path.html#mne_nirs.datasets.fnirs_motor_group.data_path" title="mne_nirs.datasets.fnirs_motor_group.data_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_path</span></code></a>([path, force_update, update_path, ...])</p></td>
 <td><p>Motor task experiment data with 5 participants.</p></td>
@@ -803,6 +867,10 @@ the data, then provide the path to the data.</p>
 </table>
 <span class="target" id="module-mne_nirs.datasets.block_speech_noise"></span><p><strong>fNIRS dataset with auditory speech and noise</strong></p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.datasets.block_speech_noise.data_path.html#mne_nirs.datasets.block_speech_noise.data_path" title="mne_nirs.datasets.block_speech_noise.data_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_path</span></code></a>([path, force_update, update_path, ...])</p></td>
 <td><p>Audio speech and noise dataset with 18 participants.</p></td>
@@ -811,6 +879,10 @@ the data, then provide the path to the data.</p>
 </table>
 <span class="target" id="module-mne_nirs.datasets.audio_or_visual_speech"></span><p><strong>fNIRS dataset with audio or visual speech</strong></p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.datasets.audio_or_visual_speech.data_path.html#mne_nirs.datasets.audio_or_visual_speech.data_path" title="mne_nirs.datasets.audio_or_visual_speech.data_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_path</span></code></a>([path, force_update, update_path, ...])</p></td>
 <td><p>Audio and visual speech dataset with 8 participants.</p></td>
@@ -918,7 +990,7 @@ the data, then provide the path to the data.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

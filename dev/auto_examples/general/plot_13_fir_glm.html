@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>GLM FIR Analysis &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
@@ -498,13 +498,13 @@ own analysis.</p>
 <p class="admonition-title">Note</p>
 <p>This tutorial uses data stored using
 <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/11-near-infrared-spectroscopy.html">the BIDS format</a>
-<a class="footnote-reference brackets" href="#footcite-luke2023bids" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<a class="footnote-reference brackets" href="#footcite-luke2023bids" id="id1">1</a>.</p>
 <p>MNE-Python allows you to process fNIRS data that is not in BIDS format.
 Simply modify the <code class="docutils literal notranslate"><span class="pre">read_raw_</span></code> function to match your data type.
 See <a class="reference internal" href="plot_01_data_io.html#tut-importing-fnirs-data"><span class="std std-ref">data importing tutorial</span></a> to learn how
 to use your data with MNE-Python.</p>
 </div>
-<nav class="contents local" id="page-contents">
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#define-fir-analysis" id="id2">Define FIR analysis</a></p></li>
@@ -515,7 +515,7 @@ to use your data with MNE-Python.</p>
 <li><p><a class="reference internal" href="#plot-the-response-from-a-single-condition" id="id7">Plot the response from a single condition</a></p></li>
 <li><p><a class="reference internal" href="#plot-the-response-with-confidence-intervals" id="id8">Plot the response with confidence intervals</a></p></li>
 </ul>
-</nav>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 1</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -548,7 +548,7 @@ to use your data with MNE-Python.</p>
 </pre></div>
 </div>
 <section id="define-fir-analysis">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Define FIR analysis</a><a class="headerlink" href="#define-fir-analysis" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2">Define FIR analysis</a><a class="headerlink" href="#define-fir-analysis" title="Permalink to this heading">#</a></h2>
 <p>This code runs a FIR GLM analysis.
 It fits a FIR for each sample from the onset of a trigger.
 We specify here that 10 FIR delays should be used.
@@ -603,7 +603,7 @@ correspond to 0, 2, 4… seconds from the onset of the stimulus.</p>
 </div>
 </section>
 <section id="run-analysis">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Run analysis</a><a class="headerlink" href="#run-analysis" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3">Run analysis</a><a class="headerlink" href="#run-analysis" title="Permalink to this heading">#</a></h2>
 <p>The analysis is run on each individual subject measurement.
 The individual results are then appended to a dataframe for
 group-level analysis below.</p>
@@ -631,7 +631,7 @@ Reading 0 ... 23006  =      0.000 ...  2944.768 secs...
 </div>
 </section>
 <section id="tidy-the-dataframe">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Tidy the dataframe</a><a class="headerlink" href="#tidy-the-dataframe" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4">Tidy the dataframe</a><a class="headerlink" href="#tidy-the-dataframe" title="Permalink to this heading">#</a></h2>
 <p>For simplicity we only examine the data from the right hand
 tapping condition. The code below retains only the relevant information
 from the dataframe and design matrix for the following statistical analysis.</p>
@@ -643,6 +643,7 @@ from the dataframe and design matrix for the following statistical analysis.</p>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;isDelay in [True]&quot;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;isTapping in [True]&quot;</span><span class="p">)</span>
 <span class="c1"># Make a new column that stores the condition name for tidier model below</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;TidyCond&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;isTapping&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;TidyCond&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tapping&quot;</span>
 <span class="c1"># Finally, extract the FIR delay in to its own column in data frame</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;delay&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">Condition</span><span class="p">]</span>
@@ -656,7 +657,7 @@ from the dataframe and design matrix for the following statistical analysis.</p>
 </div>
 </section>
 <section id="run-group-level-model">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Run group-level model</a><a class="headerlink" href="#run-group-level-model" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5">Run group-level model</a><a class="headerlink" href="#run-group-level-model" title="Permalink to this heading">#</a></h2>
 <p>A linear mixed effects (LME) model is used to determine the effect
 of FIR delay for each chromophore on the evoked response with participant
 (ID) as a random variable.</p>
@@ -669,7 +670,7 @@ of FIR delay for each chromophore on the evoked response with participant
 </div>
 </section>
 <section id="summarise-group-level-findings">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Summarise group-level findings</a><a class="headerlink" href="#summarise-group-level-findings" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6">Summarise group-level findings</a><a class="headerlink" href="#summarise-group-level-findings" title="Permalink to this heading">#</a></h2>
 <p>Next the values from the model above are extracted into a dataframe for
 more convenient analysis below.
 A subset of the results is displayed, illustrating the estimated coefficients
@@ -856,7 +857,7 @@ These coefficients must be multiplied by the FIR function to obtain the
 morphology of the fNIRS response.</p>
 </section>
 <section id="plot-the-response-from-a-single-condition">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Plot the response from a single condition</a><a class="headerlink" href="#plot-the-response-from-a-single-condition" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7">Plot the response from a single condition</a><a class="headerlink" href="#plot-the-response-from-a-single-condition" title="Permalink to this heading">#</a></h2>
 <p>Finally we create a plot with three facets.
 The first facet illustrates the FIR model that was used in the GLM analysis,
 the model results displayed in the table above indicate the scaling values
@@ -912,12 +913,12 @@ per chromophore (HbR not shown in first two facets).</p>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Oyxhaemoglobin&quot;</span><span class="p">,</span> <span class="s2">&quot;Deoyxhaemoglobin&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_13_fir_glm_001.png" srcset="../../_images/sphx_glr_plot_13_fir_glm_001.png" alt="FIR Model (Unscaled by GLM estimates), FIR Components (Scaled by Tapping/Right GLM Estimates), Evoked Response (Tapping/Right)" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f29a9fda170&gt;
+<img src="../../_images/sphx_glr_plot_13_fir_glm_001.png" srcset="../../_images/sphx_glr_plot_13_fir_glm_001.png" alt="FIR Model (Unscaled by GLM estimates), FIR Components (Scaled by Tapping/Right GLM Estimates), Evoked Response (Tapping/Right)" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fee6f86ed70&gt;
 </pre></div>
 </div>
 </section>
 <section id="plot-the-response-with-confidence-intervals">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Plot the response with confidence intervals</a><a class="headerlink" href="#plot-the-response-with-confidence-intervals" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8">Plot the response with confidence intervals</a><a class="headerlink" href="#plot-the-response-with-confidence-intervals" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can also extract the 95% confidence intervals of the estimates too</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">l95_hbo</span></a> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">df_hbo</span><span class="p">[</span><span class="s2">&quot;[0.025&quot;</span><span class="p">]]</span>  <span class="c1"># lower estimate</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">u95_hbo</span></a> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">df_hbo</span><span class="p">[</span><span class="s2">&quot;0.975]&quot;</span><span class="p">]]</span>  <span class="c1"># upper estimate</span>
@@ -954,7 +955,7 @@ per chromophore (HbR not shown in first two facets).</p>
 <img src="../../_images/sphx_glr_plot_13_fir_glm_002.png" srcset="../../_images/sphx_glr_plot_13_fir_glm_002.png" alt="Evoked Response (Tapping/Right)" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0.5, 47.7222222222222, &#39;Time (s)&#39;)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 16.198 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 17.967 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  11 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-13-fir-glm-py">
 <div class="binder-badge docutils container">
@@ -1048,7 +1049,7 @@ per chromophore (HbR not shown in first two facets).</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

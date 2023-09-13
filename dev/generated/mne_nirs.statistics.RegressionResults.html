@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>mne_nirs.statistics.RegressionResults &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
@@ -504,7 +504,7 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mne_nirs.statistics.</span></span><span class="sig-name descname"><span class="pre">RegressionResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults" title="Permalink to this definition">#</a></dt>
 <dd><p>Class containing GLM regression results.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>info</strong><span class="classifier">mne.Info</span></dt><dd><p>Info.</p>
 </dd>
@@ -514,13 +514,13 @@ document.write(`
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>glm_est</strong><span class="classifier">ResultsGLM,</span></dt><dd><p>Result class.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.ch_names" title="mne_nirs.statistics.RegressionResults.ch_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ch_names</span></code></a></dt><dd><p>Return the channel names.</p>
 </dd>
@@ -532,6 +532,10 @@ document.write(`
 </dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.MSE" title="mne_nirs.statistics.RegressionResults.MSE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MSE</span></code></a>()</p></td>
 <td><p>Return the GLM MSE.</p></td>
@@ -579,7 +583,7 @@ document.write(`
 <span class="sig-name descname"><span class="pre">MSE</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.MSE"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.MSE" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the GLM MSE.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>thetas</strong><span class="classifier">array</span></dt><dd><p>Array of MSEs. A value is provided per channel.</p>
 </dd>
@@ -593,14 +597,14 @@ document.write(`
 <span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ch_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.__contains__" title="Permalink to this definition">#</a></dt>
 <dd><p>Check channel type membership.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>ch_type</strong><span class="classifier">str</span></dt><dd><p>Channel type to check for. Can be e.g. <code class="docutils literal notranslate"><span class="pre">'meg'</span></code>, <code class="docutils literal notranslate"><span class="pre">'eeg'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'stim'</span></code>, etc.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>in</strong><span class="classifier">bool</span></dt><dd><p>Whether or not the instance contains the given channel type.</p>
 </dd>
@@ -627,7 +631,7 @@ document.write(`
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ch_names</span></span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.ch_names" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the channel names.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>names</strong><span class="classifier">array</span></dt><dd><p>The channel names.</p>
 </dd>
@@ -648,7 +652,7 @@ document.write(`
 <dd><p>Compute contrasts on regression results.</p>
 <p>This is a wrapper function for nilearn.stats.contrasts.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>contrast</strong><span class="classifier">numpy.ndarray of shape (p) or (q, p),</span></dt><dd><p>Where q = number of contrast vectors and p = number of regressors.</p>
 </dd>
@@ -657,7 +661,7 @@ and ‘F’ for 2D con_val.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>contrast</strong><span class="classifier">Contrast instance,</span></dt><dd><p>Yields the statistics of the contrast
 (effects, variance, p-values).</p>
@@ -672,7 +676,7 @@ and ‘F’ for 2D con_val.</p>
 <span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a copy of the GLM results.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>inst</strong><span class="classifier">instance of ResultsGLM</span></dt><dd><p>A copy of the object.</p>
 </dd>
@@ -686,7 +690,7 @@ and ‘F’ for 2D con_val.</p>
 <span class="sig-name descname"><span class="pre">get_channel_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">picks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_data_chs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.get_channel_types" title="Permalink to this definition">#</a></dt>
 <dd><p>Get a list of channel type for each channel.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>picks</strong><span class="classifier">str | array-like | slice | None</span></dt><dd><p>Channels to include. Slices and lists of integers will be interpreted as 
 channel indices. In lists, channel <em>type</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> 
@@ -703,7 +707,7 @@ explicitly provided.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>channel_types</strong><span class="classifier">list</span></dt><dd><p>The channel types.</p>
 </dd>
@@ -717,7 +721,7 @@ explicitly provided.</p>
 <span class="sig-name descname"><span class="pre">model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.model" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the GLM model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>models</strong><span class="classifier">array</span></dt><dd><p>Array of models. An model is provided per channel.</p>
 </dd>
@@ -731,7 +735,7 @@ explicitly provided.</p>
 <span class="sig-name descname"><span class="pre">pick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">picks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.pick"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.pick" title="Permalink to this definition">#</a></dt>
 <dd><p>Pick a subset of channels.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>picks</strong><span class="classifier">str | array-like | slice | None</span></dt><dd><p>Channels to include. Slices and lists of integers will be interpreted as 
 channel indices. In lists, channel <em>type</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> 
@@ -747,7 +751,7 @@ types (e.g., exclude=”bads” when picks=”meg”).</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>inst</strong><span class="classifier">instance of ResultsGLM</span></dt><dd><p>The modified instance.</p>
 </dd>
@@ -761,7 +765,7 @@ types (e.g., exclude=”bads” when picks=”meg”).</p>
 <span class="sig-name descname"><span class="pre">plot_topo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conditions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.plot_topo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.plot_topo" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot 2D topography of GLM data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>conditions</strong><span class="classifier">array</span></dt><dd><p>Which conditions should be displayed.</p>
 </dd>
@@ -785,7 +789,7 @@ the data.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>fig</strong><span class="classifier">figure</span></dt><dd><p>Figure of each design matrix component for hbo (top row)
 and hbr (bottom row).</p>
@@ -800,7 +804,7 @@ and hbr (bottom row).</p>
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.save" title="Permalink to this definition">#</a></dt>
 <dd><p>Save GLM results to disk.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>fname</strong><span class="classifier">str</span></dt><dd><p>The filename to use to write the HDF5 data.
 Should end in <code class="docutils literal notranslate"><span class="pre">'glm.h5'</span></code>.</p>
@@ -818,7 +822,7 @@ exists.</p>
 <span class="sig-name descname"><span class="pre">scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conditions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_no_interest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_interest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.scatter" title="Permalink to this definition">#</a></dt>
 <dd><p>Scatter plot of the GLM results.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>conditions</strong><span class="classifier">list</span></dt><dd><p>List of condition names to plot. By default plots all regressors
 of interest.</p>
@@ -833,7 +837,7 @@ then conditions starting with
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>plt</strong><span class="classifier">matplotlib.Figure</span></dt><dd><p>Scatter plot.</p>
 </dd>
@@ -858,7 +862,7 @@ It is useful for visualisation, but users should
 take this in to consideration when drawing conclusions from the
 visualisation.</p>
 <dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>chroma</strong><span class="classifier">str</span></dt><dd><p>Chromophore to plot`.</p>
 </dd>
@@ -930,7 +934,7 @@ argument.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>figure</strong><span class="classifier">instance of mne.viz.Brain | matplotlib.figure.Figure</span></dt><dd><p>An instance of <a class="reference external" href="https://mne.tools/stable/generated/mne.viz.Brain.html#mne.viz.Brain" title="(in MNE v1.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.viz.Brain</span></code></a> or matplotlib figure.</p>
 </dd>
@@ -944,7 +948,7 @@ argument.</p>
 <span class="sig-name descname"><span class="pre">theta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.theta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.theta" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the GLM theta results.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>thetas</strong><span class="classifier">array</span></dt><dd><p>Array of thetas. An array is provided per channel.</p>
 </dd>
@@ -958,13 +962,13 @@ argument.</p>
 <span class="sig-name descname"><span class="pre">to_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.to_dataframe" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a tidy dataframe representing the GLM results.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>order</strong><span class="classifier">list</span></dt><dd><p>Order in which the rows should be returned by channel name.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>tidy</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Dataframe containing GLM results.</p>
 </dd>
@@ -978,7 +982,7 @@ argument.</p>
 <span class="sig-name descname"><span class="pre">to_dataframe_region_of_interest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demographic_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.to_dataframe_region_of_interest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="Permalink to this definition">#</a></dt>
 <dd><p>Region of interest results as a dataframe.</p>
 <dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>group_by</strong><span class="classifier">dict</span></dt><dd><p>Specifies which channels are aggregated into a single ROI.
 The dict key will be used as the ROI label and the dict
@@ -1005,7 +1009,7 @@ info[“subject_info”].</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>tidy</strong><span class="classifier">pandas.DataFrame</span></dt><dd><p>Dataframe containing GLM results.</p>
 </dd>
@@ -1124,7 +1128,7 @@ info[“subject_info”].</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

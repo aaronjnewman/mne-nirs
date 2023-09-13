@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>mne.preprocessing.nirs.temporal_derivative_distribution_repair &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
@@ -504,10 +504,10 @@ document.write(`
 <span class="sig-prename descclassname"><span class="pre">mne.preprocessing.nirs.</span></span><span class="sig-name descname"><span class="pre">temporal_derivative_distribution_repair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne/preprocessing/nirs/_tddr.html#temporal_derivative_distribution_repair"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne.preprocessing.nirs.temporal_derivative_distribution_repair" title="Permalink to this definition">#</a></dt>
 <dd><p>Apply temporal derivative distribution repair to data.</p>
 <p>Applies temporal derivative distribution repair (TDDR) to data
-<a class="footnote-reference brackets" href="#footcite-fishburnetal2019" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. This approach removes baseline shift
+<a class="footnote-reference brackets" href="#footcite-fishburnetal2019" id="id1">1</a>. This approach removes baseline shift
 and spike artifacts without the need for any user-supplied parameters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>raw</strong><span class="classifier">instance of Raw</span></dt><dd><p>The raw data.</p>
 </dd>
@@ -518,7 +518,7 @@ argument.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>raw</strong><span class="classifier">instance of Raw</span></dt><dd><p>Data with TDDR applied.</p>
 </dd>
@@ -534,11 +534,11 @@ data as intended by the original author wherever possible.</p>
 instead of this function (e.g. if line length is an issue).</p>
 <p class="rubric">References</p>
 <div class="docutils container" id="id2">
-<aside class="footnote brackets" id="footcite-fishburnetal2019" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Frank A Fishburn, Ruth S Ludlum, Chandan J Vaidya, and Andrei V Medvedev. Temporal derivative distribution repair (tddr): a motion correction method for fNIRS. <em>NeuroImage</em>, 184:171–179, 2019. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2018.09.025">doi:10.1016/j.neuroimage.2018.09.025</a>.</p>
-</aside>
-</aside>
+<dl class="footnote brackets">
+<dt class="label" id="footcite-fishburnetal2019"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Frank A Fishburn, Ruth S Ludlum, Chandan J Vaidya, and Andrei V Medvedev. Temporal derivative distribution repair (tddr): a motion correction method for fNIRS. <em>NeuroImage</em>, 184:171–179, 2019. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2018.09.025">doi:10.1016/j.neuroimage.2018.09.025</a>.</p>
+</dd>
+</dl>
 </div>
 </dd></dl>
 
@@ -615,7 +615,7 @@ instead of this function (e.g. if line length is an issue).</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

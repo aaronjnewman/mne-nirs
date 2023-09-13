@@ -272,7 +272,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f29b0acdd40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7fee834a8680>
 
 
 
@@ -307,7 +307,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f29a9c9e980>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7fee6ede3380>
 
 
 
@@ -415,7 +415,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f29d1a3fec0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7fee6f5ed800>
 
 
 
@@ -734,13 +734,6 @@ motor cortex, and all channels show a similar pattern in the data.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-
 
 
 
@@ -787,10 +780,6 @@ the two signals.
 
  .. code-block:: none
 
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     combining channels using "mean"
     combining channels using "mean"
     combining channels using "mean"
@@ -831,9 +820,7 @@ Next we view how the topographic activity changes throughout the response.
 
  .. code-block:: none
 
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
     No projector specified for this dataset. Please consider the method self.add_proj.
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
     <Figure size 800x420 with 10 Axes>
 
@@ -883,8 +870,6 @@ the location of activity. First we visualise the HbO activity.
 
  .. code-block:: none
 
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
     <MNEFigure size 1200x220 with 8 Axes>
 
@@ -929,8 +914,6 @@ And we also view the HbR activity for the two conditions.
 
  .. code-block:: none
 
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
     <MNEFigure size 1200x220 with 8 Axes>
 
@@ -983,13 +966,6 @@ And we can plot the comparison at a single time point for two conditions.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-
 
 
 
@@ -1026,17 +1002,15 @@ driving the topographic plot above.
 
  .. code-block:: none
 
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
-    NOTE: pick_channels() is a legacy function. New code should use inst.pick(...).
 
-    <matplotlib.legend.Legend object at 0x7f29a83f2680>
+    <matplotlib.legend.Legend object at 0x7fee5c255120>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 24.592 seconds)
+   **Total running time of the script:** (0 minutes 26.563 seconds)
 
 **Estimated memory usage:**  24 MB
 

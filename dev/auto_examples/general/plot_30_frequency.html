@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Frequency and Filter Commentary &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
@@ -470,7 +470,7 @@ We examine the interplay between the expected brain response based
 on experimental design and our model of how the brain reacts to stimuli,
 the actual data measured during an experiment, and the filtering
 that is applied to the data.</p>
-<nav class="contents local" id="page-contents">
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#import-and-preprocess-data" id="id1">Import and preprocess data</a></p></li>
@@ -482,7 +482,7 @@ that is applied to the data.</p>
 <li><p><a class="reference internal" href="#filter-neural-signal" id="id7">Filter Neural Signal</a></p></li>
 <li><p><a class="reference internal" href="#understanding-the-relation-between-stimulus-presentation-and-response" id="id8">Understanding the relation between stimulus presentation and response</a></p></li>
 </ul>
-</nav>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
@@ -497,7 +497,7 @@ that is applied to the data.</p>
 </pre></div>
 </div>
 <section id="import-and-preprocess-data">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Import and preprocess data</a><a class="headerlink" href="#import-and-preprocess-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1">Import and preprocess data</a><a class="headerlink" href="#import-and-preprocess-data" title="Permalink to this heading">#</a></h2>
 <p>We read in the data, annotate the triggers, remove the control condition,
 convert to haemoglobin concentration.</p>
 <p>This code is similar to the first sections in the MNE tutorial,
@@ -530,7 +530,7 @@ for a detailed introduction to processing NIRS with MNE.</p>
 </div>
 </section>
 <section id="model-neural-response">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Model neural response</a><a class="headerlink" href="#model-neural-response" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2">Model neural response</a><a class="headerlink" href="#model-neural-response" title="Permalink to this heading">#</a></h2>
 <p>We know the when each stimulus was presented to the lister (see Annotations)
 and we have a model of how we expect the brain to react to each
 stimulus presentation
@@ -560,7 +560,7 @@ the repetition rate of the experiment.</p>
 </div>
 </section>
 <section id="plot-raw-measured-data">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Plot raw measured data</a><a class="headerlink" href="#plot-raw-measured-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3">Plot raw measured data</a><a class="headerlink" href="#plot-raw-measured-data" title="Permalink to this heading">#</a></h2>
 <p>Next we plot the PSD of the raw data.</p>
 <p>Note the increased activity around 1 Hz, this is the heart rate.
 We also see an increase in activity around 0.1 Hz, this is likely
@@ -581,7 +581,7 @@ There is also a small bump around 0.3 Hz that is likely the breathing rate.</p>
 </div>
 </section>
 <section id="plot-epoched-data">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Plot epoched data</a><a class="headerlink" href="#plot-epoched-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4">Plot epoched data</a><a class="headerlink" href="#plot-epoched-data" title="Permalink to this heading">#</a></h2>
 <p>Next we plot the PSD of the epoched data.</p>
 <p>The act of averaging the epochs removes some of the systemic components that
 are not time locked to the stimulus. However, the large heart rate component
@@ -613,7 +613,7 @@ Using data from preloaded Raw for 60 events and 157 original time points ...
 </div>
 </section>
 <section id="plot-filter-response">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Plot filter response</a><a class="headerlink" href="#plot-filter-response" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5">Plot filter response</a><a class="headerlink" href="#plot-filter-response" title="Permalink to this heading">#</a></h2>
 <p>Next we plot the filter response.
 For an introduction to filtering see
 <a class="reference external" href="https://mne.tools/stable/auto_tutorials/discussions/plot_background_filtering.html">https://mne.tools/stable/auto_tutorials/discussions/plot_background_filtering.html</a></p>
@@ -633,7 +633,7 @@ after epoching.</p>
 </div>
 </section>
 <section id="discussion">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Discussion</a><a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6">Discussion</a><a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
 <p>Finally we overlay all lines on the same figure to see how the
 different components relate.</p>
 <p>First, note that the filter cutoff above 0.4 Hz attenuates
@@ -669,7 +669,7 @@ epoched data.</p>
 </div>
 </section>
 <section id="filter-neural-signal">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Filter Neural Signal</a><a class="headerlink" href="#filter-neural-signal" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7">Filter Neural Signal</a><a class="headerlink" href="#filter-neural-signal" title="Permalink to this heading">#</a></h2>
 <p>The effect of filtering on the neural signal is demonstrated below.
 The green line illustrates the signal before filtering, and the red line
 shows the signal after filtering.</p>
@@ -683,7 +683,7 @@ shows the signal after filtering.</p>
 </div>
 </section>
 <section id="understanding-the-relation-between-stimulus-presentation-and-response">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Understanding the relation between stimulus presentation and response</a><a class="headerlink" href="#understanding-the-relation-between-stimulus-presentation-and-response" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8">Understanding the relation between stimulus presentation and response</a><a class="headerlink" href="#understanding-the-relation-between-stimulus-presentation-and-response" title="Permalink to this heading">#</a></h2>
 <p>Here we look at the effect of the interstimulus interval on the
 expected haemodynamic response. We choose a few different
 maximum and minimum
@@ -714,7 +714,7 @@ Some common high pass filter values from literature are shown in red.</p>
     <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="matplotlib.pyplot.colorbar" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span></a><span class="p">(</span><a href="https://matplotlib.org/stable/api/cm_api.html#matplotlib.cm.ScalarMappable" title="matplotlib.cm.ScalarMappable" class="sphx-glr-backref-module-matplotlib-cm sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sm</span></a><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rep</span></a><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Max ISI (s)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_30_frequency_007.png" srcset="../../_images/sphx_glr_plot_30_frequency_007.png" alt="ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI, ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 29.178 seconds)</p>
+<img src="../../_images/sphx_glr_plot_30_frequency_007.png" srcset="../../_images/sphx_glr_plot_30_frequency_007.png" alt="ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI, ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 30.298 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-30-frequency-py">
 <div class="binder-badge docutils container">
@@ -809,7 +809,7 @@ Some common high pass filter values from literature are shown in red.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-08-22T18:52:22.522180+00:00&#34; class=&#34;localized&#34;&gt;2023-08-22 18:52 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     
