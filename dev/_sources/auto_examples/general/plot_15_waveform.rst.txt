@@ -88,9 +88,9 @@ Here we will work with the :ref:`fNIRS motor data <mne:fnirs-motor-dataset>`.
     <div class="output_subarea output_html rendered_html output_result">
     <style>
     label { cursor: pointer; }
-    #section_952db43d-9ef5-44f6-af9f-6fedd5c126ba ~ table [for="section_952db43d-9ef5-44f6-af9f-6fedd5c126ba"]::before,
-    #section_e38e2391-34f8-4a52-8785-36d6a6371a33 ~ table [for="section_e38e2391-34f8-4a52-8785-36d6a6371a33"]::before,
-    #section_60cda686-833b-49da-bcd7-f2ad6b5d367c ~ table [for="section_60cda686-833b-49da-bcd7-f2ad6b5d367c"]::before {
+    #section_1637223a-efa4-4e35-aada-4836d6e17374 ~ table [for="section_1637223a-efa4-4e35-aada-4836d6e17374"]::before,
+    #section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01 ~ table [for="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01"]::before,
+    #section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a ~ table [for="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a"]::before {
         display: inline-block;
         content: "►";
         font-size: 11px;
@@ -98,50 +98,50 @@ Here we will work with the :ref:`fNIRS motor data <mne:fnirs-motor-dataset>`.
         text-align: left;
     }
 
-    #section_952db43d-9ef5-44f6-af9f-6fedd5c126ba:checked ~ table [for="section_952db43d-9ef5-44f6-af9f-6fedd5c126ba"]::before,
-    #section_e38e2391-34f8-4a52-8785-36d6a6371a33:checked ~ table [for="section_e38e2391-34f8-4a52-8785-36d6a6371a33"]::before,
-    #section_60cda686-833b-49da-bcd7-f2ad6b5d367c:checked ~ table [for="section_60cda686-833b-49da-bcd7-f2ad6b5d367c"]::before {
+    #section_1637223a-efa4-4e35-aada-4836d6e17374:checked ~ table [for="section_1637223a-efa4-4e35-aada-4836d6e17374"]::before,
+    #section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01:checked ~ table [for="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01"]::before,
+    #section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a:checked ~ table [for="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a"]::before {
         content: "▼";
     }
 
-    #section_952db43d-9ef5-44f6-af9f-6fedd5c126ba ~ table tr.section_952db43d-9ef5-44f6-af9f-6fedd5c126ba,
-    #section_e38e2391-34f8-4a52-8785-36d6a6371a33 ~ table tr.section_e38e2391-34f8-4a52-8785-36d6a6371a33,
-    #section_60cda686-833b-49da-bcd7-f2ad6b5d367c ~ table tr.section_60cda686-833b-49da-bcd7-f2ad6b5d367c {
+    #section_1637223a-efa4-4e35-aada-4836d6e17374 ~ table tr.section_1637223a-efa4-4e35-aada-4836d6e17374,
+    #section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01 ~ table tr.section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01,
+    #section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a ~ table tr.section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a {
         visibility: collapse;
     }
 
-    #section_952db43d-9ef5-44f6-af9f-6fedd5c126ba:checked ~ table tr.section_952db43d-9ef5-44f6-af9f-6fedd5c126ba,
-    #section_e38e2391-34f8-4a52-8785-36d6a6371a33:checked ~ table tr.section_e38e2391-34f8-4a52-8785-36d6a6371a33,
-    #section_60cda686-833b-49da-bcd7-f2ad6b5d367c:checked ~ table tr.section_60cda686-833b-49da-bcd7-f2ad6b5d367c {
+    #section_1637223a-efa4-4e35-aada-4836d6e17374:checked ~ table tr.section_1637223a-efa4-4e35-aada-4836d6e17374,
+    #section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01:checked ~ table tr.section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01,
+    #section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a:checked ~ table tr.section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a {
         visibility: visible;
     }
     </style>
 
-    <input type="checkbox" id="section_952db43d-9ef5-44f6-af9f-6fedd5c126ba" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_e38e2391-34f8-4a52-8785-36d6a6371a33" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_60cda686-833b-49da-bcd7-f2ad6b5d367c" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_1637223a-efa4-4e35-aada-4836d6e17374" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a" hidden aria-hidden="true"/>
 
     <table class="table table-hover table-striped table-sm table-responsive small">
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_952db43d-9ef5-44f6-af9f-6fedd5c126ba>
+                <label for=section_1637223a-efa4-4e35-aada-4836d6e17374>
                     General
                 </label>
             </th>
         </tr>
-        <tr class="section_952db43d-9ef5-44f6-af9f-6fedd5c126ba">
+        <tr class="section_1637223a-efa4-4e35-aada-4836d6e17374">
             <th>Measurement date</th>
         
             <td>November 02, 2019  13:16:16 GMT</td>
         
         </tr>
-        <tr class="section_952db43d-9ef5-44f6-af9f-6fedd5c126ba">
+        <tr class="section_1637223a-efa4-4e35-aada-4836d6e17374">
             <th>Experimenter</th>
         
             <td>Unknown</td>
         
         </tr>
-        <tr class="section_952db43d-9ef5-44f6-af9f-6fedd5c126ba">
+        <tr class="section_1637223a-efa4-4e35-aada-4836d6e17374">
             <th>Participant</th>
         
             
@@ -151,67 +151,67 @@ Here we will work with the :ref:`fNIRS motor data <mne:fnirs-motor-dataset>`.
         </tr>
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_e38e2391-34f8-4a52-8785-36d6a6371a33>
+                <label for=section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01>
                     Channels
                 </label>
             </th>
         </tr>
-        <tr class="section_e38e2391-34f8-4a52-8785-36d6a6371a33">
+        <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
             <th>Digitized points</th>
         
             <td>31 points</td>
         
         </tr>
-        <tr class="section_e38e2391-34f8-4a52-8785-36d6a6371a33">
+        <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
             <th>Good channels</th>
             <td>56 fNIRS (CW amplitude)</td>
         </tr>
-        <tr class="section_e38e2391-34f8-4a52-8785-36d6a6371a33">
+        <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
             <th>Bad channels</th>
             <td>None</td>
         </tr>
-        <tr class="section_e38e2391-34f8-4a52-8785-36d6a6371a33">
+        <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
             <th>EOG channels</th>
             <td>Not available</td>
         </tr>
-        <tr class="section_e38e2391-34f8-4a52-8785-36d6a6371a33">
+        <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
             <th>ECG channels</th>
             <td>Not available</td>
         </tr>
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_60cda686-833b-49da-bcd7-f2ad6b5d367c>
+                <label for=section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a>
                     Data
                 </label>
             </th>
         </tr>
     
-        <tr class="section_60cda686-833b-49da-bcd7-f2ad6b5d367c">
+        <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
             <th>Sampling frequency</th>
             <td>7.81 Hz</td>
         </tr>
     
     
-        <tr class="section_60cda686-833b-49da-bcd7-f2ad6b5d367c">
+        <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
     
     
-        <tr class="section_60cda686-833b-49da-bcd7-f2ad6b5d367c">
+        <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
             <th>Lowpass</th>
             <td>3.91 Hz</td>
         </tr>
     
     
     
-        <tr class="section_60cda686-833b-49da-bcd7-f2ad6b5d367c">
+        <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
             <th>Filenames</th>
             <td>Participant-1</td>
         </tr>
     
     
-        <tr class="section_60cda686-833b-49da-bcd7-f2ad6b5d367c">
+        <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
             <th>Duration</th>
             <td>00:49:35 (HH:MM:SS)</td>
         </tr>
@@ -332,7 +332,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f57655940c0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e65f6140>
 
 
 
@@ -367,7 +367,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f57422a3f40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e65dea00>
 
 
 
@@ -475,7 +475,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f57655271c0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e4d804c0>
 
 
 
@@ -547,7 +547,7 @@ in the data.
     NOTE: plot_psd() is a legacy function. New code should use .compute_psd().plot().
     Effective window size : 262.144 (s)
 
-    Text(0.5, 0.98, 'After filtering')
+    Text(0.5, 0.993055, 'After filtering')
 
 
 
@@ -674,14 +674,14 @@ the HbO peak.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean), µM
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean), µM
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
          :class: sphx-glr-multi-img
 
@@ -729,14 +729,14 @@ that it does not show the expected morphology.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean), µM
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean), µM
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
          :class: sphx-glr-multi-img
 
@@ -1060,14 +1060,14 @@ driving the topographic plot above.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f57395c3940>
+    <matplotlib.legend.Legend object at 0x7f19a23b5330>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 25.381 seconds)
+   **Total running time of the script:** (0 minutes 22.986 seconds)
 
 **Estimated memory usage:**  26 MB
 

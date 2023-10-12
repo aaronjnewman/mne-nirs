@@ -97,9 +97,9 @@ appear as if a fNIRS response is observed.
     <div class="output_subarea output_html rendered_html output_result">
     <style>
     label { cursor: pointer; }
-    #section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c ~ table [for="section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c"]::before,
-    #section_86e82516-e9de-4f54-944c-74400ee2e89c ~ table [for="section_86e82516-e9de-4f54-944c-74400ee2e89c"]::before,
-    #section_1a7bed04-4419-4c24-b389-a144d4816ef8 ~ table [for="section_1a7bed04-4419-4c24-b389-a144d4816ef8"]::before {
+    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef ~ table [for="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef"]::before,
+    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491 ~ table [for="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491"]::before,
+    #section_14322252-a7fa-438f-8899-7c075f52628d ~ table [for="section_14322252-a7fa-438f-8899-7c075f52628d"]::before {
         display: inline-block;
         content: "►";
         font-size: 11px;
@@ -107,50 +107,50 @@ appear as if a fNIRS response is observed.
         text-align: left;
     }
 
-    #section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c:checked ~ table [for="section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c"]::before,
-    #section_86e82516-e9de-4f54-944c-74400ee2e89c:checked ~ table [for="section_86e82516-e9de-4f54-944c-74400ee2e89c"]::before,
-    #section_1a7bed04-4419-4c24-b389-a144d4816ef8:checked ~ table [for="section_1a7bed04-4419-4c24-b389-a144d4816ef8"]::before {
+    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef:checked ~ table [for="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef"]::before,
+    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491:checked ~ table [for="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491"]::before,
+    #section_14322252-a7fa-438f-8899-7c075f52628d:checked ~ table [for="section_14322252-a7fa-438f-8899-7c075f52628d"]::before {
         content: "▼";
     }
 
-    #section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c ~ table tr.section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c,
-    #section_86e82516-e9de-4f54-944c-74400ee2e89c ~ table tr.section_86e82516-e9de-4f54-944c-74400ee2e89c,
-    #section_1a7bed04-4419-4c24-b389-a144d4816ef8 ~ table tr.section_1a7bed04-4419-4c24-b389-a144d4816ef8 {
+    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef ~ table tr.section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef,
+    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491 ~ table tr.section_9197a0f7-3ff4-4695-9c0e-314d13ecc491,
+    #section_14322252-a7fa-438f-8899-7c075f52628d ~ table tr.section_14322252-a7fa-438f-8899-7c075f52628d {
         visibility: collapse;
     }
 
-    #section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c:checked ~ table tr.section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c,
-    #section_86e82516-e9de-4f54-944c-74400ee2e89c:checked ~ table tr.section_86e82516-e9de-4f54-944c-74400ee2e89c,
-    #section_1a7bed04-4419-4c24-b389-a144d4816ef8:checked ~ table tr.section_1a7bed04-4419-4c24-b389-a144d4816ef8 {
+    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef:checked ~ table tr.section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef,
+    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491:checked ~ table tr.section_9197a0f7-3ff4-4695-9c0e-314d13ecc491,
+    #section_14322252-a7fa-438f-8899-7c075f52628d:checked ~ table tr.section_14322252-a7fa-438f-8899-7c075f52628d {
         visibility: visible;
     }
     </style>
 
-    <input type="checkbox" id="section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_86e82516-e9de-4f54-944c-74400ee2e89c" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_1a7bed04-4419-4c24-b389-a144d4816ef8" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_14322252-a7fa-438f-8899-7c075f52628d" hidden aria-hidden="true"/>
 
     <table class="table table-hover table-striped table-sm table-responsive small">
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c>
+                <label for=section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef>
                     General
                 </label>
             </th>
         </tr>
-        <tr class="section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c">
+        <tr class="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef">
             <th>Measurement date</th>
         
             <td>November 02, 2019  13:16:16 GMT</td>
         
         </tr>
-        <tr class="section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c">
+        <tr class="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef">
             <th>Experimenter</th>
         
             <td>Unknown</td>
         
         </tr>
-        <tr class="section_56cc43f4-bf15-46d1-b1bc-6c4fad166f8c">
+        <tr class="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef">
             <th>Participant</th>
         
             
@@ -160,67 +160,67 @@ appear as if a fNIRS response is observed.
         </tr>
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_86e82516-e9de-4f54-944c-74400ee2e89c>
+                <label for=section_9197a0f7-3ff4-4695-9c0e-314d13ecc491>
                     Channels
                 </label>
             </th>
         </tr>
-        <tr class="section_86e82516-e9de-4f54-944c-74400ee2e89c">
+        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
             <th>Digitized points</th>
         
             <td>31 points</td>
         
         </tr>
-        <tr class="section_86e82516-e9de-4f54-944c-74400ee2e89c">
+        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
             <th>Good channels</th>
             <td>56 fNIRS (CW amplitude)</td>
         </tr>
-        <tr class="section_86e82516-e9de-4f54-944c-74400ee2e89c">
+        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
             <th>Bad channels</th>
             <td>None</td>
         </tr>
-        <tr class="section_86e82516-e9de-4f54-944c-74400ee2e89c">
+        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
             <th>EOG channels</th>
             <td>Not available</td>
         </tr>
-        <tr class="section_86e82516-e9de-4f54-944c-74400ee2e89c">
+        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
             <th>ECG channels</th>
             <td>Not available</td>
         </tr>
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_1a7bed04-4419-4c24-b389-a144d4816ef8>
+                <label for=section_14322252-a7fa-438f-8899-7c075f52628d>
                     Data
                 </label>
             </th>
         </tr>
     
-        <tr class="section_1a7bed04-4419-4c24-b389-a144d4816ef8">
+        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
             <th>Sampling frequency</th>
             <td>7.81 Hz</td>
         </tr>
     
     
-        <tr class="section_1a7bed04-4419-4c24-b389-a144d4816ef8">
+        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
     
     
-        <tr class="section_1a7bed04-4419-4c24-b389-a144d4816ef8">
+        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
             <th>Lowpass</th>
             <td>3.91 Hz</td>
         </tr>
     
     
     
-        <tr class="section_1a7bed04-4419-4c24-b389-a144d4816ef8">
+        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
             <th>Filenames</th>
             <td>Participant-1</td>
         </tr>
     
     
-        <tr class="section_1a7bed04-4419-4c24-b389-a144d4816ef8">
+        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
             <th>Duration</th>
             <td>00:49:35 (HH:MM:SS)</td>
         </tr>
@@ -267,7 +267,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f57388c4640>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19a1b6cc00>
 
 
 
@@ -302,7 +302,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f57675f3f40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e563ec80>
 
 
 
@@ -339,7 +339,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5766b0bf40>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e4cdd540>
 
 
 
@@ -416,7 +416,7 @@ Do not do this!!
  .. code-block:: none
 
 
-    Text(0.5, 0.98, 'After filtering')
+    Text(0.5, 0.993055, 'After filtering')
 
 
 
@@ -603,9 +603,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 10.608 seconds)
+   **Total running time of the script:** (0 minutes 10.552 seconds)
 
-**Estimated memory usage:**  9 MB
+**Estimated memory usage:**  10 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_99_bad.py:

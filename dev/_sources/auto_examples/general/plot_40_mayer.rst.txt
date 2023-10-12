@@ -137,9 +137,9 @@ We read in the data and convert to haemoglobin concentration.
     <div class="output_subarea output_html rendered_html output_result">
     <style>
     label { cursor: pointer; }
-    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b ~ table [for="section_aa3a626c-5b1f-4ca1-b459-1613d172973b"]::before,
-    #section_63185b59-1d6d-4365-a305-5a6fca705cb1 ~ table [for="section_63185b59-1d6d-4365-a305-5a6fca705cb1"]::before,
-    #section_c46d5f04-cf93-4210-bf14-b3263c17b766 ~ table [for="section_c46d5f04-cf93-4210-bf14-b3263c17b766"]::before {
+    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0 ~ table [for="section_b1bccc0f-bf1d-4745-9541-74e19617efb0"]::before,
+    #section_053d82fc-d97a-48e6-983d-991cc7b0438a ~ table [for="section_053d82fc-d97a-48e6-983d-991cc7b0438a"]::before,
+    #section_f26ef55e-4017-4129-855d-322d8cb9c590 ~ table [for="section_f26ef55e-4017-4129-855d-322d8cb9c590"]::before {
         display: inline-block;
         content: "►";
         font-size: 11px;
@@ -147,50 +147,50 @@ We read in the data and convert to haemoglobin concentration.
         text-align: left;
     }
 
-    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b:checked ~ table [for="section_aa3a626c-5b1f-4ca1-b459-1613d172973b"]::before,
-    #section_63185b59-1d6d-4365-a305-5a6fca705cb1:checked ~ table [for="section_63185b59-1d6d-4365-a305-5a6fca705cb1"]::before,
-    #section_c46d5f04-cf93-4210-bf14-b3263c17b766:checked ~ table [for="section_c46d5f04-cf93-4210-bf14-b3263c17b766"]::before {
+    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0:checked ~ table [for="section_b1bccc0f-bf1d-4745-9541-74e19617efb0"]::before,
+    #section_053d82fc-d97a-48e6-983d-991cc7b0438a:checked ~ table [for="section_053d82fc-d97a-48e6-983d-991cc7b0438a"]::before,
+    #section_f26ef55e-4017-4129-855d-322d8cb9c590:checked ~ table [for="section_f26ef55e-4017-4129-855d-322d8cb9c590"]::before {
         content: "▼";
     }
 
-    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b ~ table tr.section_aa3a626c-5b1f-4ca1-b459-1613d172973b,
-    #section_63185b59-1d6d-4365-a305-5a6fca705cb1 ~ table tr.section_63185b59-1d6d-4365-a305-5a6fca705cb1,
-    #section_c46d5f04-cf93-4210-bf14-b3263c17b766 ~ table tr.section_c46d5f04-cf93-4210-bf14-b3263c17b766 {
+    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0 ~ table tr.section_b1bccc0f-bf1d-4745-9541-74e19617efb0,
+    #section_053d82fc-d97a-48e6-983d-991cc7b0438a ~ table tr.section_053d82fc-d97a-48e6-983d-991cc7b0438a,
+    #section_f26ef55e-4017-4129-855d-322d8cb9c590 ~ table tr.section_f26ef55e-4017-4129-855d-322d8cb9c590 {
         visibility: collapse;
     }
 
-    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b:checked ~ table tr.section_aa3a626c-5b1f-4ca1-b459-1613d172973b,
-    #section_63185b59-1d6d-4365-a305-5a6fca705cb1:checked ~ table tr.section_63185b59-1d6d-4365-a305-5a6fca705cb1,
-    #section_c46d5f04-cf93-4210-bf14-b3263c17b766:checked ~ table tr.section_c46d5f04-cf93-4210-bf14-b3263c17b766 {
+    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0:checked ~ table tr.section_b1bccc0f-bf1d-4745-9541-74e19617efb0,
+    #section_053d82fc-d97a-48e6-983d-991cc7b0438a:checked ~ table tr.section_053d82fc-d97a-48e6-983d-991cc7b0438a,
+    #section_f26ef55e-4017-4129-855d-322d8cb9c590:checked ~ table tr.section_f26ef55e-4017-4129-855d-322d8cb9c590 {
         visibility: visible;
     }
     </style>
 
-    <input type="checkbox" id="section_aa3a626c-5b1f-4ca1-b459-1613d172973b" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_63185b59-1d6d-4365-a305-5a6fca705cb1" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_c46d5f04-cf93-4210-bf14-b3263c17b766" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_b1bccc0f-bf1d-4745-9541-74e19617efb0" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_053d82fc-d97a-48e6-983d-991cc7b0438a" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_f26ef55e-4017-4129-855d-322d8cb9c590" hidden aria-hidden="true"/>
 
     <table class="table table-hover table-striped table-sm table-responsive small">
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_aa3a626c-5b1f-4ca1-b459-1613d172973b>
+                <label for=section_b1bccc0f-bf1d-4745-9541-74e19617efb0>
                     General
                 </label>
             </th>
         </tr>
-        <tr class="section_aa3a626c-5b1f-4ca1-b459-1613d172973b">
+        <tr class="section_b1bccc0f-bf1d-4745-9541-74e19617efb0">
             <th>Measurement date</th>
         
             <td>November 02, 2019  13:16:16 GMT</td>
         
         </tr>
-        <tr class="section_aa3a626c-5b1f-4ca1-b459-1613d172973b">
+        <tr class="section_b1bccc0f-bf1d-4745-9541-74e19617efb0">
             <th>Experimenter</th>
         
             <td>Unknown</td>
         
         </tr>
-        <tr class="section_aa3a626c-5b1f-4ca1-b459-1613d172973b">
+        <tr class="section_b1bccc0f-bf1d-4745-9541-74e19617efb0">
             <th>Participant</th>
         
             
@@ -200,67 +200,67 @@ We read in the data and convert to haemoglobin concentration.
         </tr>
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_63185b59-1d6d-4365-a305-5a6fca705cb1>
+                <label for=section_053d82fc-d97a-48e6-983d-991cc7b0438a>
                     Channels
                 </label>
             </th>
         </tr>
-        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
+        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
             <th>Digitized points</th>
         
             <td>31 points</td>
         
         </tr>
-        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
+        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
             <th>Good channels</th>
             <td>20 Oxyhemoglobin</td>
         </tr>
-        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
+        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
             <th>Bad channels</th>
             <td>None</td>
         </tr>
-        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
+        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
             <th>EOG channels</th>
             <td>Not available</td>
         </tr>
-        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
+        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
             <th>ECG channels</th>
             <td>Not available</td>
         </tr>
         <tr>
             <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_c46d5f04-cf93-4210-bf14-b3263c17b766>
+                <label for=section_f26ef55e-4017-4129-855d-322d8cb9c590>
                     Data
                 </label>
             </th>
         </tr>
     
-        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
+        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
             <th>Sampling frequency</th>
             <td>2.00 Hz</td>
         </tr>
     
     
-        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
+        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
     
     
-        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
+        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
             <th>Lowpass</th>
             <td>1.00 Hz</td>
         </tr>
     
     
     
-        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
+        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
             <th>Filenames</th>
             <td>Participant-1</td>
         </tr>
     
     
-        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
+        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
             <th>Duration</th>
             <td>00:49:34 (HH:MM:SS)</td>
         </tr>
@@ -340,7 +340,7 @@ it matches well to the data.
  .. code-block:: none
 
 
-    ([<matplotlib.axis.XTick object at 0x7f5635f065c0>, <matplotlib.axis.XTick object at 0x7f5635f05c30>, <matplotlib.axis.XTick object at 0x7f5635f06110>, <matplotlib.axis.XTick object at 0x7f5694787070>, <matplotlib.axis.XTick object at 0x7f56947842e0>, <matplotlib.axis.XTick object at 0x7f57387ebc40>, <matplotlib.axis.XTick object at 0x7f57387ea860>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
+    ([<matplotlib.axis.XTick object at 0x7f19e4717760>, <matplotlib.axis.XTick object at 0x7f19e47148e0>, <matplotlib.axis.XTick object at 0x7f19e4717ee0>, <matplotlib.axis.XTick object at 0x7f19e646e1d0>, <matplotlib.axis.XTick object at 0x7f19a26a7d90>, <matplotlib.axis.XTick object at 0x7f19a26a5510>, <matplotlib.axis.XTick object at 0x7f19a26a5420>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
 
 
 
@@ -450,7 +450,7 @@ Bibliography
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.273 seconds)
+   **Total running time of the script:** (0 minutes 4.258 seconds)
 
 **Estimated memory usage:**  9 MB
 
