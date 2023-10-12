@@ -61,7 +61,7 @@ information about triggers, condition names, etc.
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-64
 
-.. code-block:: default
+.. code-block:: Python
 
     # Authors: Robert Luke <mail@robertluke.net>
     #
@@ -105,7 +105,7 @@ We first define the root directory of our dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 74-79
 
-.. code-block:: default
+.. code-block:: Python
 
 
     root = fnirs_motor_group.data_path()
@@ -132,7 +132,7 @@ This helps to handle all the path wrangling.
 
 .. GENERATED FROM PYTHON SOURCE LINES 82-87
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dataset = BIDSPath(root=root, task="tapping")
@@ -158,7 +158,7 @@ For example we can automatically query the subjects, tasks, and sessions.
 
 .. GENERATED FROM PYTHON SOURCE LINES 89-94
 
-.. code-block:: default
+.. code-block:: Python
 
 
     subjects = get_entity_vals(root, 'subject')
@@ -184,7 +184,7 @@ But for this example we will only process the first two subjects
 
 .. GENERATED FROM PYTHON SOURCE LINES 96-99
 
-.. code-block:: default
+.. code-block:: Python
 
     subjects = subjects[:2]
 
@@ -208,7 +208,7 @@ so this example will skim over the individual level details.
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-122
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -242,7 +242,7 @@ on each. We will then save the GLM results to disk as ``.h5`` files.
 
 .. GENERATED FROM PYTHON SOURCE LINES 128-155
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -287,7 +287,7 @@ Next we loop through the five measurements and reload all the results.
 
 .. GENERATED FROM PYTHON SOURCE LINES 160-182
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Create a dataframe to store results
@@ -328,7 +328,7 @@ subjects.
 
 .. GENERATED FROM PYTHON SOURCE LINES 188-190
 
-.. code-block:: default
+.. code-block:: Python
 
 
     df
@@ -561,9 +561,9 @@ subjects.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 7.140 seconds)
+   **Total running time of the script:** (0 minutes 8.661 seconds)
 
-**Estimated memory usage:**  15 MB
+**Estimated memory usage:**  16 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_80_save_read_glm.py:
@@ -572,7 +572,6 @@ subjects.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -580,15 +579,13 @@ subjects.
         :alt: Launch binder
         :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_80_save_read_glm.ipynb <plot_80_save_read_glm.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_80_save_read_glm.py <plot_80_save_read_glm.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_80_save_read_glm.ipynb <plot_80_save_read_glm.ipynb>`
 
 
 .. only:: html

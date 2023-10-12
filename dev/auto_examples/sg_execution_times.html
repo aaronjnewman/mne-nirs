@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>mne_nirs.channels.pick_detectors &#8212; MNE-NIRS 0.6.dev0 documentation</title>
+    <title>Computation times &#8212; MNE-NIRS 0.6.dev0 documentation</title>
   
   
   
@@ -54,7 +54,7 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-188272121-1');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/mne_nirs.channels.pick_detectors';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/sg_execution_times';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mne.tools/mne-nirs/dev/_static/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
@@ -62,8 +62,6 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mne_nirs.channels.get_short_channels" href="mne_nirs.channels.get_short_channels.html" />
-    <link rel="prev" title="mne_nirs.channels.pick_sources" href="mne_nirs.channels.pick_sources.html" />
     <link rel="canonical" href="https://mne.tools/mne-nirs/stable/index.html" />
     
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -155,13 +153,13 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../auto_examples/index.html">
+                      <a class="nav-link nav-internal" href="index.html">
                         Examples
                       </a>
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../api.html">
                         API
                       </a>
@@ -253,10 +251,6 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </nav>
@@ -264,7 +258,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -283,13 +277,13 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../auto_examples/index.html">
+                      <a class="nav-link nav-internal" href="index.html">
                         Examples
                       </a>
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../api.html">
                         API
                       </a>
@@ -357,94 +351,6 @@ document.write(`
     
   </div>
   
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne.io.read_raw_hitachi.html">mne.io.read_raw_hitachi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.io.read_raw_nirx.html">mne.io.read_raw_nirx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.io.read_raw_snirf.html">mne.io.read_raw_snirf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.io.read_raw_boxy.html">mne.io.read_raw_boxy</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.io.write_raw_snirf.html">mne_nirs.io.write_raw_snirf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.io.read_snirf_aux_data.html">mne_nirs.io.read_snirf_aux_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.io.fold_landmark_specificity.html">mne_nirs.io.fold_landmark_specificity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.io.fold_channel_specificity.html">mne_nirs.io.fold_channel_specificity</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne.preprocessing.nirs.optical_density.html">mne.preprocessing.nirs.optical_density</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.preprocessing.nirs.beer_lambert_law.html">mne.preprocessing.nirs.beer_lambert_law</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.preprocessing.nirs.source_detector_distances.html">mne.preprocessing.nirs.source_detector_distances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.preprocessing.nirs.short_channels.html">mne.preprocessing.nirs.short_channels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.preprocessing.nirs.scalp_coupling_index.html">mne.preprocessing.nirs.scalp_coupling_index</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne.preprocessing.nirs.temporal_derivative_distribution_repair.html">mne.preprocessing.nirs.temporal_derivative_distribution_repair</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.signal_enhancement.enhance_negative_correlation.html">mne_nirs.signal_enhancement.enhance_negative_correlation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.signal_enhancement.short_channel_regression.html">mne_nirs.signal_enhancement.short_channel_regression</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.preprocessing.peak_power.html">mne_nirs.preprocessing.peak_power</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.preprocessing.scalp_coupling_index_windowed.html">mne_nirs.preprocessing.scalp_coupling_index_windowed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.preprocessing.quantify_mayer_fooof.html">mne_nirs.preprocessing.quantify_mayer_fooof</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.experimental_design.make_first_level_design_matrix.html">mne_nirs.experimental_design.make_first_level_design_matrix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.experimental_design.create_boxcar.html">mne_nirs.experimental_design.create_boxcar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.experimental_design.longest_inter_annotation_interval.html">mne_nirs.experimental_design.longest_inter_annotation_interval</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.experimental_design.drift_high_pass.html">mne_nirs.experimental_design.drift_high_pass</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.statistics.run_glm.html">mne_nirs.statistics.run_glm</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.statistics.RegressionResults.html">mne_nirs.statistics.RegressionResults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.statistics.ContrastResults.html">mne_nirs.statistics.ContrastResults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.statistics.read_glm.html">mne_nirs.statistics.read_glm</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.statistics.statsmodels_to_results.html">mne_nirs.statistics.statsmodels_to_results</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.visualisation.plot_3d_montage.html">mne_nirs.visualisation.plot_3d_montage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.visualisation.plot_nirs_source_detector.html">mne_nirs.visualisation.plot_nirs_source_detector</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.visualisation.plot_glm_group_topo.html">mne_nirs.visualisation.plot_glm_group_topo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.visualisation.plot_glm_surface_projection.html">mne_nirs.visualisation.plot_glm_surface_projection</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.visualisation.plot_timechannel_quality_metric.html">mne_nirs.visualisation.plot_timechannel_quality_metric</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.simulation.simulate_nirs_raw.html">mne_nirs.simulation.simulate_nirs_raw</a></li>
-</ul>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.list_sources.html">mne_nirs.channels.list_sources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.list_detectors.html">mne_nirs.channels.list_detectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.drop_sources.html">mne_nirs.channels.drop_sources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.drop_detectors.html">mne_nirs.channels.drop_detectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.pick_sources.html">mne_nirs.channels.pick_sources</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">mne_nirs.channels.pick_detectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.get_short_channels.html">mne_nirs.channels.get_short_channels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.get_long_channels.html">mne_nirs.channels.get_long_channels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.channels.picks_pair_to_idx.html">mne_nirs.channels.picks_pair_to_idx</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.datasets.fnirs_motor_group.data_path.html">mne_nirs.datasets.fnirs_motor_group.data_path</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.datasets.block_speech_noise.data_path.html">mne_nirs.datasets.block_speech_noise.data_path</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="mne_nirs.datasets.audio_or_visual_speech.data_path.html">mne_nirs.datasets.audio_or_visual_speech.data_path</a></li>
-</ul>
-</div>
-</nav></div>
-    </div>
-  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -477,10 +383,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">mne_nirs.channels.pick_detectors</li>
+    <li class="breadcrumb-item active" aria-current="page">Computation times</li>
   </ul>
 </nav>
 </div>
@@ -497,31 +400,42 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="mne-nirs-channels-pick-detectors">
-<h1>mne_nirs.channels.pick_detectors<a class="headerlink" href="#mne-nirs-channels-pick-detectors" title="Permalink to this heading">#</a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="mne_nirs.channels.pick_detectors">
-<span class="sig-prename descclassname"><span class="pre">mne_nirs.channels.</span></span><span class="sig-name descname"><span class="pre">pick_detectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detectors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/channels/_channels.html#pick_detectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.channels.pick_detectors" title="Permalink to this definition">#</a></dt>
-<dd><p>Pick detectors.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>raw</strong><span class="classifier">instance of Raw</span></dt><dd><p>Raw instance containing fNIRS data.</p>
-</dd>
-<dt><strong>detectors</strong><span class="classifier">iterable or str</span></dt><dd><p>Iterable (e.g. list) of detector(s) or detector to keep.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>inst</strong><span class="classifier">instance of Raw</span></dt><dd><p>The modified instance.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<span class="target" id="sphx-glr-backreferences-mne-nirs-channels-pick-detectors"></span></section>
+  <section id="computation-times">
+<span id="sphx-glr-auto-examples-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Permalink to this heading">#</a></h1>
+<p><strong>00:00.000</strong> total execution time for 0 files <strong>from auto_examples</strong>:</p>
+<div class="docutils container">
+<style scoped>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+</style>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" class="init">
+$(document).ready( function () {
+    $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+} );
+</script><table class="table table-striped sg-datatable">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>Time</p></th>
+<th class="head"><p>Mem (MB)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 
 
                 </article>
@@ -531,44 +445,12 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="mne_nirs.channels.pick_sources.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">mne_nirs.channels.pick_sources</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="mne_nirs.channels.get_short_channels.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">mne_nirs.channels.get_short_channels</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mne_nirs.channels.pick_detectors"><code class="docutils literal notranslate"><span class="pre">pick_detectors()</span></code></a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

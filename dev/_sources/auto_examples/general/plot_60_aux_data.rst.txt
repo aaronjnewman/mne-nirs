@@ -41,7 +41,7 @@ this can be incorporated in to your analysis.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-45
 
-.. code-block:: default
+.. code-block:: Python
 
     # sphinx_gallery_thumbnail_number = 2
 
@@ -81,7 +81,7 @@ the previous GLM example that contains auxiliary data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-57
 
-.. code-block:: default
+.. code-block:: Python
 
 
     fnirs_snirf_file = data_path()
@@ -104,74 +104,134 @@ the previous GLM example that contains auxiliary data.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
+    <style>
+    label { cursor: pointer; }
+    #section_184dba10-81a5-48ca-8f9e-811b5583945d ~ table [for="section_184dba10-81a5-48ca-8f9e-811b5583945d"]::before,
+    #section_14ca0878-80d3-428e-95f2-75387deb3799 ~ table [for="section_14ca0878-80d3-428e-95f2-75387deb3799"]::before,
+    #section_c8164cb9-8ddb-4007-8986-bd1cd9d99630 ~ table [for="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630"]::before {
+        display: inline-block;
+        content: "►";
+        font-size: 11px;
+        width: 15px;
+        text-align: left;
+    }
+
+    #section_184dba10-81a5-48ca-8f9e-811b5583945d:checked ~ table [for="section_184dba10-81a5-48ca-8f9e-811b5583945d"]::before,
+    #section_14ca0878-80d3-428e-95f2-75387deb3799:checked ~ table [for="section_14ca0878-80d3-428e-95f2-75387deb3799"]::before,
+    #section_c8164cb9-8ddb-4007-8986-bd1cd9d99630:checked ~ table [for="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630"]::before {
+        content: "▼";
+    }
+
+    #section_184dba10-81a5-48ca-8f9e-811b5583945d ~ table tr.section_184dba10-81a5-48ca-8f9e-811b5583945d,
+    #section_14ca0878-80d3-428e-95f2-75387deb3799 ~ table tr.section_14ca0878-80d3-428e-95f2-75387deb3799,
+    #section_c8164cb9-8ddb-4007-8986-bd1cd9d99630 ~ table tr.section_c8164cb9-8ddb-4007-8986-bd1cd9d99630 {
+        visibility: collapse;
+    }
+
+    #section_184dba10-81a5-48ca-8f9e-811b5583945d:checked ~ table tr.section_184dba10-81a5-48ca-8f9e-811b5583945d,
+    #section_14ca0878-80d3-428e-95f2-75387deb3799:checked ~ table tr.section_14ca0878-80d3-428e-95f2-75387deb3799,
+    #section_c8164cb9-8ddb-4007-8986-bd1cd9d99630:checked ~ table tr.section_c8164cb9-8ddb-4007-8986-bd1cd9d99630 {
+        visibility: visible;
+    }
+    </style>
+
+    <input type="checkbox" id="section_184dba10-81a5-48ca-8f9e-811b5583945d" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_14ca0878-80d3-428e-95f2-75387deb3799" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630" hidden aria-hidden="true"/>
+
     <table class="table table-hover table-striped table-sm table-responsive small">
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_184dba10-81a5-48ca-8f9e-811b5583945d>
+                    General
+                </label>
+            </th>
+        </tr>
+        <tr class="section_184dba10-81a5-48ca-8f9e-811b5583945d">
             <th>Measurement date</th>
         
             <td>August 05, 2022  13:10:58 GMT</td>
         
         </tr>
-        <tr>
+        <tr class="section_184dba10-81a5-48ca-8f9e-811b5583945d">
             <th>Experimenter</th>
         
             <td>Unknown</td>
         
         </tr>
+        <tr class="section_184dba10-81a5-48ca-8f9e-811b5583945d">
             <th>Participant</th>
         
             
         
         </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_14ca0878-80d3-428e-95f2-75387deb3799>
+                    Channels
+                </label>
+            </th>
+        </tr>
+        <tr class="section_14ca0878-80d3-428e-95f2-75387deb3799">
             <th>Digitized points</th>
         
             <td>300 points</td>
         
         </tr>
-        <tr>
+        <tr class="section_14ca0878-80d3-428e-95f2-75387deb3799">
             <th>Good channels</th>
             <td>56 fNIRS (CW amplitude)</td>
         </tr>
-        <tr>
+        <tr class="section_14ca0878-80d3-428e-95f2-75387deb3799">
             <th>Bad channels</th>
             <td>None</td>
         </tr>
-        <tr>
+        <tr class="section_14ca0878-80d3-428e-95f2-75387deb3799">
             <th>EOG channels</th>
             <td>Not available</td>
         </tr>
-        <tr>
+        <tr class="section_14ca0878-80d3-428e-95f2-75387deb3799">
             <th>ECG channels</th>
             <td>Not available</td>
-    
+        </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_c8164cb9-8ddb-4007-8986-bd1cd9d99630>
+                    Data
+                </label>
+            </th>
+        </tr>
+    
+        <tr class="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630">
             <th>Sampling frequency</th>
             <td>0.70 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630">
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630">
             <th>Lowpass</th>
             <td>0.35 Hz</td>
         </tr>
     
     
     
-        <tr>
+        <tr class="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630">
             <th>Filenames</th>
             <td>2022-08-05_002.snirf</td>
         </tr>
     
-        <tr>
+    
+        <tr class="section_c8164cb9-8ddb-4007-8986-bd1cd9d99630">
             <th>Duration</th>
             <td>00:33:53 (HH:MM:SS)</td>
         </tr>
+    
     </table>
     </div>
     <br />
@@ -188,7 +248,7 @@ experimental conditions.
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-72
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw_intensity.annotations.rename({'1': 'Control',
@@ -219,7 +279,7 @@ Next we convert the raw data to haemoglobin concentration.
 
 .. GENERATED FROM PYTHON SOURCE LINES 76-81
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw_od = mne.preprocessing.nirs.optical_density(raw_intensity)
@@ -241,7 +301,7 @@ long channels which have both neural and systemic contributions.
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-91
 
-.. code-block:: default
+.. code-block:: Python
 
 
     short_chs = get_short_channels(raw_haemo)
@@ -272,7 +332,7 @@ contribute to the measured signal.
 
 .. GENERATED FROM PYTHON SOURCE LINES 104-112
 
-.. code-block:: default
+.. code-block:: Python
 
 
     design_matrix = make_first_level_design_matrix(raw_haemo,
@@ -299,7 +359,7 @@ uncontaminated by systemic effects.
 
 .. GENERATED FROM PYTHON SOURCE LINES 119-127
 
-.. code-block:: default
+.. code-block:: Python
 
 
     design_matrix["ShortHbO"] = np.mean(short_chs.copy().pick(
@@ -324,7 +384,7 @@ not yet contain any auxiliary data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 132-138
 
-.. code-block:: default
+.. code-block:: Python
 
 
     fig, ax1 = plt.subplots(figsize=(10, 6), nrows=1, ncols=1)
@@ -359,7 +419,7 @@ fNIRS data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 149-153
 
-.. code-block:: default
+.. code-block:: Python
 
 
     aux_df = read_snirf_aux_data(fnirs_snirf_file, raw_haemo)
@@ -379,7 +439,7 @@ individual fields.
 
 .. GENERATED FROM PYTHON SOURCE LINES 157-163
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plt.plot(raw_haemo.times, aux_df['HR'])
@@ -415,7 +475,7 @@ so that these can be included as regressors in a GLM analysis.
 
 .. GENERATED FROM PYTHON SOURCE LINES 169-174
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -436,7 +496,7 @@ the data is included.
 
 .. GENERATED FROM PYTHON SOURCE LINES 178-182
 
-.. code-block:: default
+.. code-block:: Python
 
     fig, ax1 = plt.subplots(figsize=(10, 6), nrows=1, ncols=1)
     fig = plot_design_matrix(design_matrix, ax=ax1)
@@ -470,7 +530,7 @@ but this is beyond the scope of this tutorial.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.550 seconds)
+   **Total running time of the script:** (0 minutes 9.354 seconds)
 
 **Estimated memory usage:**  9 MB
 
@@ -481,7 +541,6 @@ but this is beyond the scope of this tutorial.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -489,15 +548,13 @@ but this is beyond the scope of this tutorial.
         :alt: Launch binder
         :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_60_aux_data.ipynb <plot_60_aux_data.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_60_aux_data.py <plot_60_aux_data.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_60_aux_data.ipynb <plot_60_aux_data.ipynb>`
 
 
 .. only:: html

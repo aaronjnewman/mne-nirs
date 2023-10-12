@@ -388,17 +388,17 @@ document.write(`
 </section>
 <section id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
-<p>MNE-NIRS and MNE-Python provide a wide variety of tools to use when processing NIRS data including:</p>
+<p>MNE-NIRS and MNE-Python provide a wide variety of tools to use when processing fNIRS data including:</p>
 <ul class="simple">
-<li><p>Loading data from a wide variety of devices, including SNIRF files.</p></li>
-<li><p>Apply 3D sensor locations from common digitisation systems such as Polhemus.</p></li>
-<li><p>Standard preprocessing including optical density calculation and Beer-Lambert Law conversion, filtering, etc.</p></li>
-<li><p>Data quality metrics including scalp coupling index and peak power.</p></li>
-<li><p>GLM analysis with a wide variety of cusomisation including including FIR or canonical HRF analysis, higher order autoregressive noise models, short channel regression, region of interest analysis, etc.</p></li>
+<li><p>Loading data from a <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_01_data_io.html">wide variety of devices</a>, including <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_19_snirf.html">SNIRF files</a>.</p></li>
+<li><p><a class="reference external" href="https://mne.tools/stable/overview/implementation.html#supported-formats-for-digitized-3d-locations">Apply 3D sensor locations</a> from common digitisation systems such as Polhemus.</p></li>
+<li><p>Standard preprocessing including <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_15_waveform.html#id2">optical density calculation and Beer-Lambert Law conversion</a>, filtering, etc.</p></li>
+<li><p>Data quality metrics including <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_15_waveform.html#id3">scalp coupling index</a> and <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_22_quality.html#peak-power">peak power</a>.</p></li>
+<li><p>GLM analysis with a wide variety of customisation including <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_13_fir_glm.html">including FIR</a> or <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_11_hrf_measured.html">canonical HRF</a> analysis, higher order <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_10_hrf_simulation.html#using-autoregressive-models-in-the-glm-to-account-for-noise-structure">autoregressive noise models</a>, <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_11_hrf_measured.html">short channel regression, region of interest analysis</a>, etc.</p></li>
 <li><p>Visualisation tools for all stages of processing from raw data to processed waveforms, GLM result visualisation, including both sensor and cortical surface projections.</p></li>
 <li><p>Data cleaning functions including popular short channel techniques and negative correlation enhancement.</p></li>
-<li><p>Group level analysis using (robust) linear mixed effects models and waveform averaging.</p></li>
-<li><p>And much more! Check out the documentation examples and the API for more details.</p></li>
+<li><p>Group level analysis using <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_12_group_glm.html">(robust) linear mixed effects models</a> and <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_16_waveform_group.html">waveform averaging</a>.</p></li>
+<li><p>And much more! Check out the documentation <a class="reference external" href="https://mne.tools/mne-nirs/stable/auto_examples/index.html">examples</a> and the API <a class="reference external" href="https://mne.tools/mne-nirs/stable/api.html">for more details</a>.</p></li>
 </ul>
 </section>
 <section id="installation">
@@ -406,38 +406,8 @@ document.write(`
 <p>Before installing MNE-NIRS you must install Python and MNE-Python.
 To install Python and MNE-Python follow <a class="reference external" href="https://mne.tools/stable/install/index.html">these instructions</a>.
 We recommend using the standalone installer option unless you are a python expert.</p>
-<section id="install-via-standalone-installer">
-<h3>Install via Standalone Installer<a class="headerlink" href="#install-via-standalone-installer" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Download the installer from <a class="reference external" href="https://mne.tools/stable/install/index.html">the MNE-Python website</a>.</p></li>
-<li><p>Run the installer and wait for it to complete.</p></li>
-<li><p>Once the installer is complete you will have an MNE-Python directory in your Applications folder.</p></li>
-<li><p>Double click on the <cite>Prompt (MNE)</cite></p></li>
-<li><p>Once the prompt has loaded, run <cite>jupyter lab</cite> and it will open Jupyter in your web browser.</p></li>
-<li><p>Now try one of the MNE-NIRS example notebooks by clicking <cite>Download Jupyter notebook</cite> at the bottom of any example.</p></li>
-<li><p>Use the file browser in the jupyter lab web interface (top left of page) to browse to where you downloaded the example to. Double click to open it.</p></li>
-</ol>
-<p>If you need the latest version of MNE-Python or MNE-NIRS you can enter the following at the prompt:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/mne-tools/mne-python.git@main
-<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/mne-tools/mne-nirs.git@main
-</pre></div>
-</div>
-</section>
-<section id="install-via-conda-or-pip">
-<h3>Install via Conda or Pip<a class="headerlink" href="#install-via-conda-or-pip" title="Permalink to this heading">#</a></h3>
-<p>You must use MNE-Python v1.0 or above.
-Follow the installation instructions on the
-<a class="reference external" href="https://mne.tools/dev/install/manual_install.html">MNE-Python documentation site</a>.</p>
-<p>Then run the following code to install MNE-NIRS:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>mne-nirs
-</pre></div>
-</div>
-<p>Or if you wish to run the latest development version of MNE-NIRS:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/mne-tools/mne-nirs.git@main
-</pre></div>
-</div>
 <section id="upgrading-your-software-version">
-<h4>Upgrading your software version<a class="headerlink" href="#upgrading-your-software-version" title="Permalink to this heading">#</a></h4>
+<h3>Upgrading your software version<a class="headerlink" href="#upgrading-your-software-version" title="Permalink to this heading">#</a></h3>
 <p>See the
 <a class="reference external" href="https://mne.tools/dev/install/updating.html">MNE-Python instructions for how to update</a>
 the MNE-Python version.
@@ -445,7 +415,6 @@ Similarly, you can update MNE-NIRS to the latest development version by running<
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/mne-tools/mne-nirs.git@main
 </pre></div>
 </div>
-</section>
 </section>
 </section>
 <section id="acknowledgements">
@@ -495,11 +464,7 @@ Similarly, you can update MNE-NIRS to the latest development version by running<
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-via-standalone-installer">Install via Standalone Installer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-via-conda-or-pip">Install via Conda or Pip</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-your-software-version">Upgrading your software version</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrading-your-software-version">Upgrading your software version</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
@@ -532,7 +497,7 @@ Similarly, you can update MNE-NIRS to the latest development version by running<
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-10-12T17:07:01.640125+00:00&#34; class=&#34;localized&#34;&gt;2023-10-12 17:07 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

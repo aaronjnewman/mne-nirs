@@ -492,7 +492,7 @@ motion corrected using TDDR, and converted to haemoglobin concentration.</p>
 <section id="mne-equivalent-of-homer-script">
 <h1>MNE equivalent of Homer script<a class="headerlink" href="#mne-equivalent-of-homer-script" title="Permalink to this heading">#</a></h1>
 <p>First the necessary libraries and functions are imported.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD (3-clause)</span>
 
@@ -508,7 +508,7 @@ motion corrected using TDDR, and converted to haemoglobin concentration.</p>
 <h2>Convert to optical density and motion correct<a class="headerlink" href="#convert-to-optical-density-and-motion-correct" title="Permalink to this heading">#</a></h2>
 <p>First we load the data which simply involves pointing the load function
 to the correct directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First we obtain the path to the data</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># First we obtain the path to the data</span>
 <a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_data_folder</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.datasets.fnirs_motor.data_path.html#mne.datasets.fnirs_motor.data_path" title="mne.datasets.fnirs_motor.data_path" class="sphx-glr-backref-module-mne-datasets-fnirs_motor sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fnirs_motor</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_raw_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_data_folder</span></a><span class="p">,</span> <span class="s1">&#39;Participant-1&#39;</span><span class="p">)</span>
 
@@ -521,7 +521,7 @@ to the correct directory.</p>
 <h2>Convert signal to optical density and apply TDDR<a class="headerlink" href="#convert-signal-to-optical-density-and-apply-tddr" title="Permalink to this heading">#</a></h2>
 <p>As with Homer we can convert the intensity data to optical density and
 apply motion correction using the TDDR method.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raw_od</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">optical_density</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_od</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">optical_density</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">)</span>
 <span class="n">corrected_tddr</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.temporal_derivative_distribution_repair.html#mne.preprocessing.nirs.temporal_derivative_distribution_repair" title="mne.preprocessing.nirs.temporal_derivative_distribution_repair" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">temporal_derivative_distribution_repair</span></a><span class="p">(</span><span class="n">raw_od</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -533,7 +533,7 @@ MNE uses a different default value for the partial pathlength factor (ppf),
 Homer uses a default value of ppf=6, whereas MNE uses ppf=0.1,
 To exactly match the results from Homer we can manually set the ppf value to
 6 in MNE.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">raw_h</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">beer_lambert_law</span></a><span class="p">(</span><span class="n">corrected_tddr</span><span class="p">,</span> <span class="n">ppf</span><span class="o">=</span><span class="mf">6.</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_h</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">beer_lambert_law</span></a><span class="p">(</span><span class="n">corrected_tddr</span><span class="p">,</span> <span class="n">ppf</span><span class="o">=</span><span class="mf">6.</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -545,17 +545,17 @@ If there is useful processing in the Homer
 that is not available in MNE
 please let us know by creating an issue at
 <a class="github reference external" href="https://github.com/mne-tools/mne-nirs/issues">mne-tools/mne-nirs#issues</a></p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.743 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.964 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-migration-plot-01-homer-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/migration/plot_01_homer.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo1.svg" width="150px" /></a>
 </div>
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/866042570f5904f93bc56723c37f3d28/plot_01_homer.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_01_homer.py</span></code></a></p>
-</div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/73981379dbdd2f0ebe5e101b77bb7e92/plot_01_homer.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_01_homer.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/866042570f5904f93bc56723c37f3d28/plot_01_homer.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_01_homer.py</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -642,7 +642,7 @@ please let us know by creating an issue at
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-10-12T17:07:01.640125+00:00&#34; class=&#34;localized&#34;&gt;2023-10-12 17:07 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

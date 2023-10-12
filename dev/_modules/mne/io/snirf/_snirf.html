@@ -407,20 +407,21 @@ document.write(`
 <span class="c1">#</span>
 <span class="c1"># License: BSD-3-Clause</span>
 
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">re</span>
 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..._fiff._digitization</span> <span class="kn">import</span> <span class="n">_make_dig_points</span>
+<span class="kn">from</span> <span class="nn">..._fiff.constants</span> <span class="kn">import</span> <span class="n">FIFF</span>
+<span class="kn">from</span> <span class="nn">..._fiff.meas_info</span> <span class="kn">import</span> <span class="n">_format_dig_points</span><span class="p">,</span> <span class="n">create_info</span>
+<span class="kn">from</span> <span class="nn">..._fiff.utils</span> <span class="kn">import</span> <span class="n">_mult_cal_one</span>
+<span class="kn">from</span> <span class="nn">..._freesurfer</span> <span class="kn">import</span> <span class="n">get_mni_fiducials</span>
+<span class="kn">from</span> <span class="nn">...annotations</span> <span class="kn">import</span> <span class="n">Annotations</span>
+<span class="kn">from</span> <span class="nn">...transforms</span> <span class="kn">import</span> <span class="n">_frame_to_str</span><span class="p">,</span> <span class="n">apply_trans</span>
+<span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">_check_fname</span><span class="p">,</span> <span class="n">_import_h5py</span><span class="p">,</span> <span class="n">fill_doc</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">warn</span>
 <span class="kn">from</span> <span class="nn">..base</span> <span class="kn">import</span> <span class="n">BaseRaw</span>
 <span class="kn">from</span> <span class="nn">..nirx.nirx</span> <span class="kn">import</span> <span class="n">_convert_fnirs_to_head</span>
-<span class="kn">from</span> <span class="nn">..._fiff.meas_info</span> <span class="kn">import</span> <span class="n">create_info</span><span class="p">,</span> <span class="n">_format_dig_points</span>
-<span class="kn">from</span> <span class="nn">..._fiff.utils</span> <span class="kn">import</span> <span class="n">_mult_cal_one</span>
-<span class="kn">from</span> <span class="nn">...annotations</span> <span class="kn">import</span> <span class="n">Annotations</span>
-<span class="kn">from</span> <span class="nn">...utils</span> <span class="kn">import</span> <span class="n">logger</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">fill_doc</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">_check_fname</span><span class="p">,</span> <span class="n">_import_h5py</span>
-<span class="kn">from</span> <span class="nn">..._fiff.constants</span> <span class="kn">import</span> <span class="n">FIFF</span>
-<span class="kn">from</span> <span class="nn">..._fiff._digitization</span> <span class="kn">import</span> <span class="n">_make_dig_points</span>
-<span class="kn">from</span> <span class="nn">...transforms</span> <span class="kn">import</span> <span class="n">_frame_to_str</span><span class="p">,</span> <span class="n">apply_trans</span>
-<span class="kn">from</span> <span class="nn">..._freesurfer</span> <span class="kn">import</span> <span class="n">get_mni_fiducials</span>
 
 
 <div class="viewcode-block" id="read_raw_snirf"><a class="viewcode-back" href="../../../../generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf">[docs]</a><span class="nd">@fill_doc</span>
@@ -931,6 +932,11 @@ document.write(`
 
 <span class="k">def</span> <span class="nf">_extract_sampling_rate</span><span class="p">(</span><span class="n">dat</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the sample rate from the time field.&quot;&quot;&quot;</span>
+    <span class="c1"># This is a workaround to provide support for Artinis data.</span>
+    <span class="c1"># It allows for a 1% variation in the sampling times relative</span>
+    <span class="c1"># to the average sampling rate of the file.</span>
+    <span class="n">MAXIMUM_ALLOWED_SAMPLING_JITTER_PERCENTAGE</span> <span class="o">=</span> <span class="mf">1.0</span>
+
     <span class="n">time_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nirs/data1/time&quot;</span><span class="p">))</span>
     <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">time_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
@@ -938,16 +944,30 @@ document.write(`
         <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">time_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">time_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># specified as time points</span>
-        <span class="n">fs_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">time_data</span><span class="p">),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">fs_diff</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">periods</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">time_data</span><span class="p">)</span>
+        <span class="n">uniq_periods</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">periods</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">uniq_periods</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="c1"># Uniformly sampled data</span>
-            <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">fs_diff</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">uniq_periods</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">warn</span><span class="p">(</span>
-                <span class="s2">&quot;MNE does not currently support reading &quot;</span>
-                <span class="s2">&quot;SNIRF files with non-uniform sampled data.&quot;</span>
+            <span class="c1"># Hopefully uniformly sampled data with some precision issues.</span>
+            <span class="c1"># This is a workaround to provide support for Artinis data.</span>
+            <span class="n">mean_period</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">periods</span><span class="p">)</span>
+            <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">mean_period</span>
+            <span class="n">ideal_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">time_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">time_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">time_data</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="n">max_jitter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">time_data</span> <span class="o">-</span> <span class="n">ideal_times</span><span class="p">))</span>
+            <span class="n">percent_jitter</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">max_jitter</span> <span class="o">/</span> <span class="n">mean_period</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Found jitter of </span><span class="si">{</span><span class="n">percent_jitter</span><span class="si">:</span><span class="s2">3f</span><span class="si">}</span><span class="s2">% in sample times. Sampling &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;rate has been set to </span><span class="si">{</span><span class="n">sampling_rate</span><span class="si">:</span><span class="s2">1f</span><span class="si">}</span><span class="s2">.&quot;</span>
             <span class="p">)</span>
-
+            <span class="k">if</span> <span class="n">percent_jitter</span> <span class="o">&gt;</span> <span class="n">MAXIMUM_ALLOWED_SAMPLING_JITTER_PERCENTAGE</span><span class="p">:</span>
+                <span class="n">warn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2"> Note that MNE-Python does not currently support SNIRF &quot;</span>
+                    <span class="s2">&quot;files with non-uniformly-sampled data.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
     <span class="n">time_unit</span> <span class="o">=</span> <span class="n">_get_metadata_str</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="s2">&quot;TimeUnit&quot;</span><span class="p">)</span>
     <span class="n">time_unit_scaling</span> <span class="o">=</span> <span class="n">_get_timeunit_scaling</span><span class="p">(</span><span class="n">time_unit</span><span class="p">)</span>
     <span class="n">sampling_rate</span> <span class="o">*=</span> <span class="n">time_unit_scaling</span>
@@ -1002,7 +1022,7 @@ document.write(`
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-10-12T17:07:01.640125+00:00&#34; class=&#34;localized&#34;&gt;2023-10-12 17:07 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

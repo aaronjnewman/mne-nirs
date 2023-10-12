@@ -47,7 +47,7 @@ You can read the SNIRF protocol at the official site https://github.com/fNIRS/sn
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-46
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -81,7 +81,7 @@ First we import some example data recorded with a NIRX device.
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-58
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -106,7 +106,7 @@ Now we can write this data back to disk in the SNIRF format.
 
 .. GENERATED FROM PYTHON SOURCE LINES 63-67
 
-.. code-block:: default
+.. code-block:: Python
 
 
     write_raw_snirf(raw_intensity, 'test_raw.snirf')
@@ -128,7 +128,7 @@ Next we can read back the snirf file.
 
 .. GENERATED FROM PYTHON SOURCE LINES 72-76
 
-.. code-block:: default
+.. code-block:: Python
 
 
     snirf_intensity = read_raw_snirf('test_raw.snirf')
@@ -151,7 +151,7 @@ ensure that the values are the same.
 
 .. GENERATED FROM PYTHON SOURCE LINES 82-88
 
-.. code-block:: default
+.. code-block:: Python
 
 
     assert_allclose(raw_intensity.get_data(), snirf_intensity.get_data())
@@ -173,7 +173,7 @@ ensure that the values are the same.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7fee6efd01c0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5765cbb540>
 
 
 
@@ -190,7 +190,7 @@ by MNE-NIRS are compliant with the specification.
 
 .. GENERATED FROM PYTHON SOURCE LINES 97-103
 
-.. code-block:: default
+.. code-block:: Python
 
 
     result = snirf.validateSnirf('test_raw.snirf')
@@ -206,7 +206,7 @@ by MNE-NIRS are compliant with the specification.
 
  .. code-block:: none
 
-    <snirf.pysnirf2.ValidationResult object at 0x7fee6f290a30>
+    <snirf.pysnirf2.ValidationResult object at 0x7f5765cde9e0>
 
     Found 304 OK      (hidden)
     Found 522 INFO    (hidden)
@@ -227,7 +227,7 @@ MNE-NIRS cal also be used to write optical density data to SNIRF files.
 
 .. GENERATED FROM PYTHON SOURCE LINES 108-117
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw_od = optical_density(raw_intensity)
@@ -246,7 +246,7 @@ MNE-NIRS cal also be used to write optical density data to SNIRF files.
 
  .. code-block:: none
 
-    <snirf.pysnirf2.ValidationResult object at 0x7fee6f580d60>
+    <snirf.pysnirf2.ValidationResult object at 0x7f5738700490>
 
     Found 360 OK      (hidden)
     Found 466 INFO    (hidden)
@@ -267,7 +267,7 @@ And it can write valid haemoglobin data to SNIRF files.
 
 .. GENERATED FROM PYTHON SOURCE LINES 122-129
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw_hb = beer_lambert_law(raw_od)
@@ -284,7 +284,7 @@ And it can write valid haemoglobin data to SNIRF files.
 
  .. code-block:: none
 
-    <snirf.pysnirf2.ValidationResult object at 0x7fee6f9f9c00>
+    <snirf.pysnirf2.ValidationResult object at 0x7f5765b3e8f0>
 
     Found 360 OK      (hidden)
     Found 466 INFO    (hidden)
@@ -299,7 +299,7 @@ And it can write valid haemoglobin data to SNIRF files.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.871 seconds)
+   **Total running time of the script:** (0 minutes 7.317 seconds)
 
 **Estimated memory usage:**  10 MB
 
@@ -310,7 +310,6 @@ And it can write valid haemoglobin data to SNIRF files.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -318,15 +317,13 @@ And it can write valid haemoglobin data to SNIRF files.
         :alt: Launch binder
         :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_19_snirf.ipynb <plot_19_snirf.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_19_snirf.py <plot_19_snirf.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_19_snirf.ipynb <plot_19_snirf.ipynb>`
 
 
 .. only:: html

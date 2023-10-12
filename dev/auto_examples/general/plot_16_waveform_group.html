@@ -531,7 +531,7 @@ stimulus interval.</p>
 <li><p><a class="reference internal" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" id="id12">Research question 2: Are responses larger on the contralateral side to tapping?</a></p></li>
 </ul>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
 <span class="c1">#</span>
@@ -582,7 +582,7 @@ This is the same waveform analysis as described in the
 <a class="reference internal" href="plot_15_waveform.html#tut-fnirs-processing"><span class="std std-ref">individual waveform tutorial</span></a>
 and <a class="reference internal" href="plot_21_artifacts.html#ex-fnirs-artifacts"><span class="std std-ref">artifact correction tutorial</span></a>.
 As such, this example will skim over the individual-level details.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">individual_analysis</span><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">):</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">individual_analysis</span><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">):</span>
 
     <span class="c1"># Read data with annotations in BIDS format</span>
     <span class="n">raw_intensity</span> <span class="o">=</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.read_raw_bids.html#mne_bids.read_raw_bids" title="mne_bids.read_raw_bids" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-function"><span class="n">read_raw_bids</span></a><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="o">=</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -627,7 +627,7 @@ returns the raw data and an epoch structure. The epoch structure is
 then averaged to obtain an evoked response from each participant.
 The individual-evoked data is stored in a
 dictionary (<cite>all_evokeds</cite>) for each condition.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class"><span class="n">defaultdict</span></a><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class"><span class="n">defaultdict</span></a><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
 <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sub</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1"># Loop from first to fifth subject</span>
 
@@ -655,30 +655,30 @@ with each item in the dictionary being a list of evoked responses.
 See below that for each condition we have obtained a MNE evoked type
 that is generated from the average of all 30 trials and epoched from -5 to
 20 seconds.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/pprint.html#pprint.pprint" title="pprint.pprint" class="sphx-glr-backref-module-pprint sphx-glr-backref-type-py-function"><span class="n">pprint</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/pprint.html#pprint.pprint" title="pprint.pprint" class="sphx-glr-backref-module-pprint sphx-glr-backref-type-py-function"><span class="n">pprint</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>defaultdict(&lt;class &#39;list&#39;&gt;,
-            {&#39;15.0&#39;: [&lt;Evoked | &#39;15.0&#39; (average, N=1), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                      &lt;Evoked | &#39;15.0&#39; (average, N=2), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                      &lt;Evoked | &#39;15.0&#39; (average, N=1), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                      &lt;Evoked | &#39;15.0&#39; (average, N=2), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                      &lt;Evoked | &#39;15.0&#39; (average, N=1), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;],
-             &#39;Control&#39;: [&lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;],
-             &#39;Tapping/Left&#39;: [&lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;],
-             &#39;Tapping/Right&#39;: [&lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;,
-                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~62 kB&gt;]})
+            {&#39;15.0&#39;: [&lt;Evoked | &#39;15.0&#39; (average, N=1), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                      &lt;Evoked | &#39;15.0&#39; (average, N=2), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                      &lt;Evoked | &#39;15.0&#39; (average, N=1), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                      &lt;Evoked | &#39;15.0&#39; (average, N=2), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                      &lt;Evoked | &#39;15.0&#39; (average, N=1), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;],
+             &#39;Control&#39;: [&lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                         &lt;Evoked | &#39;Control&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;],
+             &#39;Tapping/Left&#39;: [&lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                              &lt;Evoked | &#39;Tapping/Left&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;],
+             &#39;Tapping/Right&#39;: [&lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;,
+                               &lt;Evoked | &#39;Tapping/Right&#39; (average, N=30), -5 – 20 s, baseline -5 – 0 s, 40 ch, ~63 kB&gt;]})
 </pre></div>
 </div>
 </section>
@@ -687,7 +687,7 @@ that is generated from the average of all 30 trials and epoched from -5 to
 <p>Next, a grand average epoch waveform is generated for each condition.
 This is generated using all of the standard (long) fNIRS channels,
 as illustrated by the head inset in the top right corner of the figure.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the figure size and limits per chromophore</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the figure size and limits per chromophore</span>
 <a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lims</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">hbo</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="n">hbr</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
 
@@ -701,7 +701,7 @@ as illustrated by the head inset in the top right corner of the figure.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Oxyhaemoglobin&quot;</span><span class="p">,</span> <span class="s2">&quot;Deoxyhaemoglobin&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="15.0, Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fee5c28cd90&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="15.0, Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f573486b220&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
@@ -730,7 +730,7 @@ And consideration should be paid to ensure optimal size ROIs are selected.</p>
 <p>In this example, two ROIs are generated. One for the left motor cortex
 and one for the right motor cortex. These are called <cite>Left_Hemisphere</cite> and
 <cite>Right_Hemisphere</cite> and are stored in the <cite>rois</cite> dictionary.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify channel pairs for each ROI</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify channel pairs for each ROI</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">left</span></a> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">right</span></a> <span class="o">=</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
 
@@ -751,7 +751,7 @@ and one for the right motor cortex. These are called <cite>Left_Hemisphere</cite
 <p>Next, an average waveform is generated per condition per region of interest.
 This allows the researcher to view the responses elicited in different
 regions of the brain for each condition.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the figure size and limits per chromophore.</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the figure size and limits per chromophore.</span>
 <a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rois</span></a><span class="p">),</span> <span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">),</span>
                          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lims</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">hbo</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="n">hbr</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span>
@@ -774,7 +774,7 @@ regions of the brain for each condition.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Oxyhaemoglobin&quot;</span><span class="p">,</span> <span class="s2">&quot;Deoxyhaemoglobin&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fee5c579c00&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f5734606830&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to tapping appears
@@ -791,7 +791,7 @@ Here we extract the average value of the waveform between
 chromophore. The data is then stored in a dataframe, which is saved
 to a csv file for easy analysis in any statistical analysis software.
 We also demonstrate two example analyses on these values below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;ROI&#39;</span><span class="p">,</span> <span class="s1">&#39;Chroma&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">])</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;ROI&#39;</span><span class="p">,</span> <span class="s1">&#39;Chroma&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">])</span>
 
 <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.str_" title="numpy.str_" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span></a> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">):</span>
     <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subj_id</span></a> <span class="o">=</span> <span class="mi">0</span>
@@ -901,10 +901,10 @@ response amplitude in an fNIRS experiment, including skin thickness and
 skull thickness, both of which vary across the head and across participants.
 For this reason, fNIRS is most appropriate for detecting changes within a
 single ROI between conditions.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Condition&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbo&#39;&quot;</span><span class="p">),</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Condition&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbo&#39;&quot;</span><span class="p">),</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_003.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_003.png" alt="plot 16 waveform group" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid object at 0x7fee6f17c400&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_003.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_003.png" alt="plot 16 waveform group" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid object at 0x7f5738c2dc00&gt;
 </pre></div>
 </div>
 </section>
@@ -915,7 +915,7 @@ left ROI to tapping with the right hand larger
 than the response when not tapping (control)?
 For this token example we subset the dataframe and then apply the mixed
 effect model.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">input_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Control&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">input_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Control&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
 <span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbo&#39;]&quot;</span><span class="p">)</span>
 <span class="n">input_data</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ROI in [&#39;Left_Hemisphere&#39;]&quot;</span><span class="p">)</span>
 
@@ -974,7 +974,7 @@ ipsilateral side?</p>
 <p>First, the ROI data in the dataframe is encoded as ipsi- and contralateral
 to the tapping hand. Then the data is subset to just examine the two tapping
 conditions and the model is applied.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encode the ROIs as ipsi- or contralateral to the hand that is tapping.</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encode the ROIs as ipsi- or contralateral to the hand that is tapping.</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Hemisphere&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Unknown&quot;</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Condition&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Tapping/Right&quot;</span><span class="p">)</span> <span class="o">&amp;</span>
        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;ROI&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Right_Hemisphere&quot;</span><span class="p">),</span> <span class="s2">&quot;Hemisphere&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Ipsilateral&quot;</span>
@@ -1036,17 +1036,17 @@ conditions and the model is applied.</p>
 <br /><p>The model indicates that for the oxyhaemoglobin (HbO) data, the ipsilateral
 responses are 4.2 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 13.179 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 12.296 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_16_waveform_group.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
 </div>
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/dbf2d5f5770776e46b2030610adfa52f/plot_16_waveform_group.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_16_waveform_group.py</span></code></a></p>
-</div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/1894138c9dd620e585c94753514cc60e/plot_16_waveform_group.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_16_waveform_group.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/dbf2d5f5770776e46b2030610adfa52f/plot_16_waveform_group.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_16_waveform_group.py</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -1132,7 +1132,7 @@ hand that is tapping.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-09-13T14:48:39.461466+00:00&#34; class=&#34;localized&#34;&gt;2023-09-13 14:48 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-10-12T17:07:01.640125+00:00&#34; class=&#34;localized&#34;&gt;2023-10-12 17:07 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

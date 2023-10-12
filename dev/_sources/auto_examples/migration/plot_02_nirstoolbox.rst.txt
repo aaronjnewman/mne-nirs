@@ -114,7 +114,6 @@ https://github.com/mne-tools/mne-nirs/issues
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -122,15 +121,13 @@ https://github.com/mne-tools/mne-nirs/issues
         :alt: Launch binder
         :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_02_nirstoolbox.ipynb <plot_02_nirstoolbox.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_02_nirstoolbox.py <plot_02_nirstoolbox.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_02_nirstoolbox.ipynb <plot_02_nirstoolbox.ipynb>`
 
 
 .. only:: html

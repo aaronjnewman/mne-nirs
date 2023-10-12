@@ -44,7 +44,7 @@ to ensure you have all the required packages installed we recommend using the
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-40
 
-.. code-block:: default
+.. code-block:: Python
 
     # sphinx_gallery_thumbnail_number = 6
 
@@ -81,7 +81,7 @@ running `fname = /path/to/data.snirf`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-56
 
-.. code-block:: default
+.. code-block:: Python
 
     import mne_nirs.io
 
@@ -101,7 +101,7 @@ We can view the path to the data by calling the variable `fname`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-62
 
-.. code-block:: default
+.. code-block:: Python
 
 
     fname
@@ -126,7 +126,7 @@ To load the file we call the function :func:`mne:mne.io.read_raw_snirf`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-67
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw = mne.io.read_raw_snirf(fname, preload=True)
@@ -153,7 +153,7 @@ And we can look at the file metadata by calling the variable `raw`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 69-72
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw
@@ -166,74 +166,134 @@ And we can look at the file metadata by calling the variable `raw`.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
+    <style>
+    label { cursor: pointer; }
+    #section_00752f44-9849-4ca5-a322-3ba7a911779e ~ table [for="section_00752f44-9849-4ca5-a322-3ba7a911779e"]::before,
+    #section_0dadb772-4bad-4967-8181-848a2b943a4d ~ table [for="section_0dadb772-4bad-4967-8181-848a2b943a4d"]::before,
+    #section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e ~ table [for="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e"]::before {
+        display: inline-block;
+        content: "►";
+        font-size: 11px;
+        width: 15px;
+        text-align: left;
+    }
+
+    #section_00752f44-9849-4ca5-a322-3ba7a911779e:checked ~ table [for="section_00752f44-9849-4ca5-a322-3ba7a911779e"]::before,
+    #section_0dadb772-4bad-4967-8181-848a2b943a4d:checked ~ table [for="section_0dadb772-4bad-4967-8181-848a2b943a4d"]::before,
+    #section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e:checked ~ table [for="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e"]::before {
+        content: "▼";
+    }
+
+    #section_00752f44-9849-4ca5-a322-3ba7a911779e ~ table tr.section_00752f44-9849-4ca5-a322-3ba7a911779e,
+    #section_0dadb772-4bad-4967-8181-848a2b943a4d ~ table tr.section_0dadb772-4bad-4967-8181-848a2b943a4d,
+    #section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e ~ table tr.section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e {
+        visibility: collapse;
+    }
+
+    #section_00752f44-9849-4ca5-a322-3ba7a911779e:checked ~ table tr.section_00752f44-9849-4ca5-a322-3ba7a911779e,
+    #section_0dadb772-4bad-4967-8181-848a2b943a4d:checked ~ table tr.section_0dadb772-4bad-4967-8181-848a2b943a4d,
+    #section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e:checked ~ table tr.section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e {
+        visibility: visible;
+    }
+    </style>
+
+    <input type="checkbox" id="section_00752f44-9849-4ca5-a322-3ba7a911779e" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_0dadb772-4bad-4967-8181-848a2b943a4d" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e" hidden aria-hidden="true"/>
+
     <table class="table table-hover table-striped table-sm table-responsive small">
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_00752f44-9849-4ca5-a322-3ba7a911779e>
+                    General
+                </label>
+            </th>
+        </tr>
+        <tr class="section_00752f44-9849-4ca5-a322-3ba7a911779e">
             <th>Measurement date</th>
         
             <td>January 01, 2000  00:00:00 GMT</td>
         
         </tr>
-        <tr>
+        <tr class="section_00752f44-9849-4ca5-a322-3ba7a911779e">
             <th>Experimenter</th>
         
             <td>Unknown</td>
         
         </tr>
+        <tr class="section_00752f44-9849-4ca5-a322-3ba7a911779e">
             <th>Participant</th>
         
             
         
         </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_0dadb772-4bad-4967-8181-848a2b943a4d>
+                    Channels
+                </label>
+            </th>
+        </tr>
+        <tr class="section_0dadb772-4bad-4967-8181-848a2b943a4d">
             <th>Digitized points</th>
         
             <td>5 points</td>
         
         </tr>
-        <tr>
+        <tr class="section_0dadb772-4bad-4967-8181-848a2b943a4d">
             <th>Good channels</th>
             <td>216 fNIRS (CW amplitude)</td>
         </tr>
-        <tr>
+        <tr class="section_0dadb772-4bad-4967-8181-848a2b943a4d">
             <th>Bad channels</th>
             <td>None</td>
         </tr>
-        <tr>
+        <tr class="section_0dadb772-4bad-4967-8181-848a2b943a4d">
             <th>EOG channels</th>
             <td>Not available</td>
         </tr>
-        <tr>
+        <tr class="section_0dadb772-4bad-4967-8181-848a2b943a4d">
             <th>ECG channels</th>
             <td>Not available</td>
-    
+        </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e>
+                    Data
+                </label>
+            </th>
+        </tr>
+    
+        <tr class="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e">
             <th>Sampling frequency</th>
             <td>10.00 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e">
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e">
             <th>Lowpass</th>
             <td>5.00 Hz</td>
         </tr>
     
     
     
-        <tr>
+        <tr class="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e">
             <th>Filenames</th>
             <td>lumomat-1-1-0.snirf</td>
         </tr>
     
-        <tr>
+    
+        <tr class="section_32fa0ea5-9236-4b82-bb43-85c18c64cb8e">
             <th>Duration</th>
             <td>00:00:28 (HH:MM:SS)</td>
         </tr>
+    
     </table>
     </div>
     <br />
@@ -248,7 +308,7 @@ and signal annotations.
 
 .. GENERATED FROM PYTHON SOURCE LINES 77-80
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw.plot(duration=60)
@@ -267,7 +327,7 @@ and signal annotations.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7fee644a5780>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f5635c92ec0>
 
 
 
@@ -282,7 +342,7 @@ annotations to ensure they match what we expect from our experiment.
 
 .. GENERATED FROM PYTHON SOURCE LINES 88-92
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw.annotations
@@ -313,7 +373,7 @@ the annotations to a dataframe.
 
 .. GENERATED FROM PYTHON SOURCE LINES 100-104
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw.annotations.to_data_frame()
@@ -437,7 +497,7 @@ and four detectors.
 
 .. GENERATED FROM PYTHON SOURCE LINES 125-134
 
-.. code-block:: default
+.. code-block:: Python
 
 
     subjects_dir = op.join(mne.datasets.sample.data_path(), 'subjects')
@@ -482,7 +542,7 @@ First, lets just look at the `fsaverage` head that we will use.
 
 .. GENERATED FROM PYTHON SOURCE LINES 144-154
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plot_kwargs = dict(subjects_dir=subjects_dir,
@@ -533,7 +593,7 @@ including :ref:`mne:tut-auto-coreg`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 170-174
 
-.. code-block:: default
+.. code-block:: Python
 
 
     fig = mne.viz.plot_alignment(raw.info, trans="fsaverage", subject="fsaverage", **plot_kwargs)
@@ -568,7 +628,7 @@ distance between the fiducials.
 
 .. GENERATED FROM PYTHON SOURCE LINES 181-189
 
-.. code-block:: default
+.. code-block:: Python
 
 
     coreg = mne.coreg.Coregistration(raw.info, "fsaverage", subjects_dir, fiducials="estimated")
@@ -613,7 +673,7 @@ the generic MRI head.
 
 .. GENERATED FROM PYTHON SOURCE LINES 196-202
 
-.. code-block:: default
+.. code-block:: Python
 
 
     brain = mne.viz.Brain('fsaverage', subjects_dir=subjects_dir, background='w', cortex='0.5', alpha=0.3)
@@ -650,7 +710,7 @@ interface using the `fsaverage` head.
 
 .. GENERATED FROM PYTHON SOURCE LINES 209-214
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mtg = raw.get_montage()
@@ -665,74 +725,134 @@ interface using the `fsaverage` head.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
+    <style>
+    label { cursor: pointer; }
+    #section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721 ~ table [for="section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721"]::before,
+    #section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce ~ table [for="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce"]::before,
+    #section_b55ac228-0776-49b1-86c0-2d6f464c3da5 ~ table [for="section_b55ac228-0776-49b1-86c0-2d6f464c3da5"]::before {
+        display: inline-block;
+        content: "►";
+        font-size: 11px;
+        width: 15px;
+        text-align: left;
+    }
+
+    #section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721:checked ~ table [for="section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721"]::before,
+    #section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce:checked ~ table [for="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce"]::before,
+    #section_b55ac228-0776-49b1-86c0-2d6f464c3da5:checked ~ table [for="section_b55ac228-0776-49b1-86c0-2d6f464c3da5"]::before {
+        content: "▼";
+    }
+
+    #section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721 ~ table tr.section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721,
+    #section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce ~ table tr.section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce,
+    #section_b55ac228-0776-49b1-86c0-2d6f464c3da5 ~ table tr.section_b55ac228-0776-49b1-86c0-2d6f464c3da5 {
+        visibility: collapse;
+    }
+
+    #section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721:checked ~ table tr.section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721,
+    #section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce:checked ~ table tr.section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce,
+    #section_b55ac228-0776-49b1-86c0-2d6f464c3da5:checked ~ table tr.section_b55ac228-0776-49b1-86c0-2d6f464c3da5 {
+        visibility: visible;
+    }
+    </style>
+
+    <input type="checkbox" id="section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_b55ac228-0776-49b1-86c0-2d6f464c3da5" hidden aria-hidden="true"/>
+
     <table class="table table-hover table-striped table-sm table-responsive small">
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721>
+                    General
+                </label>
+            </th>
+        </tr>
+        <tr class="section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721">
             <th>Measurement date</th>
         
             <td>January 01, 2000  00:00:00 GMT</td>
         
         </tr>
-        <tr>
+        <tr class="section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721">
             <th>Experimenter</th>
         
             <td>Unknown</td>
         
         </tr>
+        <tr class="section_5667fdf2-0bcd-4b6b-bd8d-71f47cd49721">
             <th>Participant</th>
         
             
         
         </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce>
+                    Channels
+                </label>
+            </th>
+        </tr>
+        <tr class="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce">
             <th>Digitized points</th>
         
             <td>24 points</td>
         
         </tr>
-        <tr>
+        <tr class="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce">
             <th>Good channels</th>
             <td>216 fNIRS (CW amplitude)</td>
         </tr>
-        <tr>
+        <tr class="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce">
             <th>Bad channels</th>
             <td>None</td>
         </tr>
-        <tr>
+        <tr class="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce">
             <th>EOG channels</th>
             <td>Not available</td>
         </tr>
-        <tr>
+        <tr class="section_0388d2c7-a455-469d-a3fc-245f8ad4d1ce">
             <th>ECG channels</th>
             <td>Not available</td>
-    
+        </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_b55ac228-0776-49b1-86c0-2d6f464c3da5>
+                    Data
+                </label>
+            </th>
+        </tr>
+    
+        <tr class="section_b55ac228-0776-49b1-86c0-2d6f464c3da5">
             <th>Sampling frequency</th>
             <td>10.00 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_b55ac228-0776-49b1-86c0-2d6f464c3da5">
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_b55ac228-0776-49b1-86c0-2d6f464c3da5">
             <th>Lowpass</th>
             <td>5.00 Hz</td>
         </tr>
     
     
     
-        <tr>
+        <tr class="section_b55ac228-0776-49b1-86c0-2d6f464c3da5">
             <th>Filenames</th>
             <td>lumomat-1-1-0.snirf</td>
         </tr>
     
-        <tr>
+    
+        <tr class="section_b55ac228-0776-49b1-86c0-2d6f464c3da5">
             <th>Duration</th>
             <td>00:00:28 (HH:MM:SS)</td>
         </tr>
+    
     </table>
     </div>
     <br />
@@ -744,7 +864,7 @@ You can then save the coregistered object.
 
 .. GENERATED FROM PYTHON SOURCE LINES 216-219
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mne_nirs.io.write_raw_snirf(raw, "raw_coregistered_to_fsaverage.snirf")
@@ -763,7 +883,7 @@ already been coregistered to fsaverage.
 
 .. GENERATED FROM PYTHON SOURCE LINES 222-230
 
-.. code-block:: default
+.. code-block:: Python
 
 
     raw_w_coreg = mne.io.read_raw_snirf("raw_coregistered_to_fsaverage.snirf")
@@ -804,9 +924,9 @@ From here you can use your favorite analysis technique such as
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 30.273 seconds)
+   **Total running time of the script:** (0 minutes 27.188 seconds)
 
-**Estimated memory usage:**  202 MB
+**Estimated memory usage:**  165 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_06_gowerlabs.py:
@@ -815,7 +935,6 @@ From here you can use your favorite analysis technique such as
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -823,15 +942,13 @@ From here you can use your favorite analysis technique such as
         :alt: Launch binder
         :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_06_gowerlabs.ipynb <plot_06_gowerlabs.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_06_gowerlabs.py <plot_06_gowerlabs.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_06_gowerlabs.ipynb <plot_06_gowerlabs.ipynb>`
 
 
 .. only:: html

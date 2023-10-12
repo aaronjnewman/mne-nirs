@@ -60,7 +60,7 @@ data for the purpose of extracting Mayer waves oscillation parameters.
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-61
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Robert Luke <mail@robertluke.net>
@@ -84,6 +84,16 @@ data for the purpose of extracting Mayer waves oscillation parameters.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/circleci/project/examples/general/plot_40_mayer.py:58: DeprecationWarning: 
+    The `fooof` package is being deprecated and replaced by the `specparam` (spectral parameterization) package.
+    This version of `fooof` (1.1) is fully functional, but will not be further updated.
+    New projects are recommended to update to using `specparam` (see Changelog for details).
+      from fooof import FOOOF
+
 
 
 
@@ -96,7 +106,7 @@ We read in the data and convert to haemoglobin concentration.
 
 .. GENERATED FROM PYTHON SOURCE LINES 66-79
 
-.. code-block:: default
+.. code-block:: Python
 
 
     fnirs_data_folder = mne.datasets.fnirs_motor.data_path()
@@ -125,19 +135,62 @@ We read in the data and convert to haemoglobin concentration.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
+    <style>
+    label { cursor: pointer; }
+    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b ~ table [for="section_aa3a626c-5b1f-4ca1-b459-1613d172973b"]::before,
+    #section_63185b59-1d6d-4365-a305-5a6fca705cb1 ~ table [for="section_63185b59-1d6d-4365-a305-5a6fca705cb1"]::before,
+    #section_c46d5f04-cf93-4210-bf14-b3263c17b766 ~ table [for="section_c46d5f04-cf93-4210-bf14-b3263c17b766"]::before {
+        display: inline-block;
+        content: "►";
+        font-size: 11px;
+        width: 15px;
+        text-align: left;
+    }
+
+    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b:checked ~ table [for="section_aa3a626c-5b1f-4ca1-b459-1613d172973b"]::before,
+    #section_63185b59-1d6d-4365-a305-5a6fca705cb1:checked ~ table [for="section_63185b59-1d6d-4365-a305-5a6fca705cb1"]::before,
+    #section_c46d5f04-cf93-4210-bf14-b3263c17b766:checked ~ table [for="section_c46d5f04-cf93-4210-bf14-b3263c17b766"]::before {
+        content: "▼";
+    }
+
+    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b ~ table tr.section_aa3a626c-5b1f-4ca1-b459-1613d172973b,
+    #section_63185b59-1d6d-4365-a305-5a6fca705cb1 ~ table tr.section_63185b59-1d6d-4365-a305-5a6fca705cb1,
+    #section_c46d5f04-cf93-4210-bf14-b3263c17b766 ~ table tr.section_c46d5f04-cf93-4210-bf14-b3263c17b766 {
+        visibility: collapse;
+    }
+
+    #section_aa3a626c-5b1f-4ca1-b459-1613d172973b:checked ~ table tr.section_aa3a626c-5b1f-4ca1-b459-1613d172973b,
+    #section_63185b59-1d6d-4365-a305-5a6fca705cb1:checked ~ table tr.section_63185b59-1d6d-4365-a305-5a6fca705cb1,
+    #section_c46d5f04-cf93-4210-bf14-b3263c17b766:checked ~ table tr.section_c46d5f04-cf93-4210-bf14-b3263c17b766 {
+        visibility: visible;
+    }
+    </style>
+
+    <input type="checkbox" id="section_aa3a626c-5b1f-4ca1-b459-1613d172973b" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_63185b59-1d6d-4365-a305-5a6fca705cb1" hidden aria-hidden="true"/>
+    <input type="checkbox" id="section_c46d5f04-cf93-4210-bf14-b3263c17b766" hidden aria-hidden="true"/>
+
     <table class="table table-hover table-striped table-sm table-responsive small">
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_aa3a626c-5b1f-4ca1-b459-1613d172973b>
+                    General
+                </label>
+            </th>
+        </tr>
+        <tr class="section_aa3a626c-5b1f-4ca1-b459-1613d172973b">
             <th>Measurement date</th>
         
             <td>November 02, 2019  13:16:16 GMT</td>
         
         </tr>
-        <tr>
+        <tr class="section_aa3a626c-5b1f-4ca1-b459-1613d172973b">
             <th>Experimenter</th>
         
             <td>Unknown</td>
         
         </tr>
+        <tr class="section_aa3a626c-5b1f-4ca1-b459-1613d172973b">
             <th>Participant</th>
         
             
@@ -146,55 +199,72 @@ We read in the data and convert to haemoglobin concentration.
         
         </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_63185b59-1d6d-4365-a305-5a6fca705cb1>
+                    Channels
+                </label>
+            </th>
+        </tr>
+        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
             <th>Digitized points</th>
         
             <td>31 points</td>
         
         </tr>
-        <tr>
+        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
             <th>Good channels</th>
             <td>20 Oxyhemoglobin</td>
         </tr>
-        <tr>
+        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
             <th>Bad channels</th>
             <td>None</td>
         </tr>
-        <tr>
+        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
             <th>EOG channels</th>
             <td>Not available</td>
         </tr>
-        <tr>
+        <tr class="section_63185b59-1d6d-4365-a305-5a6fca705cb1">
             <th>ECG channels</th>
             <td>Not available</td>
-    
+        </tr>
         <tr>
+            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
+                <label for=section_c46d5f04-cf93-4210-bf14-b3263c17b766>
+                    Data
+                </label>
+            </th>
+        </tr>
+    
+        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
             <th>Sampling frequency</th>
             <td>2.00 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
     
     
-        <tr>
+        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
             <th>Lowpass</th>
             <td>1.00 Hz</td>
         </tr>
     
     
     
-        <tr>
+        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
             <th>Filenames</th>
             <td>Participant-1</td>
         </tr>
     
-        <tr>
+    
+        <tr class="section_c46d5f04-cf93-4210-bf14-b3263c17b766">
             <th>Duration</th>
             <td>00:49:34 (HH:MM:SS)</td>
         </tr>
+    
     </table>
     </div>
     <br />
@@ -225,7 +295,7 @@ it matches well to the data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 100-129
 
-.. code-block:: default
+.. code-block:: Python
 
 
     def scale_up_spectra(spectra, freqs):
@@ -269,16 +339,8 @@ it matches well to the data.
 
  .. code-block:: none
 
-    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/trf.py:234: RuntimeWarning: divide by zero encountered in divide
-      Delta = norm(x0 * scale_inv / v**0.5)
-    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/trf.py:363: RuntimeWarning: invalid value encountered in scalar divide
-      alpha *= Delta / Delta_new
-    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/trf.py:363: RuntimeWarning: invalid value encountered in scalar multiply
-      alpha *= Delta / Delta_new
-    /home/circleci/python_env/lib/python3.10/site-packages/scipy/optimize/_lsq/common.py:398: RuntimeWarning: invalid value encountered in cast
-      return min_step, np.equal(steps, min_step) * np.sign(s).astype(int)
 
-    ([<matplotlib.axis.XTick object at 0x7fee8024d9c0>, <matplotlib.axis.XTick object at 0x7fee8024f040>, <matplotlib.axis.XTick object at 0x7fee8024ded0>, <matplotlib.axis.XTick object at 0x7fee6ec59c60>, <matplotlib.axis.XTick object at 0x7fee6ec5b7f0>, <matplotlib.axis.XTick object at 0x7fee6ec599c0>, <matplotlib.axis.XTick object at 0x7fee6ec5ab90>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
+    ([<matplotlib.axis.XTick object at 0x7f5635f065c0>, <matplotlib.axis.XTick object at 0x7f5635f05c30>, <matplotlib.axis.XTick object at 0x7f5635f06110>, <matplotlib.axis.XTick object at 0x7f5694787070>, <matplotlib.axis.XTick object at 0x7f56947842e0>, <matplotlib.axis.XTick object at 0x7f57387ebc40>, <matplotlib.axis.XTick object at 0x7f57387ea860>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
 
 
 
@@ -296,7 +358,7 @@ authors if you use this function.
 
 .. GENERATED FROM PYTHON SOURCE LINES 139-143
 
-.. code-block:: default
+.. code-block:: Python
 
 
     quantify_mayer_fooof(raw.pick("hbo"), extra_df_fields={"Study": "Online tutorial"})
@@ -388,7 +450,7 @@ Bibliography
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.330 seconds)
+   **Total running time of the script:** (0 minutes 4.273 seconds)
 
 **Estimated memory usage:**  9 MB
 
@@ -399,7 +461,6 @@ Bibliography
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -407,15 +468,13 @@ Bibliography
         :alt: Launch binder
         :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_40_mayer.ipynb <plot_40_mayer.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_40_mayer.py <plot_40_mayer.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_40_mayer.ipynb <plot_40_mayer.ipynb>`
 
 
 .. only:: html
