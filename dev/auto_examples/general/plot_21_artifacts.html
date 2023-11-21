@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Artifact Correction Techniques &#8212; MNE-NIRS 0.6.dev0 documentation</title>
+    <title>Artifact Correction Techniques &#8212; MNE-NIRS 0.6.0 documentation</title>
   
   
   
@@ -57,7 +57,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/general/plot_21_artifacts';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mne.tools/mne-nirs/dev/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.6.0';
         </script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -210,7 +210,7 @@ document.write(`
 document.write(`
   <div class="version-switcher__container dropdown">
     <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      dev  <!-- this text may get changed later by javascript -->
+      0.6.0  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
     <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
@@ -327,7 +327,7 @@ document.write(`
 document.write(`
   <div class="version-switcher__container dropdown">
     <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      dev  <!-- this text may get changed later by javascript -->
+      0.6.0  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
     <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
@@ -495,7 +495,7 @@ and plot these signals.</p>
 </div>
 <img src="../../_images/sphx_glr_plot_21_artifacts_001.png" srcset="../../_images/sphx_glr_plot_21_artifacts_001.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading /home/circleci/mne_data/MNE-fNIRS-motor-data/Participant-1
 
-&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19a26c1940&gt;
+&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff274b50b80&gt;
 </pre></div>
 </div>
 <p>We can see some small artifacts in the above data from movement around 40,
@@ -523,7 +523,7 @@ seconds to the data.</p>
 <a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray.plot" title="mne.io.RawArray.plot" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">corrupted_od</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_21_artifacts_002.png" srcset="../../_images/sphx_glr_plot_21_artifacts_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e4d50fc0&gt;
+<img src="../../_images/sphx_glr_plot_21_artifacts_002.png" srcset="../../_images/sphx_glr_plot_21_artifacts_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff1676c6580&gt;
 </pre></div>
 </div>
 </section>
@@ -535,7 +535,7 @@ for any user-supplied parameters FishburnEtAl2019.</p>
 <a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray.plot" title="mne.io.RawArray.plot" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">corrected_tddr</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_21_artifacts_003.png" srcset="../../_images/sphx_glr_plot_21_artifacts_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19c46ed540&gt;
+<img src="../../_images/sphx_glr_plot_21_artifacts_003.png" srcset="../../_images/sphx_glr_plot_21_artifacts_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff280576480&gt;
 </pre></div>
 </div>
 <p>We can see in the data above that the introduced spikes and shifts are
@@ -548,11 +548,11 @@ The same can be said for the artifacts in the original data.</p>
 Temporal derivative distribution repair (tddr): a motion correction method
 for fNIRS. NeuroImage,
 184:171–179, 2019. doi:10.1016/j.neuroimage.2018.09.025.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.995 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.704 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  10 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-21-artifacts-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_21_artifacts.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=stable/notebooks/auto_examples/general/plot_21_artifacts.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/1d569dfb1fb8965e8877f43c4476e3cb/plot_21_artifacts.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_21_artifacts.ipynb</span></code></a></p>
@@ -639,7 +639,7 @@ for fNIRS. NeuroImage,
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-10-12T23:42:26.252035+00:00&#34; class=&#34;localized&#34;&gt;2023-10-12 23:42 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-11-21T03:21:06.396486+00:00&#34; class=&#34;localized&#34;&gt;2023-11-21 03:21 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

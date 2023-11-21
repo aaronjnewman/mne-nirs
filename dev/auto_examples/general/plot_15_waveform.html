@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Waveform Averaging Analysis &#8212; MNE-NIRS 0.6.dev0 documentation</title>
+    <title>Waveform Averaging Analysis &#8212; MNE-NIRS 0.6.0 documentation</title>
   
   
   
@@ -57,7 +57,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/general/plot_15_waveform';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mne.tools/mne-nirs/dev/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.6.0';
         </script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -210,7 +210,7 @@ document.write(`
 document.write(`
   <div class="version-switcher__container dropdown">
     <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      dev  <!-- this text may get changed later by javascript -->
+      0.6.0  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
     <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
@@ -327,7 +327,7 @@ document.write(`
 document.write(`
   <div class="version-switcher__container dropdown">
     <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      dev  <!-- this text may get changed later by javascript -->
+      0.6.0  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
     <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
@@ -500,137 +500,94 @@ Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<style>
-label { cursor: pointer; }
-#section_1637223a-efa4-4e35-aada-4836d6e17374 ~ table [for="section_1637223a-efa4-4e35-aada-4836d6e17374"]::before,
-#section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01 ~ table [for="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01"]::before,
-#section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a ~ table [for="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a"]::before {
-    display: inline-block;
-    content: "►";
-    font-size: 11px;
-    width: 15px;
-    text-align: left;
-}
+<details open>
+    <summary><strong>General</strong></summary>
+    <table class="table table-hover table-striped table-sm table-responsive small">
+        <tr>
+            <th>Measurement date</th>
 
-#section_1637223a-efa4-4e35-aada-4836d6e17374:checked ~ table [for="section_1637223a-efa4-4e35-aada-4836d6e17374"]::before,
-#section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01:checked ~ table [for="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01"]::before,
-#section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a:checked ~ table [for="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a"]::before {
-    content: "▼";
-}
+            <td>November 02, 2019  13:16:16 GMT</td>
 
-#section_1637223a-efa4-4e35-aada-4836d6e17374 ~ table tr.section_1637223a-efa4-4e35-aada-4836d6e17374,
-#section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01 ~ table tr.section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01,
-#section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a ~ table tr.section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a {
-    visibility: collapse;
-}
+        </tr>
+        <tr>
+            <th>Experimenter</th>
 
-#section_1637223a-efa4-4e35-aada-4836d6e17374:checked ~ table tr.section_1637223a-efa4-4e35-aada-4836d6e17374,
-#section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01:checked ~ table tr.section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01,
-#section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a:checked ~ table tr.section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a {
-    visibility: visible;
-}
-</style>
+            <td>Unknown</td>
 
-<input type="checkbox" id="section_1637223a-efa4-4e35-aada-4836d6e17374" hidden aria-hidden="true"/>
-<input type="checkbox" id="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01" hidden aria-hidden="true"/>
-<input type="checkbox" id="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a" hidden aria-hidden="true"/>
-
-<table class="table table-hover table-striped table-sm table-responsive small">
-    <tr>
-        <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-            <label for=section_1637223a-efa4-4e35-aada-4836d6e17374>
-                General
-            </label>
-        </th>
-    </tr>
-    <tr class="section_1637223a-efa4-4e35-aada-4836d6e17374">
-        <th>Measurement date</th>
-
-        <td>November 02, 2019  13:16:16 GMT</td>
-
-    </tr>
-    <tr class="section_1637223a-efa4-4e35-aada-4836d6e17374">
-        <th>Experimenter</th>
-
-        <td>Unknown</td>
-
-    </tr>
-    <tr class="section_1637223a-efa4-4e35-aada-4836d6e17374">
-        <th>Participant</th>
+        </tr>
+        <tr>
+            <th>Participant</th>
 
 
             <td>P1</td>
 
 
-    </tr>
-    <tr>
-        <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-            <label for=section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01>
-                Channels
-            </label>
-        </th>
-    </tr>
-    <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
-        <th>Digitized points</th>
+        </tr>
+    </table>
+    </details>
+    <details open>
+        <summary><strong>Channels</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Digitized points</th>
 
-        <td>31 points</td>
+                <td>31 points</td>
 
-    </tr>
-    <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
-        <th>Good channels</th>
-        <td>56 fNIRS (CW amplitude)</td>
-    </tr>
-    <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
-        <th>Bad channels</th>
-        <td>None</td>
-    </tr>
-    <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
-        <th>EOG channels</th>
-        <td>Not available</td>
-    </tr>
-    <tr class="section_f4cd9eb5-3561-43f6-85b1-e9d38b9e8d01">
-        <th>ECG channels</th>
-        <td>Not available</td>
-    </tr>
-    <tr>
-        <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-            <label for=section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a>
-                Data
-            </label>
-        </th>
-    </tr>
+            </tr>
+            <tr>
+                <th>Good channels</th>
+                <td>56 fNIRS (CW amplitude)</td>
+            </tr>
+            <tr>
+                <th>Bad channels</th>
+                <td>None</td>
+            </tr>
+            <tr>
+                <th>EOG channels</th>
+                <td>Not available</td>
+            </tr>
+            <tr>
+                <th>ECG channels</th>
+                <td>Not available</td>
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Data</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
 
-    <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
-        <th>Sampling frequency</th>
-        <td>7.81 Hz</td>
-    </tr>
+                <tr>
+                    <th>Sampling frequency</th>
+                    <td>7.81 Hz</td>
+                </tr>
 
 
-    <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
-        <th>Highpass</th>
-        <td>0.00 Hz</td>
-    </tr>
+                <tr>
+                    <th>Highpass</th>
+                    <td>0.00 Hz</td>
+                </tr>
 
 
-    <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
-        <th>Lowpass</th>
-        <td>3.91 Hz</td>
-    </tr>
+                <tr>
+                    <th>Lowpass</th>
+                    <td>3.91 Hz</td>
+                </tr>
 
 
 
-    <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
-        <th>Filenames</th>
-        <td>Participant-1</td>
-    </tr>
+                <tr>
+                    <th>Filenames</th>
+                    <td>Participant-1</td>
+                </tr>
 
 
-    <tr class="section_f9638e6a-d90d-487b-9a49-f4fe9b3dcd2a">
-        <th>Duration</th>
-        <td>00:49:35 (HH:MM:SS)</td>
-    </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>00:49:35 (HH:MM:SS)</td>
+                </tr>
 
-</table>
+            </table>
+            </details>
 </div>
 <br />
 <br /><section id="providing-more-meaningful-annotation-information">
@@ -684,7 +641,7 @@ To achieve this we pick all the channels that are not considered to be short.</p
                    <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_15_waveform_002.png" srcset="../../_images/sphx_glr_plot_15_waveform_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e65f6140&gt;
+<img src="../../_images/sphx_glr_plot_15_waveform_002.png" srcset="../../_images/sphx_glr_plot_15_waveform_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff2a8870080&gt;
 </pre></div>
 </div>
 </section>
@@ -696,7 +653,7 @@ To achieve this we pick all the channels that are not considered to be short.</p
             <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_15_waveform_003.png" srcset="../../_images/sphx_glr_plot_15_waveform_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e65dea00&gt;
+<img src="../../_images/sphx_glr_plot_15_waveform_003.png" srcset="../../_images/sphx_glr_plot_15_waveform_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff2a87d2a80&gt;
 </pre></div>
 </div>
 </section>
@@ -739,7 +696,7 @@ the modified Beer-Lambert law.</p>
                <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_15_waveform_005.png" srcset="../../_images/sphx_glr_plot_15_waveform_005.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e4d804c0&gt;
+<img src="../../_images/sphx_glr_plot_15_waveform_005.png" srcset="../../_images/sphx_glr_plot_15_waveform_005.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff274f2cf00&gt;
 </pre></div>
 </div>
 </section>
@@ -1025,14 +982,14 @@ driving the topographic plot above.</p>
 <a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure.legend" title="matplotlib.figure.Figure.legend" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-method"><span class="n">fig</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">leg_lines</span></a><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Left&#39;</span><span class="p">,</span> <span class="s1">&#39;Right&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_15_waveform_022.png" srcset="../../_images/sphx_glr_plot_15_waveform_022.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f19a23b5330&gt;
+<img src="../../_images/sphx_glr_plot_15_waveform_022.png" srcset="../../_images/sphx_glr_plot_15_waveform_022.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7ff2a88b2d40&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 22.986 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  26 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 23.822 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  23 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-15-waveform-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_15_waveform.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=stable/notebooks/auto_examples/general/plot_15_waveform.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3625a00178ee7f800e4a372b712d82c8/plot_15_waveform.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_15_waveform.ipynb</span></code></a></p>
@@ -1128,7 +1085,7 @@ driving the topographic plot above.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-10-12T23:42:26.252035+00:00&#34; class=&#34;localized&#34;&gt;2023-10-12 23:42 UTC&lt;/time&gt;
+      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-11-21T03:21:06.396486+00:00&#34; class=&#34;localized&#34;&gt;2023-11-21 03:21 UTC&lt;/time&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
       <br/>
     

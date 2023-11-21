@@ -123,6 +123,9 @@ to meet github memory constraints.
 
  .. code-block:: none
 
+    Using default location ~/mne_data for fnirs_motor...
+      0%|                                              | 0.00/17.9M [00:00<?, ?B/s]     26%|█████████▌                           | 4.63M/17.9M [00:00<00:00, 46.3MB/s]     66%|████████████████████████▌            | 11.9M/17.9M [00:00<00:00, 61.6MB/s]      0%|                                              | 0.00/17.9M [00:00<?, ?B/s]    100%|█████████████████████████████████████| 17.9M/17.9M [00:00<00:00, 57.7GB/s]
+    Download complete in 02s (17.1 MB)
     Loading /home/circleci/mne_data/MNE-fNIRS-motor-data/Participant-1
     Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 
@@ -130,137 +133,94 @@ to meet github memory constraints.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>
-    label { cursor: pointer; }
-    #section_76ae59bd-fb90-491b-95be-a1ddefd682b2 ~ table [for="section_76ae59bd-fb90-491b-95be-a1ddefd682b2"]::before,
-    #section_f35f3318-af14-4c9a-9435-252406546b3c ~ table [for="section_f35f3318-af14-4c9a-9435-252406546b3c"]::before,
-    #section_cd075fe2-427f-4c00-96e9-10c80e9acf2a ~ table [for="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a"]::before {
-        display: inline-block;
-        content: "►";
-        font-size: 11px;
-        width: 15px;
-        text-align: left;
-    }
-
-    #section_76ae59bd-fb90-491b-95be-a1ddefd682b2:checked ~ table [for="section_76ae59bd-fb90-491b-95be-a1ddefd682b2"]::before,
-    #section_f35f3318-af14-4c9a-9435-252406546b3c:checked ~ table [for="section_f35f3318-af14-4c9a-9435-252406546b3c"]::before,
-    #section_cd075fe2-427f-4c00-96e9-10c80e9acf2a:checked ~ table [for="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a"]::before {
-        content: "▼";
-    }
-
-    #section_76ae59bd-fb90-491b-95be-a1ddefd682b2 ~ table tr.section_76ae59bd-fb90-491b-95be-a1ddefd682b2,
-    #section_f35f3318-af14-4c9a-9435-252406546b3c ~ table tr.section_f35f3318-af14-4c9a-9435-252406546b3c,
-    #section_cd075fe2-427f-4c00-96e9-10c80e9acf2a ~ table tr.section_cd075fe2-427f-4c00-96e9-10c80e9acf2a {
-        visibility: collapse;
-    }
-
-    #section_76ae59bd-fb90-491b-95be-a1ddefd682b2:checked ~ table tr.section_76ae59bd-fb90-491b-95be-a1ddefd682b2,
-    #section_f35f3318-af14-4c9a-9435-252406546b3c:checked ~ table tr.section_f35f3318-af14-4c9a-9435-252406546b3c,
-    #section_cd075fe2-427f-4c00-96e9-10c80e9acf2a:checked ~ table tr.section_cd075fe2-427f-4c00-96e9-10c80e9acf2a {
-        visibility: visible;
-    }
-    </style>
-
-    <input type="checkbox" id="section_76ae59bd-fb90-491b-95be-a1ddefd682b2" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_f35f3318-af14-4c9a-9435-252406546b3c" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a" hidden aria-hidden="true"/>
-
-    <table class="table table-hover table-striped table-sm table-responsive small">
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_76ae59bd-fb90-491b-95be-a1ddefd682b2>
-                    General
-                </label>
-            </th>
-        </tr>
-        <tr class="section_76ae59bd-fb90-491b-95be-a1ddefd682b2">
-            <th>Measurement date</th>
-        
-            <td>November 02, 2019  13:16:16 GMT</td>
-        
-        </tr>
-        <tr class="section_76ae59bd-fb90-491b-95be-a1ddefd682b2">
-            <th>Experimenter</th>
-        
-            <td>Unknown</td>
-        
-        </tr>
-        <tr class="section_76ae59bd-fb90-491b-95be-a1ddefd682b2">
-            <th>Participant</th>
-        
+    <details open>
+        <summary><strong>General</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Measurement date</th>
+            
+                <td>November 02, 2019  13:16:16 GMT</td>
+            
+            </tr>
+            <tr>
+                <th>Experimenter</th>
+            
+                <td>Unknown</td>
+            
+            </tr>
+            <tr>
+                <th>Participant</th>
+            
             
                 <td>P1</td>
             
-        
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_f35f3318-af14-4c9a-9435-252406546b3c>
-                    Channels
-                </label>
-            </th>
-        </tr>
-        <tr class="section_f35f3318-af14-4c9a-9435-252406546b3c">
-            <th>Digitized points</th>
-        
-            <td>31 points</td>
-        
-        </tr>
-        <tr class="section_f35f3318-af14-4c9a-9435-252406546b3c">
-            <th>Good channels</th>
-            <td>56 fNIRS (CW amplitude)</td>
-        </tr>
-        <tr class="section_f35f3318-af14-4c9a-9435-252406546b3c">
-            <th>Bad channels</th>
-            <td>None</td>
-        </tr>
-        <tr class="section_f35f3318-af14-4c9a-9435-252406546b3c">
-            <th>EOG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr class="section_f35f3318-af14-4c9a-9435-252406546b3c">
-            <th>ECG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_cd075fe2-427f-4c00-96e9-10c80e9acf2a>
-                    Data
-                </label>
-            </th>
-        </tr>
-    
-        <tr class="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a">
-            <th>Sampling frequency</th>
-            <td>0.70 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a">
-            <th>Highpass</th>
-            <td>0.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a">
-            <th>Lowpass</th>
-            <td>0.35 Hz</td>
-        </tr>
-    
-    
-    
-        <tr class="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a">
-            <th>Filenames</th>
-            <td>Participant-1</td>
-        </tr>
-    
-    
-        <tr class="section_cd075fe2-427f-4c00-96e9-10c80e9acf2a">
-            <th>Duration</th>
-            <td>00:49:33 (HH:MM:SS)</td>
-        </tr>
-    
-    </table>
+            
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Channels</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                <tr>
+                    <th>Digitized points</th>
+                
+                    <td>31 points</td>
+                
+                </tr>
+                <tr>
+                    <th>Good channels</th>
+                    <td>56 fNIRS (CW amplitude)</td>
+                </tr>
+                <tr>
+                    <th>Bad channels</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>EOG channels</th>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <th>ECG channels</th>
+                    <td>Not available</td>
+                </tr>
+            </table>
+            </details>
+            <details open>
+                <summary><strong>Data</strong></summary>
+                <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                    <tr>
+                        <th>Sampling frequency</th>
+                        <td>0.70 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Highpass</th>
+                        <td>0.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Lowpass</th>
+                        <td>0.35 Hz</td>
+                    </tr>
+                
+                
+                
+                    <tr>
+                        <th>Filenames</th>
+                        <td>Participant-1</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Duration</th>
+                        <td>00:49:33 (HH:MM:SS)</td>
+                    </tr>
+                
+                </table>
+                </details>
     </div>
     <br />
     <br />
@@ -1085,7 +1045,7 @@ cortical surface
  .. code-block:: none
 
 
-    <mne.viz._brain._brain.Brain object at 0x7f19e4d4c550>
+    <mne.viz._brain._brain.Brain object at 0x7ff280bd15d0>
 
 
 
@@ -1600,9 +1560,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 17.864 seconds)
+   **Total running time of the script:** (0 minutes 22.563 seconds)
 
-**Estimated memory usage:**  247 MB
+**Estimated memory usage:**  244 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:
@@ -1614,7 +1574,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
-        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_11_hrf_measured.ipynb
+        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=stable/notebooks/auto_examples/general/plot_11_hrf_measured.ipynb
         :alt: Launch binder
         :width: 150 px
 

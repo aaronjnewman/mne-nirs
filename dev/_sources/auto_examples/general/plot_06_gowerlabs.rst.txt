@@ -166,135 +166,92 @@ And we can look at the file metadata by calling the variable `raw`.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>
-    label { cursor: pointer; }
-    #section_328283f0-58ab-4850-a5a3-f235bdf21c86 ~ table [for="section_328283f0-58ab-4850-a5a3-f235bdf21c86"]::before,
-    #section_c09a5196-ef00-452a-886c-946329971169 ~ table [for="section_c09a5196-ef00-452a-886c-946329971169"]::before,
-    #section_897e582b-cf32-4ae4-a5f4-adce69667152 ~ table [for="section_897e582b-cf32-4ae4-a5f4-adce69667152"]::before {
-        display: inline-block;
-        content: "►";
-        font-size: 11px;
-        width: 15px;
-        text-align: left;
-    }
-
-    #section_328283f0-58ab-4850-a5a3-f235bdf21c86:checked ~ table [for="section_328283f0-58ab-4850-a5a3-f235bdf21c86"]::before,
-    #section_c09a5196-ef00-452a-886c-946329971169:checked ~ table [for="section_c09a5196-ef00-452a-886c-946329971169"]::before,
-    #section_897e582b-cf32-4ae4-a5f4-adce69667152:checked ~ table [for="section_897e582b-cf32-4ae4-a5f4-adce69667152"]::before {
-        content: "▼";
-    }
-
-    #section_328283f0-58ab-4850-a5a3-f235bdf21c86 ~ table tr.section_328283f0-58ab-4850-a5a3-f235bdf21c86,
-    #section_c09a5196-ef00-452a-886c-946329971169 ~ table tr.section_c09a5196-ef00-452a-886c-946329971169,
-    #section_897e582b-cf32-4ae4-a5f4-adce69667152 ~ table tr.section_897e582b-cf32-4ae4-a5f4-adce69667152 {
-        visibility: collapse;
-    }
-
-    #section_328283f0-58ab-4850-a5a3-f235bdf21c86:checked ~ table tr.section_328283f0-58ab-4850-a5a3-f235bdf21c86,
-    #section_c09a5196-ef00-452a-886c-946329971169:checked ~ table tr.section_c09a5196-ef00-452a-886c-946329971169,
-    #section_897e582b-cf32-4ae4-a5f4-adce69667152:checked ~ table tr.section_897e582b-cf32-4ae4-a5f4-adce69667152 {
-        visibility: visible;
-    }
-    </style>
-
-    <input type="checkbox" id="section_328283f0-58ab-4850-a5a3-f235bdf21c86" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_c09a5196-ef00-452a-886c-946329971169" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_897e582b-cf32-4ae4-a5f4-adce69667152" hidden aria-hidden="true"/>
-
-    <table class="table table-hover table-striped table-sm table-responsive small">
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_328283f0-58ab-4850-a5a3-f235bdf21c86>
-                    General
-                </label>
-            </th>
-        </tr>
-        <tr class="section_328283f0-58ab-4850-a5a3-f235bdf21c86">
-            <th>Measurement date</th>
-        
-            <td>January 01, 2000  00:00:00 GMT</td>
-        
-        </tr>
-        <tr class="section_328283f0-58ab-4850-a5a3-f235bdf21c86">
-            <th>Experimenter</th>
-        
-            <td>Unknown</td>
-        
-        </tr>
-        <tr class="section_328283f0-58ab-4850-a5a3-f235bdf21c86">
-            <th>Participant</th>
-        
+    <details open>
+        <summary><strong>General</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Measurement date</th>
             
-        
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_c09a5196-ef00-452a-886c-946329971169>
-                    Channels
-                </label>
-            </th>
-        </tr>
-        <tr class="section_c09a5196-ef00-452a-886c-946329971169">
-            <th>Digitized points</th>
-        
-            <td>5 points</td>
-        
-        </tr>
-        <tr class="section_c09a5196-ef00-452a-886c-946329971169">
-            <th>Good channels</th>
-            <td>216 fNIRS (CW amplitude)</td>
-        </tr>
-        <tr class="section_c09a5196-ef00-452a-886c-946329971169">
-            <th>Bad channels</th>
-            <td>None</td>
-        </tr>
-        <tr class="section_c09a5196-ef00-452a-886c-946329971169">
-            <th>EOG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr class="section_c09a5196-ef00-452a-886c-946329971169">
-            <th>ECG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_897e582b-cf32-4ae4-a5f4-adce69667152>
-                    Data
-                </label>
-            </th>
-        </tr>
-    
-        <tr class="section_897e582b-cf32-4ae4-a5f4-adce69667152">
-            <th>Sampling frequency</th>
-            <td>10.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_897e582b-cf32-4ae4-a5f4-adce69667152">
-            <th>Highpass</th>
-            <td>0.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_897e582b-cf32-4ae4-a5f4-adce69667152">
-            <th>Lowpass</th>
-            <td>5.00 Hz</td>
-        </tr>
-    
-    
-    
-        <tr class="section_897e582b-cf32-4ae4-a5f4-adce69667152">
-            <th>Filenames</th>
-            <td>lumomat-1-1-0.snirf</td>
-        </tr>
-    
-    
-        <tr class="section_897e582b-cf32-4ae4-a5f4-adce69667152">
-            <th>Duration</th>
-            <td>00:00:28 (HH:MM:SS)</td>
-        </tr>
-    
-    </table>
+                <td>January 01, 2000  00:00:00 GMT</td>
+            
+            </tr>
+            <tr>
+                <th>Experimenter</th>
+            
+                <td>Unknown</td>
+            
+            </tr>
+            <tr>
+                <th>Participant</th>
+            
+            
+            
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Channels</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                <tr>
+                    <th>Digitized points</th>
+                
+                    <td>5 points</td>
+                
+                </tr>
+                <tr>
+                    <th>Good channels</th>
+                    <td>216 fNIRS (CW amplitude)</td>
+                </tr>
+                <tr>
+                    <th>Bad channels</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>EOG channels</th>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <th>ECG channels</th>
+                    <td>Not available</td>
+                </tr>
+            </table>
+            </details>
+            <details open>
+                <summary><strong>Data</strong></summary>
+                <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                    <tr>
+                        <th>Sampling frequency</th>
+                        <td>10.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Highpass</th>
+                        <td>0.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Lowpass</th>
+                        <td>5.00 Hz</td>
+                    </tr>
+                
+                
+                
+                    <tr>
+                        <th>Filenames</th>
+                        <td>lumomat-1-1-0.snirf</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Duration</th>
+                        <td>00:00:28 (HH:MM:SS)</td>
+                    </tr>
+                
+                </table>
+                </details>
     </div>
     <br />
     <br />
@@ -327,7 +284,7 @@ and signal annotations.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19147a2f00>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff2d8c72200>
 
 
 
@@ -725,135 +682,92 @@ interface using the `fsaverage` head.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>
-    label { cursor: pointer; }
-    #section_a7298ee2-9f96-4288-ab09-12e1a9309dd5 ~ table [for="section_a7298ee2-9f96-4288-ab09-12e1a9309dd5"]::before,
-    #section_6e5752fe-8db0-4979-b153-b5288758212f ~ table [for="section_6e5752fe-8db0-4979-b153-b5288758212f"]::before,
-    #section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba ~ table [for="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba"]::before {
-        display: inline-block;
-        content: "►";
-        font-size: 11px;
-        width: 15px;
-        text-align: left;
-    }
-
-    #section_a7298ee2-9f96-4288-ab09-12e1a9309dd5:checked ~ table [for="section_a7298ee2-9f96-4288-ab09-12e1a9309dd5"]::before,
-    #section_6e5752fe-8db0-4979-b153-b5288758212f:checked ~ table [for="section_6e5752fe-8db0-4979-b153-b5288758212f"]::before,
-    #section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba:checked ~ table [for="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba"]::before {
-        content: "▼";
-    }
-
-    #section_a7298ee2-9f96-4288-ab09-12e1a9309dd5 ~ table tr.section_a7298ee2-9f96-4288-ab09-12e1a9309dd5,
-    #section_6e5752fe-8db0-4979-b153-b5288758212f ~ table tr.section_6e5752fe-8db0-4979-b153-b5288758212f,
-    #section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba ~ table tr.section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba {
-        visibility: collapse;
-    }
-
-    #section_a7298ee2-9f96-4288-ab09-12e1a9309dd5:checked ~ table tr.section_a7298ee2-9f96-4288-ab09-12e1a9309dd5,
-    #section_6e5752fe-8db0-4979-b153-b5288758212f:checked ~ table tr.section_6e5752fe-8db0-4979-b153-b5288758212f,
-    #section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba:checked ~ table tr.section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba {
-        visibility: visible;
-    }
-    </style>
-
-    <input type="checkbox" id="section_a7298ee2-9f96-4288-ab09-12e1a9309dd5" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_6e5752fe-8db0-4979-b153-b5288758212f" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba" hidden aria-hidden="true"/>
-
-    <table class="table table-hover table-striped table-sm table-responsive small">
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_a7298ee2-9f96-4288-ab09-12e1a9309dd5>
-                    General
-                </label>
-            </th>
-        </tr>
-        <tr class="section_a7298ee2-9f96-4288-ab09-12e1a9309dd5">
-            <th>Measurement date</th>
-        
-            <td>January 01, 2000  00:00:00 GMT</td>
-        
-        </tr>
-        <tr class="section_a7298ee2-9f96-4288-ab09-12e1a9309dd5">
-            <th>Experimenter</th>
-        
-            <td>Unknown</td>
-        
-        </tr>
-        <tr class="section_a7298ee2-9f96-4288-ab09-12e1a9309dd5">
-            <th>Participant</th>
-        
+    <details open>
+        <summary><strong>General</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Measurement date</th>
             
-        
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_6e5752fe-8db0-4979-b153-b5288758212f>
-                    Channels
-                </label>
-            </th>
-        </tr>
-        <tr class="section_6e5752fe-8db0-4979-b153-b5288758212f">
-            <th>Digitized points</th>
-        
-            <td>24 points</td>
-        
-        </tr>
-        <tr class="section_6e5752fe-8db0-4979-b153-b5288758212f">
-            <th>Good channels</th>
-            <td>216 fNIRS (CW amplitude)</td>
-        </tr>
-        <tr class="section_6e5752fe-8db0-4979-b153-b5288758212f">
-            <th>Bad channels</th>
-            <td>None</td>
-        </tr>
-        <tr class="section_6e5752fe-8db0-4979-b153-b5288758212f">
-            <th>EOG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr class="section_6e5752fe-8db0-4979-b153-b5288758212f">
-            <th>ECG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba>
-                    Data
-                </label>
-            </th>
-        </tr>
-    
-        <tr class="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba">
-            <th>Sampling frequency</th>
-            <td>10.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba">
-            <th>Highpass</th>
-            <td>0.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba">
-            <th>Lowpass</th>
-            <td>5.00 Hz</td>
-        </tr>
-    
-    
-    
-        <tr class="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba">
-            <th>Filenames</th>
-            <td>lumomat-1-1-0.snirf</td>
-        </tr>
-    
-    
-        <tr class="section_d0241f2c-85b7-4696-8ae2-9bfdc30cdfba">
-            <th>Duration</th>
-            <td>00:00:28 (HH:MM:SS)</td>
-        </tr>
-    
-    </table>
+                <td>January 01, 2000  00:00:00 GMT</td>
+            
+            </tr>
+            <tr>
+                <th>Experimenter</th>
+            
+                <td>Unknown</td>
+            
+            </tr>
+            <tr>
+                <th>Participant</th>
+            
+            
+            
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Channels</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                <tr>
+                    <th>Digitized points</th>
+                
+                    <td>24 points</td>
+                
+                </tr>
+                <tr>
+                    <th>Good channels</th>
+                    <td>216 fNIRS (CW amplitude)</td>
+                </tr>
+                <tr>
+                    <th>Bad channels</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>EOG channels</th>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <th>ECG channels</th>
+                    <td>Not available</td>
+                </tr>
+            </table>
+            </details>
+            <details open>
+                <summary><strong>Data</strong></summary>
+                <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                    <tr>
+                        <th>Sampling frequency</th>
+                        <td>10.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Highpass</th>
+                        <td>0.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Lowpass</th>
+                        <td>5.00 Hz</td>
+                    </tr>
+                
+                
+                
+                    <tr>
+                        <th>Filenames</th>
+                        <td>lumomat-1-1-0.snirf</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Duration</th>
+                        <td>00:00:28 (HH:MM:SS)</td>
+                    </tr>
+                
+                </table>
+                </details>
     </div>
     <br />
     <br />
@@ -924,9 +838,9 @@ From here you can use your favorite analysis technique such as
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 25.951 seconds)
+   **Total running time of the script:** (0 minutes 29.580 seconds)
 
-**Estimated memory usage:**  164 MB
+**Estimated memory usage:**  162 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_06_gowerlabs.py:
@@ -938,7 +852,7 @@ From here you can use your favorite analysis technique such as
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
-        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_06_gowerlabs.ipynb
+        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=stable/notebooks/auto_examples/general/plot_06_gowerlabs.ipynb
         :alt: Launch binder
         :width: 150 px
 

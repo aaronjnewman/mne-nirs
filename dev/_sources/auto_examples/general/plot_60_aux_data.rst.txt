@@ -93,139 +93,103 @@ the previous GLM example that contains auxiliary data.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/circleci/project/mne_nirs/datasets/snirf_with_aux/snirf_with_aux.py:62: RuntimeWarning: Setting non-standard config type: "MNE_DATASETS_SNIRFAUX_PATH"
+      dpath = fetch_dataset(dataset_params, path=path, force_update=force_update,
+
 
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>
-    label { cursor: pointer; }
-    #section_c75c90dc-1778-42c5-b948-32019701ec11 ~ table [for="section_c75c90dc-1778-42c5-b948-32019701ec11"]::before,
-    #section_422f00a5-f326-4fbf-8bf9-1002f533a0f7 ~ table [for="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7"]::before,
-    #section_952783d3-bf0b-4cad-94fa-d3d058c19684 ~ table [for="section_952783d3-bf0b-4cad-94fa-d3d058c19684"]::before {
-        display: inline-block;
-        content: "►";
-        font-size: 11px;
-        width: 15px;
-        text-align: left;
-    }
-
-    #section_c75c90dc-1778-42c5-b948-32019701ec11:checked ~ table [for="section_c75c90dc-1778-42c5-b948-32019701ec11"]::before,
-    #section_422f00a5-f326-4fbf-8bf9-1002f533a0f7:checked ~ table [for="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7"]::before,
-    #section_952783d3-bf0b-4cad-94fa-d3d058c19684:checked ~ table [for="section_952783d3-bf0b-4cad-94fa-d3d058c19684"]::before {
-        content: "▼";
-    }
-
-    #section_c75c90dc-1778-42c5-b948-32019701ec11 ~ table tr.section_c75c90dc-1778-42c5-b948-32019701ec11,
-    #section_422f00a5-f326-4fbf-8bf9-1002f533a0f7 ~ table tr.section_422f00a5-f326-4fbf-8bf9-1002f533a0f7,
-    #section_952783d3-bf0b-4cad-94fa-d3d058c19684 ~ table tr.section_952783d3-bf0b-4cad-94fa-d3d058c19684 {
-        visibility: collapse;
-    }
-
-    #section_c75c90dc-1778-42c5-b948-32019701ec11:checked ~ table tr.section_c75c90dc-1778-42c5-b948-32019701ec11,
-    #section_422f00a5-f326-4fbf-8bf9-1002f533a0f7:checked ~ table tr.section_422f00a5-f326-4fbf-8bf9-1002f533a0f7,
-    #section_952783d3-bf0b-4cad-94fa-d3d058c19684:checked ~ table tr.section_952783d3-bf0b-4cad-94fa-d3d058c19684 {
-        visibility: visible;
-    }
-    </style>
-
-    <input type="checkbox" id="section_c75c90dc-1778-42c5-b948-32019701ec11" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_952783d3-bf0b-4cad-94fa-d3d058c19684" hidden aria-hidden="true"/>
-
-    <table class="table table-hover table-striped table-sm table-responsive small">
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_c75c90dc-1778-42c5-b948-32019701ec11>
-                    General
-                </label>
-            </th>
-        </tr>
-        <tr class="section_c75c90dc-1778-42c5-b948-32019701ec11">
-            <th>Measurement date</th>
-        
-            <td>August 05, 2022  13:10:58 GMT</td>
-        
-        </tr>
-        <tr class="section_c75c90dc-1778-42c5-b948-32019701ec11">
-            <th>Experimenter</th>
-        
-            <td>Unknown</td>
-        
-        </tr>
-        <tr class="section_c75c90dc-1778-42c5-b948-32019701ec11">
-            <th>Participant</th>
-        
+    <details open>
+        <summary><strong>General</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Measurement date</th>
             
-        
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_422f00a5-f326-4fbf-8bf9-1002f533a0f7>
-                    Channels
-                </label>
-            </th>
-        </tr>
-        <tr class="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7">
-            <th>Digitized points</th>
-        
-            <td>300 points</td>
-        
-        </tr>
-        <tr class="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7">
-            <th>Good channels</th>
-            <td>56 fNIRS (CW amplitude)</td>
-        </tr>
-        <tr class="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7">
-            <th>Bad channels</th>
-            <td>None</td>
-        </tr>
-        <tr class="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7">
-            <th>EOG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr class="section_422f00a5-f326-4fbf-8bf9-1002f533a0f7">
-            <th>ECG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_952783d3-bf0b-4cad-94fa-d3d058c19684>
-                    Data
-                </label>
-            </th>
-        </tr>
-    
-        <tr class="section_952783d3-bf0b-4cad-94fa-d3d058c19684">
-            <th>Sampling frequency</th>
-            <td>0.70 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_952783d3-bf0b-4cad-94fa-d3d058c19684">
-            <th>Highpass</th>
-            <td>0.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_952783d3-bf0b-4cad-94fa-d3d058c19684">
-            <th>Lowpass</th>
-            <td>0.35 Hz</td>
-        </tr>
-    
-    
-    
-        <tr class="section_952783d3-bf0b-4cad-94fa-d3d058c19684">
-            <th>Filenames</th>
-            <td>2022-08-05_002.snirf</td>
-        </tr>
-    
-    
-        <tr class="section_952783d3-bf0b-4cad-94fa-d3d058c19684">
-            <th>Duration</th>
-            <td>00:33:53 (HH:MM:SS)</td>
-        </tr>
-    
-    </table>
+                <td>August 05, 2022  13:10:58 GMT</td>
+            
+            </tr>
+            <tr>
+                <th>Experimenter</th>
+            
+                <td>Unknown</td>
+            
+            </tr>
+            <tr>
+                <th>Participant</th>
+            
+            
+            
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Channels</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                <tr>
+                    <th>Digitized points</th>
+                
+                    <td>300 points</td>
+                
+                </tr>
+                <tr>
+                    <th>Good channels</th>
+                    <td>56 fNIRS (CW amplitude)</td>
+                </tr>
+                <tr>
+                    <th>Bad channels</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>EOG channels</th>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <th>ECG channels</th>
+                    <td>Not available</td>
+                </tr>
+            </table>
+            </details>
+            <details open>
+                <summary><strong>Data</strong></summary>
+                <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                    <tr>
+                        <th>Sampling frequency</th>
+                        <td>0.70 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Highpass</th>
+                        <td>0.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Lowpass</th>
+                        <td>0.35 Hz</td>
+                    </tr>
+                
+                
+                
+                    <tr>
+                        <th>Filenames</th>
+                        <td>2022-08-05_002.snirf</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Duration</th>
+                        <td>00:33:53 (HH:MM:SS)</td>
+                    </tr>
+                
+                </table>
+                </details>
     </div>
     <br />
     <br />
@@ -523,7 +487,7 @@ but this is beyond the scope of this tutorial.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 7.593 seconds)
+   **Total running time of the script:** (0 minutes 9.036 seconds)
 
 **Estimated memory usage:**  9 MB
 
@@ -537,7 +501,7 @@ but this is beyond the scope of this tutorial.
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
-        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_60_aux_data.ipynb
+        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=stable/notebooks/auto_examples/general/plot_60_aux_data.ipynb
         :alt: Launch binder
         :width: 150 px
 

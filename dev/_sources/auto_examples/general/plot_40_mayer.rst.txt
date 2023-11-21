@@ -135,137 +135,94 @@ We read in the data and convert to haemoglobin concentration.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>
-    label { cursor: pointer; }
-    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0 ~ table [for="section_b1bccc0f-bf1d-4745-9541-74e19617efb0"]::before,
-    #section_053d82fc-d97a-48e6-983d-991cc7b0438a ~ table [for="section_053d82fc-d97a-48e6-983d-991cc7b0438a"]::before,
-    #section_f26ef55e-4017-4129-855d-322d8cb9c590 ~ table [for="section_f26ef55e-4017-4129-855d-322d8cb9c590"]::before {
-        display: inline-block;
-        content: "►";
-        font-size: 11px;
-        width: 15px;
-        text-align: left;
-    }
-
-    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0:checked ~ table [for="section_b1bccc0f-bf1d-4745-9541-74e19617efb0"]::before,
-    #section_053d82fc-d97a-48e6-983d-991cc7b0438a:checked ~ table [for="section_053d82fc-d97a-48e6-983d-991cc7b0438a"]::before,
-    #section_f26ef55e-4017-4129-855d-322d8cb9c590:checked ~ table [for="section_f26ef55e-4017-4129-855d-322d8cb9c590"]::before {
-        content: "▼";
-    }
-
-    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0 ~ table tr.section_b1bccc0f-bf1d-4745-9541-74e19617efb0,
-    #section_053d82fc-d97a-48e6-983d-991cc7b0438a ~ table tr.section_053d82fc-d97a-48e6-983d-991cc7b0438a,
-    #section_f26ef55e-4017-4129-855d-322d8cb9c590 ~ table tr.section_f26ef55e-4017-4129-855d-322d8cb9c590 {
-        visibility: collapse;
-    }
-
-    #section_b1bccc0f-bf1d-4745-9541-74e19617efb0:checked ~ table tr.section_b1bccc0f-bf1d-4745-9541-74e19617efb0,
-    #section_053d82fc-d97a-48e6-983d-991cc7b0438a:checked ~ table tr.section_053d82fc-d97a-48e6-983d-991cc7b0438a,
-    #section_f26ef55e-4017-4129-855d-322d8cb9c590:checked ~ table tr.section_f26ef55e-4017-4129-855d-322d8cb9c590 {
-        visibility: visible;
-    }
-    </style>
-
-    <input type="checkbox" id="section_b1bccc0f-bf1d-4745-9541-74e19617efb0" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_053d82fc-d97a-48e6-983d-991cc7b0438a" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_f26ef55e-4017-4129-855d-322d8cb9c590" hidden aria-hidden="true"/>
-
-    <table class="table table-hover table-striped table-sm table-responsive small">
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_b1bccc0f-bf1d-4745-9541-74e19617efb0>
-                    General
-                </label>
-            </th>
-        </tr>
-        <tr class="section_b1bccc0f-bf1d-4745-9541-74e19617efb0">
-            <th>Measurement date</th>
-        
-            <td>November 02, 2019  13:16:16 GMT</td>
-        
-        </tr>
-        <tr class="section_b1bccc0f-bf1d-4745-9541-74e19617efb0">
-            <th>Experimenter</th>
-        
-            <td>Unknown</td>
-        
-        </tr>
-        <tr class="section_b1bccc0f-bf1d-4745-9541-74e19617efb0">
-            <th>Participant</th>
-        
+    <details open>
+        <summary><strong>General</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Measurement date</th>
+            
+                <td>November 02, 2019  13:16:16 GMT</td>
+            
+            </tr>
+            <tr>
+                <th>Experimenter</th>
+            
+                <td>Unknown</td>
+            
+            </tr>
+            <tr>
+                <th>Participant</th>
+            
             
                 <td>P1</td>
             
-        
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_053d82fc-d97a-48e6-983d-991cc7b0438a>
-                    Channels
-                </label>
-            </th>
-        </tr>
-        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
-            <th>Digitized points</th>
-        
-            <td>31 points</td>
-        
-        </tr>
-        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
-            <th>Good channels</th>
-            <td>20 Oxyhemoglobin</td>
-        </tr>
-        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
-            <th>Bad channels</th>
-            <td>None</td>
-        </tr>
-        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
-            <th>EOG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr class="section_053d82fc-d97a-48e6-983d-991cc7b0438a">
-            <th>ECG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_f26ef55e-4017-4129-855d-322d8cb9c590>
-                    Data
-                </label>
-            </th>
-        </tr>
-    
-        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
-            <th>Sampling frequency</th>
-            <td>2.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
-            <th>Highpass</th>
-            <td>0.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
-            <th>Lowpass</th>
-            <td>1.00 Hz</td>
-        </tr>
-    
-    
-    
-        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
-            <th>Filenames</th>
-            <td>Participant-1</td>
-        </tr>
-    
-    
-        <tr class="section_f26ef55e-4017-4129-855d-322d8cb9c590">
-            <th>Duration</th>
-            <td>00:49:34 (HH:MM:SS)</td>
-        </tr>
-    
-    </table>
+            
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Channels</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                <tr>
+                    <th>Digitized points</th>
+                
+                    <td>31 points</td>
+                
+                </tr>
+                <tr>
+                    <th>Good channels</th>
+                    <td>20 Oxyhemoglobin</td>
+                </tr>
+                <tr>
+                    <th>Bad channels</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>EOG channels</th>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <th>ECG channels</th>
+                    <td>Not available</td>
+                </tr>
+            </table>
+            </details>
+            <details open>
+                <summary><strong>Data</strong></summary>
+                <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                    <tr>
+                        <th>Sampling frequency</th>
+                        <td>2.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Highpass</th>
+                        <td>0.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Lowpass</th>
+                        <td>1.00 Hz</td>
+                    </tr>
+                
+                
+                
+                    <tr>
+                        <th>Filenames</th>
+                        <td>Participant-1</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Duration</th>
+                        <td>00:49:34 (HH:MM:SS)</td>
+                    </tr>
+                
+                </table>
+                </details>
     </div>
     <br />
     <br />
@@ -340,7 +297,7 @@ it matches well to the data.
  .. code-block:: none
 
 
-    ([<matplotlib.axis.XTick object at 0x7f19e4717760>, <matplotlib.axis.XTick object at 0x7f19e47148e0>, <matplotlib.axis.XTick object at 0x7f19e4717ee0>, <matplotlib.axis.XTick object at 0x7f19e646e1d0>, <matplotlib.axis.XTick object at 0x7f19a26a7d90>, <matplotlib.axis.XTick object at 0x7f19a26a5510>, <matplotlib.axis.XTick object at 0x7f19a26a5420>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
+    ([<matplotlib.axis.XTick object at 0x7ff167824040>, <matplotlib.axis.XTick object at 0x7ff167824a90>, <matplotlib.axis.XTick object at 0x7ff2a8a3dab0>, <matplotlib.axis.XTick object at 0x7ff167c9b250>, <matplotlib.axis.XTick object at 0x7ff167c9b490>, <matplotlib.axis.XTick object at 0x7ff167c99ba0>, <matplotlib.axis.XTick object at 0x7ff167b70d30>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
 
 
 
@@ -450,7 +407,7 @@ Bibliography
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.258 seconds)
+   **Total running time of the script:** (0 minutes 4.297 seconds)
 
 **Estimated memory usage:**  9 MB
 
@@ -464,7 +421,7 @@ Bibliography
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
-        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_40_mayer.ipynb
+        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=stable/notebooks/auto_examples/general/plot_40_mayer.ipynb
         :alt: Launch binder
         :width: 150 px
 

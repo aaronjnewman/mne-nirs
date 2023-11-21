@@ -95,137 +95,94 @@ appear as if a fNIRS response is observed.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>
-    label { cursor: pointer; }
-    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef ~ table [for="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef"]::before,
-    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491 ~ table [for="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491"]::before,
-    #section_14322252-a7fa-438f-8899-7c075f52628d ~ table [for="section_14322252-a7fa-438f-8899-7c075f52628d"]::before {
-        display: inline-block;
-        content: "►";
-        font-size: 11px;
-        width: 15px;
-        text-align: left;
-    }
-
-    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef:checked ~ table [for="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef"]::before,
-    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491:checked ~ table [for="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491"]::before,
-    #section_14322252-a7fa-438f-8899-7c075f52628d:checked ~ table [for="section_14322252-a7fa-438f-8899-7c075f52628d"]::before {
-        content: "▼";
-    }
-
-    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef ~ table tr.section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef,
-    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491 ~ table tr.section_9197a0f7-3ff4-4695-9c0e-314d13ecc491,
-    #section_14322252-a7fa-438f-8899-7c075f52628d ~ table tr.section_14322252-a7fa-438f-8899-7c075f52628d {
-        visibility: collapse;
-    }
-
-    #section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef:checked ~ table tr.section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef,
-    #section_9197a0f7-3ff4-4695-9c0e-314d13ecc491:checked ~ table tr.section_9197a0f7-3ff4-4695-9c0e-314d13ecc491,
-    #section_14322252-a7fa-438f-8899-7c075f52628d:checked ~ table tr.section_14322252-a7fa-438f-8899-7c075f52628d {
-        visibility: visible;
-    }
-    </style>
-
-    <input type="checkbox" id="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491" hidden aria-hidden="true"/>
-    <input type="checkbox" id="section_14322252-a7fa-438f-8899-7c075f52628d" hidden aria-hidden="true"/>
-
-    <table class="table table-hover table-striped table-sm table-responsive small">
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef>
-                    General
-                </label>
-            </th>
-        </tr>
-        <tr class="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef">
-            <th>Measurement date</th>
-        
-            <td>November 02, 2019  13:16:16 GMT</td>
-        
-        </tr>
-        <tr class="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef">
-            <th>Experimenter</th>
-        
-            <td>Unknown</td>
-        
-        </tr>
-        <tr class="section_a8b9b0fc-9f03-4dc5-a50f-aeadd277baef">
-            <th>Participant</th>
-        
+    <details open>
+        <summary><strong>General</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Measurement date</th>
+            
+                <td>November 02, 2019  13:16:16 GMT</td>
+            
+            </tr>
+            <tr>
+                <th>Experimenter</th>
+            
+                <td>Unknown</td>
+            
+            </tr>
+            <tr>
+                <th>Participant</th>
+            
             
                 <td>P1</td>
             
-        
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_9197a0f7-3ff4-4695-9c0e-314d13ecc491>
-                    Channels
-                </label>
-            </th>
-        </tr>
-        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
-            <th>Digitized points</th>
-        
-            <td>31 points</td>
-        
-        </tr>
-        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
-            <th>Good channels</th>
-            <td>56 fNIRS (CW amplitude)</td>
-        </tr>
-        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
-            <th>Bad channels</th>
-            <td>None</td>
-        </tr>
-        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
-            <th>EOG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr class="section_9197a0f7-3ff4-4695-9c0e-314d13ecc491">
-            <th>ECG channels</th>
-            <td>Not available</td>
-        </tr>
-        <tr>
-            <th class="collapsible_header" colspan="2" style="font-weight: bold; text-align: left;">
-                <label for=section_14322252-a7fa-438f-8899-7c075f52628d>
-                    Data
-                </label>
-            </th>
-        </tr>
-    
-        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
-            <th>Sampling frequency</th>
-            <td>7.81 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
-            <th>Highpass</th>
-            <td>0.00 Hz</td>
-        </tr>
-    
-    
-        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
-            <th>Lowpass</th>
-            <td>3.91 Hz</td>
-        </tr>
-    
-    
-    
-        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
-            <th>Filenames</th>
-            <td>Participant-1</td>
-        </tr>
-    
-    
-        <tr class="section_14322252-a7fa-438f-8899-7c075f52628d">
-            <th>Duration</th>
-            <td>00:49:35 (HH:MM:SS)</td>
-        </tr>
-    
-    </table>
+            
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Channels</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                <tr>
+                    <th>Digitized points</th>
+                
+                    <td>31 points</td>
+                
+                </tr>
+                <tr>
+                    <th>Good channels</th>
+                    <td>56 fNIRS (CW amplitude)</td>
+                </tr>
+                <tr>
+                    <th>Bad channels</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>EOG channels</th>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <th>ECG channels</th>
+                    <td>Not available</td>
+                </tr>
+            </table>
+            </details>
+            <details open>
+                <summary><strong>Data</strong></summary>
+                <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                    <tr>
+                        <th>Sampling frequency</th>
+                        <td>7.81 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Highpass</th>
+                        <td>0.00 Hz</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Lowpass</th>
+                        <td>3.91 Hz</td>
+                    </tr>
+                
+                
+                
+                    <tr>
+                        <th>Filenames</th>
+                        <td>Participant-1</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th>Duration</th>
+                        <td>00:49:35 (HH:MM:SS)</td>
+                    </tr>
+                
+                </table>
+                </details>
     </div>
     <br />
     <br />
@@ -267,7 +224,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19a1b6cc00>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff1678ab8c0>
 
 
 
@@ -302,7 +259,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e563ec80>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff274242b40>
 
 
 
@@ -339,7 +296,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7f19e4cdd540>
+    <mne_qt_browser._pg_figure.MNEQtBrowser(0x0) at 0x7ff274211480>
 
 
 
@@ -603,7 +560,7 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 10.552 seconds)
+   **Total running time of the script:** (0 minutes 9.060 seconds)
 
 **Estimated memory usage:**  10 MB
 
@@ -617,7 +574,7 @@ approach, and the benefits of the GLM style of analysis
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
-        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=dev/notebooks/auto_examples/general/plot_99_bad.ipynb
+        :target: https://mybinder.org/v2/gh/mne-tools/mne-nirs/gh-pages?filepath=stable/notebooks/auto_examples/general/plot_99_bad.ipynb
         :alt: Launch binder
         :width: 150 px
 
