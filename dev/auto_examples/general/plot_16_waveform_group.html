@@ -1,53 +1,56 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Group Level Waveform Analysis &#8212; MNE-NIRS 0.6.0 documentation</title>
   
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/js/copybutton.js"></script>
+    <script src="../../_static/documentation_options.js?v=8fa8b3e9"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-188272121-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-188272121-1');
+            </script>
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
@@ -57,9 +60,9 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/general/plot_16_waveform_group';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mne.tools/mne-nirs/dev/_static/versions.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.6.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.6';
         </script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="SNIRF Support in MNE" href="plot_19_snirf.html" />
@@ -72,7 +75,7 @@
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
 
   
   
@@ -210,7 +213,7 @@ document.write(`
 document.write(`
   <div class="version-switcher__container dropdown">
     <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      0.6.0  <!-- this text may get changed later by javascript -->
+      0.6  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
     <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
@@ -221,7 +224,7 @@ document.write(`
 </script></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
-    aria-label="Icon Links">
+    aria-label="External Links">
         <li class="nav-item">
           
           
@@ -327,7 +330,7 @@ document.write(`
 document.write(`
   <div class="version-switcher__container dropdown">
     <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      0.6.0  <!-- this text may get changed later by javascript -->
+      0.6  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
     <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
@@ -338,7 +341,7 @@ document.write(`
 </script></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
-    aria-label="Icon Links">
+    aria-label="External Links">
         <li class="nav-item">
           
           
@@ -415,39 +418,7 @@ document.write(`
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item">
-
-
-
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
-    
-    <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
-        <i class="fa-solid fa-home"></i>
-      </a>
-    </li>
-    
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Examples</a></li>
-    
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Analysis examples</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Group Level Waveform Analysis</li>
-  </ul>
-</nav>
-</div>
-      
-    </div>
-  
-  
-</div>
-</div>
+              <div class="bd-header-article"></div>
               
               
               
@@ -461,7 +432,7 @@ document.write(`
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="group-level-waveform-analysis">
-<span id="tut-fnirs-group-wave"></span><span id="sphx-glr-auto-examples-general-plot-16-waveform-group-py"></span><h1>Group Level Waveform Analysis<a class="headerlink" href="#group-level-waveform-analysis" title="Permalink to this heading">#</a></h1>
+<span id="tut-fnirs-group-wave"></span><span id="sphx-glr-auto-examples-general-plot-16-waveform-group-py"></span><h1>Group Level Waveform Analysis<a class="headerlink" href="#group-level-waveform-analysis" title="Link to this heading">#</a></h1>
 <p>This is an example of a group-level waveform-based
 functional near-infrared spectroscopy (fNIRS)
 analysis in MNE-NIRS.</p>
@@ -499,7 +470,7 @@ information about triggers, condition names, etc.</p>
 <p class="admonition-title">Note</p>
 <p>This tutorial uses data stored using
 <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/11-near-infrared-spectroscopy.html">the BIDS format</a>
-<a class="footnote-reference brackets" href="#footcite-luke2023bids" id="id2">1</a>.</p>
+<a class="footnote-reference brackets" href="#footcite-luke2023bids" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p>MNE-Python allows you to process fNIRS data that is not in BIDS format.
 Simply modify the <code class="docutils literal notranslate"><span class="pre">read_raw_</span></code> function to match your data type.
 See <a class="reference internal" href="plot_01_data_io.html#tut-importing-fnirs-data"><span class="std std-ref">data importing tutorial</span></a> to learn how
@@ -517,7 +488,7 @@ Participants tapped their thumb to their fingers for the entire 5 sec.
 Conditions were presented in a random order with a randomised inter-
 stimulus interval.</p>
 </div>
-<div class="contents local topic" id="page-contents">
+<nav class="contents local" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#define-individual-analysis" id="id4">Define individual analysis</a></p></li>
@@ -530,7 +501,7 @@ stimulus interval.</p>
 <li><p><a class="reference internal" href="#research-question-1-comparison-of-conditions" id="id11">Research question 1: Comparison of conditions</a></p></li>
 <li><p><a class="reference internal" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" id="id12">Research question 2: Are responses larger on the contralateral side to tapping?</a></p></li>
 </ul>
-</div>
+</nav>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -571,7 +542,7 @@ stimulus interval.</p>
 </pre></div>
 </div>
 <section id="define-individual-analysis">
-<h2><a class="toc-backref" href="#id4">Define individual analysis</a><a class="headerlink" href="#define-individual-analysis" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Define individual analysis</a><a class="headerlink" href="#define-individual-analysis" title="Link to this heading">#</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Individual analysis procedures</p>
 <p><a class="reference internal" href="plot_15_waveform.html#tut-fnirs-processing"><span class="std std-ref">Waveform individual analysis</span></a></p>
@@ -620,7 +591,7 @@ As such, this example will skim over the individual-level details.</p>
 </div>
 </section>
 <section id="run-analysis-on-all-data">
-<h2><a class="toc-backref" href="#id5">Run analysis on all data</a><a class="headerlink" href="#run-analysis-on-all-data" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Run analysis on all data</a><a class="headerlink" href="#run-analysis-on-all-data" title="Link to this heading">#</a></h2>
 <p>Next, we loop through the five participants’ measurements and run the
 individual analysis on each. For each individual, the function
 returns the raw data and an epoch structure. The epoch structure is
@@ -683,7 +654,7 @@ that is generated from the average of all 30 trials and epoched from -5 to
 </div>
 </section>
 <section id="view-average-waveform">
-<h2><a class="toc-backref" href="#id6">View average waveform</a><a class="headerlink" href="#view-average-waveform" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">View average waveform</a><a class="headerlink" href="#view-average-waveform" title="Link to this heading">#</a></h2>
 <p>Next, a grand average epoch waveform is generated for each condition.
 This is generated using all of the standard (long) fNIRS channels,
 as illustrated by the head inset in the top right corner of the figure.</p>
@@ -701,7 +672,7 @@ as illustrated by the head inset in the top right corner of the figure.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Oxyhaemoglobin&quot;</span><span class="p">,</span> <span class="s2">&quot;Deoxyhaemoglobin&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="15.0, Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7ff274bde0e0&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="15.0, Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f1d10747460&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
@@ -710,7 +681,7 @@ control condition (similar for when tapping occurred with the left hand).
 We test if this is the case in the analysis below.</p>
 </section>
 <section id="generate-regions-of-interest">
-<h2><a class="toc-backref" href="#id7">Generate regions of interest</a><a class="headerlink" href="#generate-regions-of-interest" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Generate regions of interest</a><a class="headerlink" href="#generate-regions-of-interest" title="Link to this heading">#</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Relevant literature</p>
 <p>Zimeo Morais, G.A., Balardin, J.B. &amp; Sato, J.R.
@@ -747,7 +718,7 @@ and one for the right motor cortex. These are called <cite>Left_Hemisphere</cite
 </div>
 </section>
 <section id="create-average-waveform-per-roi">
-<h2><a class="toc-backref" href="#id8">Create average waveform per ROI</a><a class="headerlink" href="#create-average-waveform-per-roi" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Create average waveform per ROI</a><a class="headerlink" href="#create-average-waveform-per-roi" title="Link to this heading">#</a></h2>
 <p>Next, an average waveform is generated per condition per region of interest.
 This allows the researcher to view the responses elicited in different
 regions of the brain for each condition.</p>
@@ -774,7 +745,7 @@ regions of the brain for each condition.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Oxyhaemoglobin&quot;</span><span class="p">,</span> <span class="s2">&quot;Deoxyhaemoglobin&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7ff280aa4580&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Tapping/Right" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f1d5fad5ae0&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to tapping appears
@@ -782,7 +753,7 @@ largest in the brain region that is contralateral to the hand
 that is tapping. We test if this is the case in the analysis below.</p>
 </section>
 <section id="extract-evoked-amplitude">
-<h2><a class="toc-backref" href="#id9">Extract evoked amplitude</a><a class="headerlink" href="#extract-evoked-amplitude" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Extract evoked amplitude</a><a class="headerlink" href="#extract-evoked-amplitude" title="Link to this heading">#</a></h2>
 <p>The waveforms above provide a qualitative overview of the data.
 It is also useful to perform a quantitative analysis based on the relevant
 features in the dataset.
@@ -891,7 +862,7 @@ We also demonstrate two example analyses on these values below.</p>
 <br />
 <br /></section>
 <section id="view-individual-results">
-<h2><a class="toc-backref" href="#id10">View individual results</a><a class="headerlink" href="#view-individual-results" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">View individual results</a><a class="headerlink" href="#view-individual-results" title="Link to this heading">#</a></h2>
 <p>This figure simply summarises the information in the dataframe created above.
 We observe that the values extracted from the waveform for the control
 condition generally sit around 0. Whereas the tapping conditions have
@@ -904,12 +875,12 @@ single ROI between conditions.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Condition&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.EvokedArray.html#mne.EvokedArray" title="mne.EvokedArray" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbo&#39;&quot;</span><span class="p">),</span> <span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_16_waveform_group_003.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_003.png" alt="plot 16 waveform group" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid object at 0x7ff280990100&gt;
+<img src="../../_images/sphx_glr_plot_16_waveform_group_003.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_003.png" alt="plot 16 waveform group" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid object at 0x7f1d3844af50&gt;
 </pre></div>
 </div>
 </section>
 <section id="research-question-1-comparison-of-conditions">
-<h2><a class="toc-backref" href="#id11">Research question 1: Comparison of conditions</a><a class="headerlink" href="#research-question-1-comparison-of-conditions" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Research question 1: Comparison of conditions</a><a class="headerlink" href="#research-question-1-comparison-of-conditions" title="Link to this heading">#</a></h2>
 <p>In this example question we ask: is the HbO response in the
 left ROI to tapping with the right hand larger
 than the response when not tapping (control)?
@@ -967,7 +938,7 @@ ROI, that the tapping condition with the right hand evokes
 a 9.0 μMol larger response than the control condition.</p>
 </section>
 <section id="research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping">
-<h2><a class="toc-backref" href="#id12">Research question 2: Are responses larger on the contralateral side to tapping?</a><a class="headerlink" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Research question 2: Are responses larger on the contralateral side to tapping?</a><a class="headerlink" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" title="Link to this heading">#</a></h2>
 <p>In this example question we ask: when tapping, is the brain region on the
 contralateral side of the brain to the tapping hand larger than the
 ipsilateral side?</p>
@@ -1036,7 +1007,7 @@ conditions and the model is applied.</p>
 <br /><p>The model indicates that for the oxyhaemoglobin (HbO) data, the ipsilateral
 responses are 4.2 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 10.915 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 12.055 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
 <div class="binder-badge docutils container">
@@ -1059,7 +1030,10 @@ hand that is tapping.</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="plot_15_waveform.html"
@@ -1079,7 +1053,10 @@ hand that is tapping.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1106,41 +1083,57 @@ hand that is tapping.</p>
 </ul>
   </nav></div>
 
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/mne-tools/mne-nirs/edit/main/doc/auto_examples/general/plot_16_waveform_group.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
 </div></div>
               
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
     </div>
   </div>
   
-    <script src="https://mne.tools/mne-nirs/versionwarning.js"></script>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
+    <script src="https://mne.tools/mne-nirs/versionwarning.js"></script>
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
   
     <div class="footer-items__start">
       
-        <div class="footer-item">
-  <p class="copyright">
-    
-      © Copyright 2012–2023, MNE Developers. Last updated &lt;time datetime=&#34;2023-11-21T03:21:06.396486+00:00&#34; class=&#34;localized&#34;&gt;2023-11-21 03:21 UTC&lt;/time&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;$(function () { $(&#34;time.localized&#34;).each(function () { var el = $(this); el.text(new Date(el.attr(&#34;datetime&#34;)).toLocaleString([], {dateStyle: &#34;medium&#34;, timeStyle: &#34;long&#34;})); }); } )&lt;/script&gt;.
-      <br/>
-    
-  </p>
-</div>
+        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2012–2023, MNE Developers. Last updated <time datetime="2023-12-07T23:28:09.353927+00:00" class="localized">2023-12-07 23:28 UTC</time>
+<script type="text/javascript">$(function () { $("time.localized").each(function () { var el = $(this); el.text(new Date(el.attr("datetime")).toLocaleString([], {dateStyle: "medium", timeStyle: "long"})); }); } )</script></p></div>
       
     </div>
   
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
   
 </div>
 
