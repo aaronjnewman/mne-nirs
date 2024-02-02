@@ -402,7 +402,9 @@ document.write(`
 <div class="viewcode-block" id="read_raw_snirf">
 <a class="viewcode-back" href="../../../../generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf">[docs]</a>
 <span class="nd">@fill_doc</span>
-<span class="k">def</span> <span class="nf">read_raw_snirf</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">optode_frame</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">read_raw_snirf</span><span class="p">(</span>
+    <span class="n">fname</span><span class="p">,</span> <span class="n">optode_frame</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;RawSNIRF&quot;</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Reader for a continuous wave SNIRF data.</span>
 
 <span class="sd">    .. note:: This reader supports the .snirf file type only,</span>
@@ -439,7 +441,7 @@ document.write(`
 
 
 <span class="k">def</span> <span class="nf">_open</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@fill_doc</span>
@@ -795,10 +797,10 @@ document.write(`
                 <span class="n">info</span><span class="p">[</span><span class="s2">&quot;dig&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dig</span>
 
             <span class="n">str_date</span> <span class="o">=</span> <span class="n">_correct_shape</span><span class="p">(</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/metaDataTags/MeasurementDate&quot;</span><span class="p">)))</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/metaDataTags/MeasurementDate&quot;</span><span class="p">))</span>
             <span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span>
             <span class="n">str_time</span> <span class="o">=</span> <span class="n">_correct_shape</span><span class="p">(</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/metaDataTags/MeasurementTime&quot;</span><span class="p">)))</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nirs/metaDataTags/MeasurementTime&quot;</span><span class="p">))</span>
             <span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span>
             <span class="n">str_datetime</span> <span class="o">=</span> <span class="n">str_date</span> <span class="o">+</span> <span class="n">str_time</span>
 
@@ -840,7 +842,7 @@ document.write(`
                     <span class="k">with</span> <span class="n">info</span><span class="o">.</span><span class="n">_unlock</span><span class="p">():</span>
                         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s2">&quot;birthday&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">birthday</span>
 
-            <span class="nb">super</span><span class="p">(</span><span class="n">RawSNIRF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
                 <span class="n">info</span><span class="p">,</span>
                 <span class="n">preload</span><span class="p">,</span>
                 <span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="n">fname</span><span class="p">],</span>
@@ -1003,7 +1005,7 @@ document.write(`
   
     <div class="footer-items__start">
       
-        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2012–2023, MNE Developers. Last updated <time datetime="2023-12-08T01:48:52.552535+00:00" class="localized">2023-12-08 01:48 UTC</time>
+        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2012–2024, MNE Developers. Last updated <time datetime="2024-02-02T17:56:58.431861+00:00" class="localized">2024-02-02 17:56 UTC</time>
 <script type="text/javascript">$(function () { $("time.localized").each(function () { var el = $(this); el.text(new Date(el.attr("datetime")).toLocaleString([], {dateStyle: "medium", timeStyle: "long"})); }); } )</script></p></div>
       
     </div>

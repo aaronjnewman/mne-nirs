@@ -480,16 +480,16 @@ document.write(`
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>raw</strong><span class="classifier">BaseRaw</span></dt><dd><p>The fNIRS data.</p>
+<dt><strong>raw</strong><span class="classifier"><a class="reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="(in MNE v1.6)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseRaw</span></code></a></span></dt><dd><p>The fNIRS data.</p>
 </dd>
-<dt><strong>fold_files</strong><span class="classifier">list | path-like | None</span></dt><dd><p>If None, will use the MNE_NIRS_FOLD_PATH config variable.
+<dt><strong>fold_files</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> | path-like | <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>If None, will use the MNE_NIRS_FOLD_PATH config variable.
 If path-like, should be a path to a directory containing ‘10-10.xls’
 and ‘10-5.xls’. If list, should be paths to the fold toolbox files.
 See Notes for details.</p>
 </dd>
-<dt><strong>atlas</strong><span class="classifier">str</span></dt><dd><p>Brain atlas to use.</p>
+<dt><strong>atlas</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Brain atlas to use.</p>
 </dd>
-<dt><strong>interpolate</strong><span class="classifier">bool</span></dt><dd><p>If the optimal source-detector pair is not found in the fOLD files
+<dt><strong>interpolate</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.12)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If the optimal source-detector pair is not found in the fOLD files
 False (default) will yield no results for that pairing, whereas
 True will use the next closest match. See Notes for an example.</p>
 <div class="admonition warning">
@@ -502,8 +502,8 @@ caution.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>spec</strong><span class="classifier">list of DataFrame</span></dt><dd><p>List of dataframes, one for each channel.</p>
+<dd class="field-even"><dl>
+<dt><strong>spec</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.2.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame</span></code></a></span></dt><dd><p>List of dataframes, one for each channel.</p>
 </dd>
 </dl>
 </dd>
@@ -654,7 +654,7 @@ made.</p></li>
   
     <div class="footer-items__start">
       
-        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2012–2023, MNE Developers. Last updated <time datetime="2023-12-08T01:48:52.552535+00:00" class="localized">2023-12-08 01:48 UTC</time>
+        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2012–2024, MNE Developers. Last updated <time datetime="2024-02-02T17:56:58.431861+00:00" class="localized">2024-02-02 17:56 UTC</time>
 <script type="text/javascript">$(function () { $("time.localized").each(function () { var el = $(this); el.text(new Date(el.attr("datetime")).toLocaleString([], {dateStyle: "medium", timeStyle: "long"})); }); } )</script></p></div>
       
     </div>

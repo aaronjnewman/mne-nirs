@@ -57,7 +57,7 @@ appear as if a fNIRS response is observed.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-62
+.. GENERATED FROM PYTHON SOURCE LINES 42-64
 
 .. code-block:: Python
 
@@ -69,14 +69,16 @@ appear as if a fNIRS response is observed.
     # License: BSD (3-clause)
 
     import os
-    import numpy as np
 
     import mne
+    import numpy as np
+
     import mne_nirs
+
     np.random.seed(1)
 
     fnirs_data_folder = mne.datasets.fnirs_motor.data_path()
-    fnirs_cw_amplitude_dir = os.path.join(fnirs_data_folder, 'Participant-1')
+    fnirs_cw_amplitude_dir = os.path.join(fnirs_data_folder, "Participant-1")
     raw_intensity = mne.io.read_raw_nirx(fnirs_cw_amplitude_dir, verbose=True)
     raw_intensity.load_data()
 
@@ -187,7 +189,7 @@ appear as if a fNIRS response is observed.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-70
+.. GENERATED FROM PYTHON SOURCE LINES 65-72
 
 Selecting channels appropriate for detecting neural responses
 -------------------------------------------------------------
@@ -197,17 +199,19 @@ detect a neural response (less than 1 cm distance between optodes).
 These short channels can be seen in the figure above.
 To achieve this we pick all the channels that are not considered to be short.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-79
+.. GENERATED FROM PYTHON SOURCE LINES 72-83
 
 .. code-block:: Python
 
 
     picks = mne.pick_types(raw_intensity.info, meg=False, fnirs=True)
     dists = mne.preprocessing.nirs.source_detector_distances(
-        raw_intensity.info, picks=picks)
+        raw_intensity.info, picks=picks
+    )
     raw_intensity.pick(picks[dists > 0.01])
-    raw_intensity.plot(n_channels=len(raw_intensity.ch_names),
-                       duration=500, show_scrollbars=False)
+    raw_intensity.plot(
+        n_channels=len(raw_intensity.ch_names), duration=500, show_scrollbars=False
+    )
 
 
 
@@ -224,25 +228,24 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f9144428160>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f75974da560>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-84
+.. GENERATED FROM PYTHON SOURCE LINES 84-88
 
 Converting from raw intensity to optical density
 ------------------------------------------------
 
 The raw intensity values are then converted to optical density.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-90
+.. GENERATED FROM PYTHON SOURCE LINES 88-93
 
 .. code-block:: Python
 
 
     raw_od = mne.preprocessing.nirs.optical_density(raw_intensity)
-    raw_od.plot(n_channels=len(raw_od.ch_names),
-                duration=500, show_scrollbars=False)
+    raw_od.plot(n_channels=len(raw_od.ch_names), duration=500, show_scrollbars=False)
 
 
 
@@ -259,11 +262,11 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f91f1f45e10>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f75970c8160>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-96
+.. GENERATED FROM PYTHON SOURCE LINES 94-99
 
 Converting from optical density to haemoglobin
 ----------------------------------------------
@@ -271,15 +274,13 @@ Converting from optical density to haemoglobin
 Next we convert the optical density data to haemoglobin concentration using
 the modified Beer-Lambert law.
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-103
+.. GENERATED FROM PYTHON SOURCE LINES 99-104
 
 .. code-block:: Python
 
 
     raw_haemo = mne.preprocessing.nirs.beer_lambert_law(raw_od, ppf=0.1)
-    raw_haemo.plot(n_channels=len(raw_haemo.ch_names),
-                   duration=500, show_scrollbars=False)
-
+    raw_haemo.plot(n_channels=len(raw_haemo.ch_names), duration=500, show_scrollbars=False)
 
 
 
@@ -296,11 +297,11 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f91f1ec8940>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f7597d2ae60>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-109
+.. GENERATED FROM PYTHON SOURCE LINES 105-110
 
 !!!!!!Replace real data with white noise!!!!!
 ----------------------------------------------
@@ -308,14 +309,14 @@ the modified Beer-Lambert law.
 Here we replace the signals with white noise.
 We make the HbR white noise 3 time smaller than HbO as is commonly observed.
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-115
+.. GENERATED FROM PYTHON SOURCE LINES 110-116
 
 .. code-block:: Python
 
 
 
     raw_haemo._data = np.random.randn(40, 23239) / 1.0e6 * 1
-    raw_haemo._data[::2, :]= np.random.randn(20, 23239) / 1.0e6 * 3
+    raw_haemo._data[::2, :] = np.random.randn(20, 23239) / 1.0e6 * 3
 
 
 
@@ -325,7 +326,7 @@ We make the HbR white noise 3 time smaller than HbO as is commonly observed.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-122
+.. GENERATED FROM PYTHON SOURCE LINES 117-123
 
 Removing heart rate from signal (BAD DONT COPY)
 -----------------------------------------------
@@ -334,17 +335,16 @@ This analysis is BAD and is provided just as a demonstration.
 Do not do this!!
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-131
+.. GENERATED FROM PYTHON SOURCE LINES 123-131
 
 .. code-block:: Python
 
 
-    fig = raw_haemo.plot_psd(average=True)
-    fig.suptitle('Before filtering', weight='bold', size='x-large')
-    raw_haemo = raw_haemo.filter(0.05, 0.1, h_trans_bandwidth=0.2,
-                                 l_trans_bandwidth=0.02)
-    fig = raw_haemo.plot_psd(average=True)
-    fig.suptitle('After filtering', weight='bold', size='x-large')
+    fig = raw_haemo.compute_psd().plot(average=True, amplitude=False)
+    fig.suptitle("Before filtering", weight="bold", size="x-large")
+    raw_haemo = raw_haemo.filter(0.05, 0.1, h_trans_bandwidth=0.2, l_trans_bandwidth=0.02)
+    fig = raw_haemo.compute_psd().plot(average=True, amplitude=False)
+    fig.suptitle("After filtering", weight="bold", size="x-large")
 
 
 
@@ -411,17 +411,16 @@ related to each of the experimental conditions.
 First we extract the events of interest and visualise them to ensure they are
 correct.
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-159
+.. GENERATED FROM PYTHON SOURCE LINES 150-158
 
 .. code-block:: Python
 
 
-    events, _ = mne.events_from_annotations(raw_haemo, event_id={'1.0': 1,
-                                                                 '2.0': 2,
-                                                                 '3.0': 3})
-    event_dict = {'Control': 1, 'Tapping/Left': 2, 'Tapping/Right': 3}
-    fig = mne.viz.plot_events(events, event_id=event_dict,
-                              sfreq=raw_haemo.info['sfreq'])
+    events, _ = mne.events_from_annotations(
+        raw_haemo, event_id={"1.0": 1, "2.0": 2, "3.0": 3}
+    )
+    event_dict = {"Control": 1, "Tapping/Left": 2, "Tapping/Right": 3}
+    fig = mne.viz.plot_events(events, event_id=event_dict, sfreq=raw_haemo.info["sfreq"])
 
 
 
@@ -436,13 +435,13 @@ correct.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-163
+.. GENERATED FROM PYTHON SOURCE LINES 159-162
 
 Next we define the range of our epochs, the rejection criteria,
 baseline correction, and extract the epochs. We visualise the log of which
 epochs were dropped.
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-174
+.. GENERATED FROM PYTHON SOURCE LINES 162-182
 
 .. code-block:: Python
 
@@ -450,11 +449,20 @@ epochs were dropped.
     reject_criteria = dict(hbo=10e-6)
     tmin, tmax = -1.5, 10.5
 
-    epochs = mne.Epochs(raw_haemo, events, event_id=event_dict,
-                        tmin=tmin, tmax=tmax,
-                        reject=reject_criteria, reject_by_annotation=True,
-                        proj=True, baseline=(None, 0), preload=True,
-                        detrend=1, verbose=True)
+    epochs = mne.Epochs(
+        raw_haemo,
+        events,
+        event_id=event_dict,
+        tmin=tmin,
+        tmax=tmax,
+        reject=reject_criteria,
+        reject_by_annotation=True,
+        proj=True,
+        baseline=(None, 0),
+        preload=True,
+        detrend=1,
+        verbose=True,
+    )
 
 
 
@@ -476,7 +484,7 @@ epochs were dropped.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-181
+.. GENERATED FROM PYTHON SOURCE LINES 183-189
 
 Plot standard fNIRS response image
 ----------------------------------
@@ -485,22 +493,23 @@ Next we generate the most common visualisation of fNIRS data: plotting
 both the HbO and HbR on the same figure to illustrate the relation between
 the two signals.
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-195
+.. GENERATED FROM PYTHON SOURCE LINES 189-204
 
 .. code-block:: Python
 
 
-    evoked_dict = {'Tapping/HbO': epochs['Tapping'].average(picks='hbo'),
-                   'Tapping/HbR': epochs['Tapping'].average(picks='hbr')}
+    evoked_dict = {
+        "Tapping/HbO": epochs["Tapping"].average(picks="hbo"),
+        "Tapping/HbR": epochs["Tapping"].average(picks="hbr"),
+    }
 
     # Rename channels until the encoding of frequency in ch_name is fixed
     for condition in evoked_dict:
         evoked_dict[condition].rename_channels(lambda x: x[:-4])
 
-    color_dict = dict(HbO='#AA3377', HbR='b')
+    color_dict = dict(HbO="#AA3377", HbR="b")
 
-    mne.viz.plot_compare_evokeds(evoked_dict, combine="mean", ci=0.95,
-                                 colors=color_dict)
+    mne.viz.plot_compare_evokeds(evoked_dict, combine="mean", ci=0.95, colors=color_dict)
 
 
 
@@ -521,7 +530,7 @@ the two signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-229
+.. GENERATED FROM PYTHON SOURCE LINES 205-238
 
 Summary
 --------------
@@ -560,7 +569,7 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.924 seconds)
+   **Total running time of the script:** (0 minutes 8.551 seconds)
 
 **Estimated memory usage:**  10 MB
 
