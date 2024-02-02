@@ -53,12 +53,7 @@ You should read their excellent documentation. Their work should be considered
 the primary resource, and this is just an example of how to apply it to fNIRS
 data for the purpose of extracting Mayer waves oscillation parameters.
 
-
-.. contents:: Page contents
-   :local:
-   :depth: 2
-
-.. GENERATED FROM PYTHON SOURCE LINES 43-61
+.. GENERATED FROM PYTHON SOURCE LINES 37-53
 
 .. code-block:: Python
 
@@ -68,17 +63,15 @@ data for the purpose of extracting Mayer waves oscillation parameters.
     # License: BSD (3-clause)
 
     import os
+
+    import matplotlib.pyplot as plt
     import mne
     import numpy as np
-    import matplotlib.pyplot as plt
-
-    from mne.preprocessing.nirs import optical_density, beer_lambert_law
+    from fooof import FOOOF
+    from mne.preprocessing.nirs import beer_lambert_law, optical_density
 
     from mne_nirs.channels import get_long_channels
     from mne_nirs.preprocessing import quantify_mayer_fooof
-
-    from fooof import FOOOF
-
 
 
 
@@ -88,7 +81,7 @@ data for the purpose of extracting Mayer waves oscillation parameters.
 
  .. code-block:: none
 
-    /home/circleci/project/examples/general/plot_40_mayer.py:58: DeprecationWarning: 
+    /home/circleci/project/examples/general/plot_40_mayer.py:47: DeprecationWarning: 
     The `fooof` package is being deprecated and replaced by the `specparam` (spectral parameterization) package.
     This version of `fooof` (1.1) is fully functional, but will not be further updated.
     New projects are recommended to update to using `specparam` (see Changelog for details).
@@ -97,20 +90,20 @@ data for the purpose of extracting Mayer waves oscillation parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-66
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
 Import and preprocess data
 --------------------------
 
 We read in the data and convert to haemoglobin concentration.
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-79
+.. GENERATED FROM PYTHON SOURCE LINES 58-71
 
 .. code-block:: Python
 
 
     fnirs_data_folder = mne.datasets.fnirs_motor.data_path()
-    fnirs_raw_dir = os.path.join(fnirs_data_folder, 'Participant-1')
+    fnirs_raw_dir = os.path.join(fnirs_data_folder, "Participant-1")
     raw = mne.io.read_raw_nirx(fnirs_raw_dir, verbose=True).load_data()
 
     raw = optical_density(raw)
@@ -227,7 +220,7 @@ We read in the data and convert to haemoglobin concentration.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-100
+.. GENERATED FROM PYTHON SOURCE LINES 72-92
 
 Process data with FOOOF
 -----------------------
@@ -250,9 +243,10 @@ at exactly 0.1 Hz, but instead seems to peak at approximately 0.09 Hz.
 The shaded area illustrates the oscillation fitted by the FOOOF algorithm,
 it matches well to the data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-129
+.. GENERATED FROM PYTHON SOURCE LINES 92-122
 
 .. code-block:: Python
+
 
 
     def scale_up_spectra(spectra, freqs):
@@ -264,9 +258,9 @@ it matches well to the data.
         freqs = freqs * 10
         return spectra, freqs
 
+
     # Prepare data for FOOOF
-    psd = raw.compute_psd(
-        fmin=0.001, fmax=1.0, tmin=0, tmax=None, n_overlap=300, n_fft=600)
+    psd = raw.compute_psd(fmin=0.001, fmax=1.0, tmin=0, tmax=None, n_overlap=300, n_fft=600)
     spectra, freqs = psd.get_data(return_freqs=True)
     spectra, freqs = scale_up_spectra(spectra, freqs)
 
@@ -278,7 +272,7 @@ it matches well to the data.
     fm.fit(freqs, np.mean(spectra, axis=0), freq_range)
 
     fig, axs = plt.subplots(1, 1, figsize=(10, 5))
-    fm.plot(plot_peaks='shade', data_kwargs={'color': 'orange'}, ax=axs)
+    fm.plot(plot_peaks="shade", data_kwargs={"color": "orange"}, ax=axs)
     # Correct for x10 scaling above
     plt.xticks([0, 1, 2, 3, 4, 5, 6], [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6])
 
@@ -297,11 +291,11 @@ it matches well to the data.
  .. code-block:: none
 
 
-    ([<matplotlib.axis.XTick object at 0x7f552fa56410>, <matplotlib.axis.XTick object at 0x7f552fa54e80>, <matplotlib.axis.XTick object at 0x7f55020a67d0>, <matplotlib.axis.XTick object at 0x7f55023bf610>, <matplotlib.axis.XTick object at 0x7f55023be9e0>, <matplotlib.axis.XTick object at 0x7f55023be710>, <matplotlib.axis.XTick object at 0x7f550230bd90>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
+    ([<matplotlib.axis.XTick object at 0x7eff77b84580>, <matplotlib.axis.XTick object at 0x7eff77b85b10>, <matplotlib.axis.XTick object at 0x7effdf622d70>, <matplotlib.axis.XTick object at 0x7effa27c1a20>, <matplotlib.axis.XTick object at 0x7effa27c0a00>, <matplotlib.axis.XTick object at 0x7effa27c30a0>, <matplotlib.axis.XTick object at 0x7efef475c520>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-139
+.. GENERATED FROM PYTHON SOURCE LINES 123-132
 
 Use MNE-NIRS to quantify Mayer wave oscillation
 -----------------------------------------------
@@ -313,7 +307,7 @@ dataframe for your convenience.
 It uses the FOOOF algorithm under the hood, so ensure you cite the original
 authors if you use this function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-143
+.. GENERATED FROM PYTHON SOURCE LINES 132-136
 
 .. code-block:: Python
 
@@ -370,7 +364,7 @@ authors if you use this function.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-168
+.. GENERATED FROM PYTHON SOURCE LINES 137-161
 
 Conclusion
 ----------
@@ -380,8 +374,8 @@ wave parameters, and highlighted the `quantify_mayer_fooof` for conveniently
 applying this analysis to fNIRS data with MNE-NIRS.
 
 An example measurement illustrated what the presence of a Mayer wave
-looks like with a power spectral density. The measurement also illustrated that the Mayer wave
-is not a perfect sinusoid, as evidenced by the broad spectral content.
+looks like with a power spectral density. The measurement also illustrated that the
+Mayer wave is not a perfect sinusoid, as evidenced by the broad spectral content.
 Further, the example illustrated that the Mayer wave is not always precisely locked
 to 0.1 Hz, both visual inspection and FOOOF quantification indicate a 0.09 Hz
 centre frequency.
@@ -397,7 +391,7 @@ and
 :ref:`signal enhancement tutorial <tut-fnirs-enhance>`
 for how to use short channels in either a GLM or averaging analysis with MNE-NIRS.
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-175
+.. GENERATED FROM PYTHON SOURCE LINES 164-168
 
 Bibliography
 -----------------------------------------------
@@ -407,7 +401,7 @@ Bibliography
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.995 seconds)
+   **Total running time of the script:** (0 minutes 3.842 seconds)
 
 **Estimated memory usage:**  10 MB
 

@@ -50,7 +50,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="LUMO is a modular, wearable,  high-density diffuse optical tomography (HD-DOT) system produced ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="LUMO is a modular, wearable, high-density diffuse optical tomography (HD-DOT) system produced b...">
 
 .. only:: html
 

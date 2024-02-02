@@ -24,7 +24,7 @@
 Read Gowerlabs LUMO data
 ========================
 
-`LUMO <https://www.gowerlabs.co.uk/lumo>`__ is a modular, wearable, 
+`LUMO <https://www.gowerlabs.co.uk/lumo>`__ is a modular, wearable,
 high-density diffuse optical tomography (HD-DOT) system produced by
 `Gowerlabs <https://www.gowerlabs.co.uk>`__. This tutorial demonstrates
 how to load data from LUMO, and how to utilise 3D digitisation
@@ -42,7 +42,7 @@ This tutorial uses the 3D graphical functionality provided by MNE-Python,
 to ensure you have all the required packages installed we recommend using the
 `official MNE installers. <https://mne.tools/stable/install/index.html>`__
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-40
+.. GENERATED FROM PYTHON SOURCE LINES 26-38
 
 .. code-block:: Python
 
@@ -53,9 +53,9 @@ to ensure you have all the required packages installed we recommend using the
     # License: BSD (3-clause)
 
     import os.path as op
+
     import mne
     from mne.datasets.testing import data_path
-
     from mne.viz import set_3d_view
 
 
@@ -65,8 +65,7 @@ to ensure you have all the required packages installed we recommend using the
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 41-51
+.. GENERATED FROM PYTHON SOURCE LINES 39-49
 
 Import Gowerlabs Example File
 -----------------------------
@@ -79,14 +78,14 @@ running `fname = /path/to/data.snirf`.
 .. note:: The provided sample file includes only a small number of LUMO
           tiles, and thus channels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-56
+.. GENERATED FROM PYTHON SOURCE LINES 49-54
 
 .. code-block:: Python
 
     import mne_nirs.io
 
     testing_path = data_path(download=True)
-    fname = op.join(testing_path, 'SNIRF', 'GowerLabs', 'lumomat-1-1-0.snirf')
+    fname = op.join(testing_path, "SNIRF", "GowerLabs", "lumomat-1-1-0.snirf")
 
 
 
@@ -95,11 +94,11 @@ running `fname = /path/to/data.snirf`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
 We can view the path to the data by calling the variable `fname`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 56-60
 
 .. code-block:: Python
 
@@ -120,11 +119,11 @@ We can view the path to the data by calling the variable `fname`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 61-62
 
 To load the file we call the function :func:`mne:mne.io.read_raw_snirf`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-67
+.. GENERATED FROM PYTHON SOURCE LINES 62-65
 
 .. code-block:: Python
 
@@ -140,18 +139,18 @@ To load the file we call the function :func:`mne:mne.io.read_raw_snirf`.
  .. code-block:: none
 
     Loading /home/circleci/mne_data/MNE-testing-data/SNIRF/GowerLabs/lumomat-1-1-0.snirf
-    /home/circleci/project/examples/general/plot_06_gowerlabs.py:65: RuntimeWarning: Extraction of measurement date from SNIRF file failed. The date is being set to January 1st, 2000, instead of unknownunknown
+    /home/circleci/project/examples/general/plot_06_gowerlabs.py:63: RuntimeWarning: Extraction of measurement date from SNIRF file failed. The date is being set to January 1st, 2000, instead of unknownunknown
       raw = mne.io.read_raw_snirf(fname, preload=True)
     Reading 0 ... 273  =      0.000 ...    27.300 secs...
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-69
+.. GENERATED FROM PYTHON SOURCE LINES 66-67
 
 And we can look at the file metadata by calling the variable `raw`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-72
+.. GENERATED FROM PYTHON SOURCE LINES 67-70
 
 .. code-block:: Python
 
@@ -256,14 +255,14 @@ And we can look at the file metadata by calling the variable `raw`.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-77
+.. GENERATED FROM PYTHON SOURCE LINES 71-75
 
 Visualise Data
 --------------
 Next, we visually inspect the data to get an overview of the data quality
 and signal annotations.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-80
+.. GENERATED FROM PYTHON SOURCE LINES 75-78
 
 .. code-block:: Python
 
@@ -284,20 +283,20 @@ and signal annotations.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f54084ca050>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7efef47e9870>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-87
+.. GENERATED FROM PYTHON SOURCE LINES 79-85
 
 We observe valid data in each channel, and note that the file includes a
 number of event annotations.
-Annotations are a flexible tool to represent events in your experiment. 
+Annotations are a flexible tool to represent events in your experiment.
 They can also be used to annotate other useful information such as bad
 segments of data, participant movements, etc. We can inspect the
 annotations to ensure they match what we expect from our experiment.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-92
+.. GENERATED FROM PYTHON SOURCE LINES 86-90
 
 .. code-block:: Python
 
@@ -318,17 +317,17 @@ annotations to ensure they match what we expect from our experiment.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-100
+.. GENERATED FROM PYTHON SOURCE LINES 91-98
 
 The implementation of annotations varies between manufacturers. Rather
 than recording the onset and duration of a stimulus condition, LUMO records
 discrete event markers which have a nominal one second duration. Each
-marker can consist of an arbitrary character or string. In this sample, 
-there were six `A` annotations, one `Cat` annotation, and two `Dog` 
+marker can consist of an arbitrary character or string. In this sample,
+there were six `A` annotations, one `Cat` annotation, and two `Dog`
 annotations. We can view the specific data for each annotation by converting
 the annotations to a dataframe.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-104
+.. GENERATED FROM PYTHON SOURCE LINES 98-102
 
 .. code-block:: Python
 
@@ -429,7 +428,7 @@ the annotations to a dataframe.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-125
+.. GENERATED FROM PYTHON SOURCE LINES 103-123
 
 View Optode Positions in 3D Space
 ---------------------------------
@@ -452,16 +451,22 @@ First, lets just look at the sensors in arbitrary space.
 Below we see that there are three LUMO tiles, each with three sources
 and four detectors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-134
+.. GENERATED FROM PYTHON SOURCE LINES 123-138
 
 .. code-block:: Python
 
 
-    subjects_dir = op.join(mne.datasets.sample.data_path(), 'subjects')
+    subjects_dir = op.join(mne.datasets.sample.data_path(), "subjects")
     mne.datasets.fetch_fsaverage(subjects_dir=subjects_dir)
 
-    brain = mne.viz.Brain('fsaverage', subjects_dir=subjects_dir, alpha=0.0, cortex='low_contrast', background="w")
-    brain.add_sensors(raw.info, trans='fsaverage', fnirs=["sources", "detectors"])
+    brain = mne.viz.Brain(
+        "fsaverage",
+        subjects_dir=subjects_dir,
+        alpha=0.0,
+        cortex="low_contrast",
+        background="w",
+    )
+    brain.add_sensors(raw.info, trans="fsaverage", fnirs=["sources", "detectors"])
     brain.show_view(azimuth=130, elevation=80, distance=700)
 
 
@@ -485,7 +490,7 @@ and four detectors.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-144
+.. GENERATED FROM PYTHON SOURCE LINES 139-148
 
 Coregister Optodes to Template Head
 -----------------------------------
@@ -497,15 +502,21 @@ First, lets just look at the `fsaverage` head that we will use.
           to coregistration. You can also use the MNE-Python
           coregistration GUI :func:`mne:mne.gui.coregistration`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-154
+.. GENERATED FROM PYTHON SOURCE LINES 148-164
 
 .. code-block:: Python
 
 
-    plot_kwargs = dict(subjects_dir=subjects_dir,
-                       surfaces="brain", dig=True, eeg=[],
-                       fnirs=['sources', 'detectors'], show_axes=True,
-                       coord_frame='head', mri_fiducials=True)
+    plot_kwargs = dict(
+        subjects_dir=subjects_dir,
+        surfaces="brain",
+        dig=True,
+        eeg=[],
+        fnirs=["sources", "detectors"],
+        show_axes=True,
+        coord_frame="head",
+        mri_fiducials=True,
+    )
 
     fig = mne.viz.plot_alignment(trans="fsaverage", subject="fsaverage", **plot_kwargs)
     set_3d_view(figure=fig, azimuth=90, elevation=0, distance=1)
@@ -524,13 +535,13 @@ First, lets just look at the `fsaverage` head that we will use.
 
  .. code-block:: none
 
-    /home/circleci/project/examples/general/plot_06_gowerlabs.py:150: RuntimeWarning: Digitization points not found. Cannot plot digitization.
+    /home/circleci/project/examples/general/plot_06_gowerlabs.py:160: RuntimeWarning: Digitization points not found. Cannot plot digitization.
       fig = mne.viz.plot_alignment(trans="fsaverage", subject="fsaverage", **plot_kwargs)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-170
+.. GENERATED FROM PYTHON SOURCE LINES 165-180
 
 This is what a head model will look like. If you have an MRI from
 the participant you can use freesurfer to generate the required files.
@@ -548,12 +559,14 @@ coregistration and is described in several MNE-Python tutorials
 including :ref:`mne:tut-auto-coreg`.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-174
+.. GENERATED FROM PYTHON SOURCE LINES 180-186
 
 .. code-block:: Python
 
 
-    fig = mne.viz.plot_alignment(raw.info, trans="fsaverage", subject="fsaverage", **plot_kwargs)
+    fig = mne.viz.plot_alignment(
+        raw.info, trans="fsaverage", subject="fsaverage", **plot_kwargs
+    )
     set_3d_view(figure=fig, azimuth=90, elevation=0, distance=1)
 
 
@@ -574,7 +587,7 @@ including :ref:`mne:tut-auto-coreg`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-181
+.. GENERATED FROM PYTHON SOURCE LINES 187-193
 
 In the figure above we can see the Gowerlabs optode positions
 and the participants digitised fiducials represented by circles.
@@ -583,15 +596,19 @@ on the head. To coregister the optodes to the head we will perform
 a rotation and translation of the optode frame to minimise the
 distance between the fiducials.
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-189
+.. GENERATED FROM PYTHON SOURCE LINES 193-205
 
 .. code-block:: Python
 
 
-    coreg = mne.coreg.Coregistration(raw.info, "fsaverage", subjects_dir, fiducials="estimated")
-    coreg.fit_fiducials(lpa_weight=1., nasion_weight=1., rpa_weight=1.)
+    coreg = mne.coreg.Coregistration(
+        raw.info, "fsaverage", subjects_dir, fiducials="estimated"
+    )
+    coreg.fit_fiducials(lpa_weight=1.0, nasion_weight=1.0, rpa_weight=1.0)
 
-    fig = mne.viz.plot_alignment(raw.info, trans=coreg.trans, subject="fsaverage", **plot_kwargs)
+    fig = mne.viz.plot_alignment(
+        raw.info, trans=coreg.trans, subject="fsaverage", **plot_kwargs
+    )
     set_3d_view(figure=fig, azimuth=90, elevation=0, distance=1)
 
 
@@ -619,7 +636,7 @@ distance between the fiducials.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-196
+.. GENERATED FROM PYTHON SOURCE LINES 206-212
 
 We see in the figure above that after the `fit_fiducials` method was called,
 the optodes are well aligned to the brain, and the distance between diamonds (MRI)
@@ -628,13 +645,15 @@ between the fiducial pairs, this is because we used a generic head rather than
 an individualised MRI scan. You can also :func:`mne:mne.scale_mri` to scale
 the generic MRI head.
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-202
+.. GENERATED FROM PYTHON SOURCE LINES 212-220
 
 .. code-block:: Python
 
 
-    brain = mne.viz.Brain('fsaverage', subjects_dir=subjects_dir, background='w', cortex='0.5', alpha=0.3)
-    brain.add_sensors(raw.info, trans=coreg.trans, fnirs=['sources', 'detectors'])
+    brain = mne.viz.Brain(
+        "fsaverage", subjects_dir=subjects_dir, background="w", cortex="0.5", alpha=0.3
+    )
+    brain.add_sensors(raw.info, trans=coreg.trans, fnirs=["sources", "detectors"])
     brain.show_view(azimuth=90, elevation=90, distance=500)
 
 
@@ -656,7 +675,7 @@ the generic MRI head.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-209
+.. GENERATED FROM PYTHON SOURCE LINES 221-227
 
 Apply Transformation to Raw Object
 ----------------------------------
@@ -665,7 +684,7 @@ object. This can be useful if you want to save the file back to disk
 and not coregister again when rereading the file. Or for simpler
 interface using the `fsaverage` head.
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-214
+.. GENERATED FROM PYTHON SOURCE LINES 227-232
 
 .. code-block:: Python
 
@@ -772,11 +791,11 @@ interface using the `fsaverage` head.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-216
+.. GENERATED FROM PYTHON SOURCE LINES 233-234
 
 You can then save the coregistered object.
 
-.. GENERATED FROM PYTHON SOURCE LINES 216-219
+.. GENERATED FROM PYTHON SOURCE LINES 234-237
 
 .. code-block:: Python
 
@@ -790,12 +809,12 @@ You can then save the coregistered object.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-222
+.. GENERATED FROM PYTHON SOURCE LINES 238-240
 
 You can then load this data and use it immediately as it has
 already been coregistered to fsaverage.
 
-.. GENERATED FROM PYTHON SOURCE LINES 222-230
+.. GENERATED FROM PYTHON SOURCE LINES 240-250
 
 .. code-block:: Python
 
@@ -803,8 +822,10 @@ already been coregistered to fsaverage.
     raw_w_coreg = mne.io.read_raw_snirf("raw_coregistered_to_fsaverage.snirf")
 
     # Now you can simply use `trans = "fsaverage"`.
-    brain = mne.viz.Brain('fsaverage', subjects_dir=subjects_dir, background='w', cortex='0.5', alpha=0.3)
-    brain.add_sensors(raw_w_coreg.info, trans="fsaverage", fnirs=['sources', 'detectors'])
+    brain = mne.viz.Brain(
+        "fsaverage", subjects_dir=subjects_dir, background="w", cortex="0.5", alpha=0.3
+    )
+    brain.add_sensors(raw_w_coreg.info, trans="fsaverage", fnirs=["sources", "detectors"])
 
 
 
@@ -826,7 +847,7 @@ already been coregistered to fsaverage.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 231-237
+.. GENERATED FROM PYTHON SOURCE LINES 251-257
 
 Next Steps
 ----------
@@ -838,9 +859,9 @@ From here you can use your favorite analysis technique such as
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 25.977 seconds)
+   **Total running time of the script:** (0 minutes 25.785 seconds)
 
-**Estimated memory usage:**  163 MB
+**Estimated memory usage:**  159 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_06_gowerlabs.py:

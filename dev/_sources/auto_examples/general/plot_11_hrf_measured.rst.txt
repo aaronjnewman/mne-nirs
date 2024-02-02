@@ -44,7 +44,7 @@ for a comparison of the epoching and GLM approaches.
 This GLM analysis is a wrapper over the excellent
 `Nilearn GLM <http://nilearn.github.io/modules/reference.html#module-nilearn.glm>`__.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-50
+.. GENERATED FROM PYTHON SOURCE LINES 28-46
 
 .. code-block:: Python
 
@@ -55,20 +55,16 @@ This GLM analysis is a wrapper over the excellent
     # License: BSD (3-clause)
 
     import os
-    import numpy as np
+
     import matplotlib.pyplot as plt
-
     import mne
-    import mne_nirs
-
-    from mne_nirs.experimental_design import make_first_level_design_matrix
-    from mne_nirs.statistics import run_glm
-    from mne_nirs.channels import (get_long_channels,
-                                   get_short_channels,
-                                   picks_pair_to_idx)
-
+    import numpy as np
     from nilearn.plotting import plot_design_matrix
 
+    import mne_nirs
+    from mne_nirs.channels import get_long_channels, get_short_channels, picks_pair_to_idx
+    from mne_nirs.experimental_design import make_first_level_design_matrix
+    from mne_nirs.statistics import run_glm
 
 
 
@@ -77,7 +73,7 @@ This GLM analysis is a wrapper over the excellent
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-70
+.. GENERATED FROM PYTHON SOURCE LINES 47-66
 
 Import raw NIRS data
 --------------------
@@ -99,13 +95,13 @@ to meet github memory constraints.
    Conditions were presented in a random order with a randomised inter
    stimulus interval.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-77
+.. GENERATED FROM PYTHON SOURCE LINES 66-73
 
 .. code-block:: Python
 
 
     fnirs_data_folder = mne.datasets.fnirs_motor.data_path()
-    fnirs_raw_dir = os.path.join(fnirs_data_folder, 'Participant-1')
+    fnirs_raw_dir = os.path.join(fnirs_data_folder, "Participant-1")
     raw_intensity = mne.io.read_raw_nirx(fnirs_raw_dir).load_data()
     raw_intensity.resample(0.7)
 
@@ -217,7 +213,7 @@ to meet github memory constraints.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-87
+.. GENERATED FROM PYTHON SOURCE LINES 74-83
 
 Clean up annotations before analysis
 ------------------------------------
@@ -229,14 +225,14 @@ experimental conditions.
 Because of limitations with ``nilearn``, we use ``'_'`` to separate conditions
 rather than the standard ``'/'``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-94
+.. GENERATED FROM PYTHON SOURCE LINES 83-90
 
 .. code-block:: Python
 
-    raw_intensity.annotations.rename({'1.0': 'Control',
-                                      '2.0': 'Tapping_Left',
-                                      '3.0': 'Tapping_Right'})
-    raw_intensity.annotations.delete(raw_intensity.annotations.description == '15.0')
+    raw_intensity.annotations.rename(
+        {"1.0": "Control", "2.0": "Tapping_Left", "3.0": "Tapping_Right"}
+    )
+    raw_intensity.annotations.delete(raw_intensity.annotations.description == "15.0")
     raw_intensity.annotations.set_durations(5)
 
 
@@ -253,13 +249,13 @@ rather than the standard ``'/'``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-98
+.. GENERATED FROM PYTHON SOURCE LINES 91-94
 
 Preprocess NIRS data
 --------------------
 Next we convert the raw data to haemoglobin concentration.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-103
+.. GENERATED FROM PYTHON SOURCE LINES 94-99
 
 .. code-block:: Python
 
@@ -275,7 +271,7 @@ Next we convert the raw data to haemoglobin concentration.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-113
+.. GENERATED FROM PYTHON SOURCE LINES 100-109
 
 .. sidebar:: Relevant literature
 
@@ -287,7 +283,7 @@ We then split the data in to
 short channels which predominantly contain systemic responses and
 long channels which have both neural and systemic contributions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-119
+.. GENERATED FROM PYTHON SOURCE LINES 110-115
 
 .. code-block:: Python
 
@@ -303,7 +299,7 @@ long channels which have both neural and systemic contributions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-129
+.. GENERATED FROM PYTHON SOURCE LINES 116-125
 
 View experiment events
 ----------------------
@@ -315,13 +311,13 @@ Here each dot represents when an event started.
 We observe that the order of conditions was randomised and the time between
 events is also randomised.
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-134
+.. GENERATED FROM PYTHON SOURCE LINES 125-130
 
 .. code-block:: Python
 
 
     events, event_dict = mne.events_from_annotations(raw_haemo, verbose=False)
-    mne.viz.plot_events(events, event_id=event_dict, sfreq=raw_haemo.info['sfreq'])
+    mne.viz.plot_events(events, event_id=event_dict, sfreq=raw_haemo.info["sfreq"])
 
 
 
@@ -342,13 +338,13 @@ events is also randomised.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-138
+.. GENERATED FROM PYTHON SOURCE LINES 131-134
 
 The previous plot did not illustrate the duration that an event lasted for.
 Alternatively, we can view the experiment using a boxcar plot, where the
 line is raised for the duration of the stimulus/condition.
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-147
+.. GENERATED FROM PYTHON SOURCE LINES 135-143
 
 .. code-block:: Python
 
@@ -357,7 +353,7 @@ line is raised for the duration of the stimulus/condition.
     fig, ax = plt.subplots(figsize=(15, 6), constrained_layout=True)
     ax.plot(raw_haemo.times, s)
     ax.legend(["Control", "Left", "Right"], loc="upper right")
-    ax.set_xlabel("Time (s)");
+    ax.set_xlabel("Time (s)")
 
 
 
@@ -379,7 +375,7 @@ line is raised for the duration of the stimulus/condition.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-169
+.. GENERATED FROM PYTHON SOURCE LINES 144-166
 
 Create design matrix
 --------------------
@@ -401,18 +397,21 @@ We also include a cosine drift model with components up to the high pass
 parameter value. See the nilearn documentation for recommendations on setting
 these values. In short, they suggest "The cutoff period (1/high_pass) should be
 set as the longest period between two trials of the same condition multiplied by 2.
-For instance, if the longest period is 32s, the high_pass frequency shall be 1/64 Hz ~ 0.016 Hz".
+For instance, if the longest period is 32s, the high_pass frequency shall be
+1/64 Hz ~ 0.016 Hz".
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-177
+.. GENERATED FROM PYTHON SOURCE LINES 166-176
 
 .. code-block:: Python
 
 
-    design_matrix = make_first_level_design_matrix(raw_haemo,
-                                                   drift_model='cosine',
-                                                   high_pass=0.005,  # Must be specified per experiment
-                                                   hrf_model='spm',
-                                                   stim_dur=5.0)
+    design_matrix = make_first_level_design_matrix(
+        raw_haemo,
+        drift_model="cosine",
+        high_pass=0.005,  # Must be specified per experiment
+        hrf_model="spm",
+        stim_dur=5.0,
+    )
 
 
 
@@ -422,7 +421,7 @@ For instance, if the longest period is 32s, the high_pass frequency shall be 1/6
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-183
+.. GENERATED FROM PYTHON SOURCE LINES 177-182
 
 We also add the mean of the short channels to the design matrix.
 In theory these channels contain only systemic components, so including
@@ -430,26 +429,28 @@ them in the design matrix allows us to estimate the neural component
 related to each experimental condition
 uncontaminated by systemic effects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-192
+.. GENERATED FROM PYTHON SOURCE LINES 183-193
 
 .. code-block:: Python
 
 
-    design_matrix["ShortHbO"] = np.mean(short_chs.copy().pick(
-                                        picks="hbo").get_data(), axis=0)
+    design_matrix["ShortHbO"] = np.mean(
+        short_chs.copy().pick(picks="hbo").get_data(), axis=0
+    )
 
-    design_matrix["ShortHbR"] = np.mean(short_chs.copy().pick(
-                                        picks="hbr").get_data(), axis=0)
-
-
-
-
+    design_matrix["ShortHbR"] = np.mean(
+        short_chs.copy().pick(picks="hbr").get_data(), axis=0
+    )
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-199
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 194-200
 
 And we display a summary of the design matrix
 using standard Nilearn reporting functions.
@@ -458,7 +459,7 @@ event information.
 The next columns illustrate the drift and constant components.
 The last columns illustrate the short channel signals.
 
-.. GENERATED FROM PYTHON SOURCE LINES 200-205
+.. GENERATED FROM PYTHON SOURCE LINES 201-206
 
 .. code-block:: Python
 
@@ -486,7 +487,7 @@ The last columns illustrate the short channel signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 206-224
+.. GENERATED FROM PYTHON SOURCE LINES 207-225
 
 Examine expected response
 -------------------------
@@ -507,7 +508,7 @@ may be different, so you may need to alter either the ``s`` index or condition
 name. Note however, that this is just for visualisation and does not affect
 the results below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 224-233
+.. GENERATED FROM PYTHON SOURCE LINES 225-234
 
 .. code-block:: Python
 
@@ -515,7 +516,7 @@ the results below.
     fig, ax = plt.subplots(constrained_layout=True)
     s = mne_nirs.experimental_design.create_boxcar(raw_intensity, stim_dur=5.0)
     ax.plot(raw_intensity.times, s[:, 1])
-    ax.plot(design_matrix['Tapping_Left'])
+    ax.plot(design_matrix["Tapping_Left"])
     ax.legend(["Stimulus", "Expected Response"])
     ax.set(xlim=(180, 300), xlabel="Time (s)", ylabel="Amplitude")
 
@@ -539,7 +540,7 @@ the results below.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 234-246
+.. GENERATED FROM PYTHON SOURCE LINES 235-247
 
 Fit GLM to subset of data and estimate response for each experimental condition
 -------------------------------------------------------------------------------
@@ -554,7 +555,7 @@ We run a GLM fit for the data and experiment matrix.
 First we analyse just the first two channels which correspond to HbO and HbR
 of a single source detector pair.
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-251
+.. GENERATED FROM PYTHON SOURCE LINES 248-252
 
 .. code-block:: Python
 
@@ -569,13 +570,13 @@ of a single source detector pair.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 252-255
+.. GENERATED FROM PYTHON SOURCE LINES 253-256
 
 This returns a GLM regression estimate for each channel.
 This data is stored in a dedicated type.
 You can view an overview of the estimates by addressing the variable:
 
-.. GENERATED FROM PYTHON SOURCE LINES 256-259
+.. GENERATED FROM PYTHON SOURCE LINES 257-260
 
 .. code-block:: Python
 
@@ -595,7 +596,7 @@ You can view an overview of the estimates by addressing the variable:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 260-265
+.. GENERATED FROM PYTHON SOURCE LINES 261-266
 
 As with other MNE types you can use the `pick` function.
 To query the mean square error of a single channel you would call.
@@ -603,12 +604,12 @@ To query the mean square error of a single channel you would call.
 Note: as we wish to retain both channels for further the analysis below,
 we operate on a copy to demonstrate this channel picking functionality.
 
-.. GENERATED FROM PYTHON SOURCE LINES 266-269
+.. GENERATED FROM PYTHON SOURCE LINES 267-270
 
 .. code-block:: Python
 
 
-    glm_est.copy().pick('S1_D1 hbr')
+    glm_est.copy().pick("S1_D1 hbr")
 
 
 
@@ -623,7 +624,7 @@ we operate on a copy to demonstrate this channel picking functionality.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 270-275
+.. GENERATED FROM PYTHON SOURCE LINES 271-276
 
 Underlying the data for each channel is a standard
 `Nilearn RegressionResults object <https://nilearn.github.io/modules/generated/nilearn.glm.RegressionResults.html>`_
@@ -631,7 +632,7 @@ object. These objects are rich with information that can be requested
 from the object, for example to determine the mean square error of the
 estimates for two channels you would call:
 
-.. GENERATED FROM PYTHON SOURCE LINES 276-279
+.. GENERATED FROM PYTHON SOURCE LINES 277-280
 
 .. code-block:: Python
 
@@ -651,18 +652,18 @@ estimates for two channels you would call:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 280-283
+.. GENERATED FROM PYTHON SOURCE LINES 281-284
 
 And we can chain the methods to quickly access required details.
 For example, to determine the MSE for channel `S1` `D1` for the hbr type
 you would call:
 
-.. GENERATED FROM PYTHON SOURCE LINES 284-288
+.. GENERATED FROM PYTHON SOURCE LINES 285-289
 
 .. code-block:: Python
 
 
-    glm_est.copy().pick('S1_D1 hbr').MSE()
+    glm_est.copy().pick("S1_D1 hbr").MSE()
 
 
 
@@ -678,7 +679,7 @@ you would call:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 289-294
+.. GENERATED FROM PYTHON SOURCE LINES 290-295
 
 Due to the richness of the objects we provide a function to
 extract commonly used information and put it in a convenient dataframe/table.
@@ -686,7 +687,7 @@ Below this is demonstrated and then we just display the first 9 rows of the
 table which correspond to the 9 components of the design matrix for the
 first channel.
 
-.. GENERATED FROM PYTHON SOURCE LINES 295-298
+.. GENERATED FROM PYTHON SOURCE LINES 296-299
 
 .. code-block:: Python
 
@@ -876,7 +877,7 @@ first channel.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 299-306
+.. GENERATED FROM PYTHON SOURCE LINES 300-307
 
 We then display the results using the scatter plot function.
 Note that the control condition sits
@@ -886,7 +887,7 @@ Further, we note that for this channel the response to tapping on the
 right hand is larger than the left. And the values are similar to what
 is seen in the epoching tutorial.
 
-.. GENERATED FROM PYTHON SOURCE LINES 307-311
+.. GENERATED FROM PYTHON SOURCE LINES 308-312
 
 .. code-block:: Python
 
@@ -912,7 +913,7 @@ is seen in the epoching tutorial.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 312-321
+.. GENERATED FROM PYTHON SOURCE LINES 313-322
 
 Fit GLM to all data and view topographic distribution
 -----------------------------------------------------
@@ -924,13 +925,13 @@ that activation is largest
 contralateral to the tapping side. Also note that HbR tends to be the
 negative of HbO as expected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 321-326
+.. GENERATED FROM PYTHON SOURCE LINES 322-327
 
 .. code-block:: Python
 
 
     glm_est = run_glm(raw_haemo, design_matrix)
-    glm_est.plot_topo(conditions=['Tapping_Left', 'Tapping_Right'])
+    glm_est.plot_topo(conditions=["Tapping_Left", "Tapping_Right"])
 
 
 
@@ -951,7 +952,7 @@ negative of HbO as expected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 327-346
+.. GENERATED FROM PYTHON SOURCE LINES 328-347
 
 Note that the topographic visualisation is a high level representation
 of the underlying data. This visual representation fits a smoothed surface
@@ -973,20 +974,26 @@ When each hemisphere is plotted independently (right) it becomes immediately
 apparent that the data does not indicate that activity spreads across
 the center of the head.
 
-.. GENERATED FROM PYTHON SOURCE LINES 347-362
+.. GENERATED FROM PYTHON SOURCE LINES 348-369
 
 .. code-block:: Python
 
 
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 6), gridspec_kw=dict(width_ratios=[0.92, 1]))
+    fig, axes = plt.subplots(
+        nrows=1, ncols=2, figsize=(10, 6), gridspec_kw=dict(width_ratios=[0.92, 1])
+    )
 
     glm_hbo = glm_est.copy().pick(picks="hbo")
-    conditions = ['Tapping_Right']
+    conditions = ["Tapping_Right"]
 
     glm_hbo.plot_topo(axes=axes[0], colorbar=False, conditions=conditions)
 
-    glm_hbo.copy().pick(picks=range(10)).plot_topo(conditions=conditions, axes=axes[1], colorbar=False, vlim=(-16, 16))
-    glm_hbo.copy().pick(picks=range(10, 20)).plot_topo(conditions=conditions, axes=axes[1], colorbar=False, vlim=(-16, 16))
+    glm_hbo.copy().pick(picks=range(10)).plot_topo(
+        conditions=conditions, axes=axes[1], colorbar=False, vlim=(-16, 16)
+    )
+    glm_hbo.copy().pick(picks=range(10, 20)).plot_topo(
+        conditions=conditions, axes=axes[1], colorbar=False, vlim=(-16, 16)
+    )
 
     axes[0].set_title("Smoothed across hemispheres")
     axes[1].set_title("Hemispheres plotted independently")
@@ -1010,17 +1017,19 @@ the center of the head.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 363-365
+.. GENERATED FROM PYTHON SOURCE LINES 370-372
 
 Another way to view the data is to project the GLM estimates to the nearest
 cortical surface
 
-.. GENERATED FROM PYTHON SOURCE LINES 366-370
+.. GENERATED FROM PYTHON SOURCE LINES 373-379
 
 .. code-block:: Python
 
 
-    glm_est.copy().surface_projection(condition="Tapping_Right", view="dorsal", chroma="hbo")
+    glm_est.copy().surface_projection(
+        condition="Tapping_Right", view="dorsal", chroma="hbo"
+    )
 
 
 
@@ -1037,11 +1046,11 @@ cortical surface
  .. code-block:: none
 
 
-    <mne.viz._brain._brain.Brain object at 0x7f55025c4700>
+    <mne.viz._brain._brain.Brain object at 0x7eff77a21720>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 371-390
+.. GENERATED FROM PYTHON SOURCE LINES 380-399
 
 Analyse regions of interest
 ---------------------------
@@ -1063,20 +1072,20 @@ Region of interest analysis can be more robust than single channel analysis.
 The fOLD toolbox can be used to assist in the design of ROIs.
 And consideration should be paid to ensure optimal size ROIs are selected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 390-404
+.. GENERATED FROM PYTHON SOURCE LINES 399-413
 
 .. code-block:: Python
 
 
-    left = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 3],
-            [2, 4], [3, 2], [3, 3], [4, 3], [4, 4]]
-    right = [[5, 5], [5, 6], [5, 7], [6, 5], [6, 7],
-             [6, 8], [7, 6], [7, 7], [8, 7], [8, 8]]
+    left = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 3], [2, 4], [3, 2], [3, 3], [4, 3], [4, 4]]
+    right = [[5, 5], [5, 6], [5, 7], [6, 5], [6, 7], [6, 8], [7, 6], [7, 7], [8, 7], [8, 8]]
 
-    groups = dict(Left_ROI=picks_pair_to_idx(raw_haemo, left),
-                  Right_ROI=picks_pair_to_idx(raw_haemo, right))
+    groups = dict(
+        Left_ROI=picks_pair_to_idx(raw_haemo, left),
+        Right_ROI=picks_pair_to_idx(raw_haemo, right),
+    )
 
-    conditions = ['Control', 'Tapping_Left', 'Tapping_Right']
+    conditions = ["Control", "Tapping_Left", "Tapping_Right"]
 
     df = glm_est.to_dataframe_region_of_interest(groups, conditions)
 
@@ -1088,13 +1097,13 @@ And consideration should be paid to ensure optimal size ROIs are selected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 405-408
+.. GENERATED FROM PYTHON SOURCE LINES 414-417
 
 As with the single channel results above, this is placed in a tidy dataframe
 which contains conveniently extracted information, but now for the region
 of interest.
 
-.. GENERATED FROM PYTHON SOURCE LINES 408-412
+.. GENERATED FROM PYTHON SOURCE LINES 417-421
 
 .. code-block:: Python
 
@@ -1291,7 +1300,7 @@ of interest.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 413-421
+.. GENERATED FROM PYTHON SOURCE LINES 422-430
 
 Compute contrasts
 -----------------
@@ -1302,15 +1311,16 @@ and plot it.
 Here we contrast the response to tapping on the left hand with the response
 from tapping on the right hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 422-432
+.. GENERATED FROM PYTHON SOURCE LINES 431-442
 
 .. code-block:: Python
 
 
     contrast_matrix = np.eye(design_matrix.shape[1])
-    basic_conts = dict([(column, contrast_matrix[i])
-                       for i, column in enumerate(design_matrix.columns)])
-    contrast_LvR = basic_conts['Tapping_Left'] - basic_conts['Tapping_Right']
+    basic_conts = dict(
+        [(column, contrast_matrix[i]) for i, column in enumerate(design_matrix.columns)]
+    )
+    contrast_LvR = basic_conts["Tapping_Left"] - basic_conts["Tapping_Right"]
 
     contrast = glm_est.compute_contrast(contrast_LvR)
     contrast.plot_topo()
@@ -1334,7 +1344,7 @@ from tapping on the right hand.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 433-447
+.. GENERATED FROM PYTHON SOURCE LINES 443-457
 
 Export Results
 ---------------
@@ -1351,7 +1361,7 @@ The long to wide conversion also adds some additional derived data, such as
 if a significant response (p<0.05) was observed, which sensor and detector is
 in the channel, which chroma, etc.
 
-.. GENERATED FROM PYTHON SOURCE LINES 447-451
+.. GENERATED FROM PYTHON SOURCE LINES 457-461
 
 .. code-block:: Python
 
@@ -1366,7 +1376,7 @@ in the channel, which chroma, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 452-459
+.. GENERATED FROM PYTHON SOURCE LINES 462-469
 
 Determine true and false positive rates
 ---------------------------------------
@@ -1376,17 +1386,17 @@ positive rates. Note: optodes cover a greater region than just the
 motor cortex, so we dont expect 100% of channels to detect responses to
 the tapping, but we do expect 5% or less for the false positive rate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 459-466
+.. GENERATED FROM PYTHON SOURCE LINES 469-476
 
 .. code-block:: Python
 
 
-    (df
-     .query('Condition in ["Control", "Tapping_Left", "Tapping_Right"]')
-     .drop(['df', 'mse', 'p_value', 't'], axis=1)
-     .groupby(['Condition', 'Chroma', 'ch_name'])
-     .agg(['mean'])
-     )
+    (
+        df.query('Condition in ["Control", "Tapping_Left", "Tapping_Right"]')
+        .drop(["df", "mse", "p_value", "t"], axis=1)
+        .groupby(["Condition", "Chroma", "ch_name"])
+        .agg(["mean"])
+    )
 
 
 
@@ -1552,9 +1562,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 16.604 seconds)
+   **Total running time of the script:** (0 minutes 16.655 seconds)
 
-**Estimated memory usage:**  272 MB
+**Estimated memory usage:**  291 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:

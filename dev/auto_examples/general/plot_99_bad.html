@@ -461,20 +461,6 @@ is used as a basis for this analysis, so most of the document looks similar.
 However, at the midpoint we replace the real data with noise and demonstrate
 that without careful attention to the analysis parameter it would still
 appear as if a fNIRS response is observed.</p>
-<nav class="contents local" id="page-contents">
-<p class="topic-title">Page contents</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#selecting-channels-appropriate-for-detecting-neural-responses" id="id1">Selecting channels appropriate for detecting neural responses</a></p></li>
-<li><p><a class="reference internal" href="#converting-from-raw-intensity-to-optical-density" id="id2">Converting from raw intensity to optical density</a></p></li>
-<li><p><a class="reference internal" href="#converting-from-optical-density-to-haemoglobin" id="id3">Converting from optical density to haemoglobin</a></p></li>
-<li><p><a class="reference internal" href="#replace-real-data-with-white-noise" id="id4">!!!!!!Replace real data with white noise!!!!!</a></p></li>
-<li><p><a class="reference internal" href="#removing-heart-rate-from-signal-bad-dont-copy" id="id5">Removing heart rate from signal (BAD DONT COPY)</a></p></li>
-<li><p><a class="reference internal" href="#apply-cui-negative-correlation-method" id="id6">Apply Cui negative correlation method</a></p></li>
-<li><p><a class="reference internal" href="#extract-epochs" id="id7">Extract epochs</a></p></li>
-<li><p><a class="reference internal" href="#plot-standard-fnirs-response-image" id="id8">Plot standard fNIRS response image</a></p></li>
-<li><p><a class="reference internal" href="#summary" id="id9">Summary</a></p></li>
-</ul>
-</nav>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 7</span>
 
 
@@ -592,7 +578,7 @@ appear as if a fNIRS response is observed.</p>
 </div>
 <br />
 <br /><section id="selecting-channels-appropriate-for-detecting-neural-responses">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Selecting channels appropriate for detecting neural responses</a><a class="headerlink" href="#selecting-channels-appropriate-for-detecting-neural-responses" title="Link to this heading">#</a></h2>
+<h2>Selecting channels appropriate for detecting neural responses<a class="headerlink" href="#selecting-channels-appropriate-for-detecting-neural-responses" title="Link to this heading">#</a></h2>
 <p>First we remove channels that are too close together (short channels) to
 detect a neural response (less than 1 cm distance between optodes).
 These short channels can be seen in the figure above.
@@ -607,35 +593,35 @@ To achieve this we pick all the channels that are not considered to be short.</p
 <span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_99_bad_001.png" srcset="../../_images/sphx_glr_plot_99_bad_001.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f5501fb77f0&gt;
+<img src="../../_images/sphx_glr_plot_99_bad_001.png" srcset="../../_images/sphx_glr_plot_99_bad_001.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7eff7732c940&gt;
 </pre></div>
 </div>
 </section>
 <section id="converting-from-raw-intensity-to-optical-density">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Converting from raw intensity to optical density</a><a class="headerlink" href="#converting-from-raw-intensity-to-optical-density" title="Link to this heading">#</a></h2>
+<h2>Converting from raw intensity to optical density<a class="headerlink" href="#converting-from-raw-intensity-to-optical-density" title="Link to this heading">#</a></h2>
 <p>The raw intensity values are then converted to optical density.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_od</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">nirs</span><span class="o">.</span><span class="n">optical_density</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">)</span>
 <span class="n">raw_od</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">raw_od</span><span class="o">.</span><span class="n">ch_names</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_99_bad_002.png" srcset="../../_images/sphx_glr_plot_99_bad_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f550330ac20&gt;
+<img src="../../_images/sphx_glr_plot_99_bad_002.png" srcset="../../_images/sphx_glr_plot_99_bad_002.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7effa2ad2830&gt;
 </pre></div>
 </div>
 </section>
 <section id="converting-from-optical-density-to-haemoglobin">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Converting from optical density to haemoglobin</a><a class="headerlink" href="#converting-from-optical-density-to-haemoglobin" title="Link to this heading">#</a></h2>
+<h2>Converting from optical density to haemoglobin<a class="headerlink" href="#converting-from-optical-density-to-haemoglobin" title="Link to this heading">#</a></h2>
 <p>Next we convert the optical density data to haemoglobin concentration using
 the modified Beer-Lambert law.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_haemo</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">nirs</span><span class="o">.</span><span class="n">beer_lambert_law</span></a><span class="p">(</span><span class="n">raw_od</span><span class="p">,</span> <span class="n">ppf</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">raw_haemo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">raw_haemo</span><span class="o">.</span><span class="n">ch_names</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">show_scrollbars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_99_bad_003.png" srcset="../../_images/sphx_glr_plot_99_bad_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f552d20e320&gt;
+<img src="../../_images/sphx_glr_plot_99_bad_003.png" srcset="../../_images/sphx_glr_plot_99_bad_003.png" alt="Raw plot" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7eff77f55ea0&gt;
 </pre></div>
 </div>
 </section>
 <section id="replace-real-data-with-white-noise">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">!!!!!!Replace real data with white noise!!!!!</a><a class="headerlink" href="#replace-real-data-with-white-noise" title="Link to this heading">#</a></h2>
+<h2>!!!!!!Replace real data with white noise!!!!!<a class="headerlink" href="#replace-real-data-with-white-noise" title="Link to this heading">#</a></h2>
 <p>Here we replace the signals with white noise.
 We make the HbR white noise 3 time smaller than HbO as is commonly observed.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">_data</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.randn.html#numpy.random.randn" title="numpy.random.randn" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">23239</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.0e6</span> <span class="o">*</span> <span class="mi">1</span>
@@ -644,7 +630,7 @@ We make the HbR white noise 3 time smaller than HbO as is commonly observed.</p>
 </div>
 </section>
 <section id="removing-heart-rate-from-signal-bad-dont-copy">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Removing heart rate from signal (BAD DONT COPY)</a><a class="headerlink" href="#removing-heart-rate-from-signal-bad-dont-copy" title="Link to this heading">#</a></h2>
+<h2>Removing heart rate from signal (BAD DONT COPY)<a class="headerlink" href="#removing-heart-rate-from-signal-bad-dont-copy" title="Link to this heading">#</a></h2>
 <p>This analysis is BAD and is provided just as a demonstration.
 Do not do this!!</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a> <span class="o">=</span> <span class="n">raw_haemo</span><span class="o">.</span><span class="n">compute_psd</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">average</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -663,14 +649,14 @@ Do not do this!!</p>
 </div>
 </section>
 <section id="apply-cui-negative-correlation-method">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Apply Cui negative correlation method</a><a class="headerlink" href="#apply-cui-negative-correlation-method" title="Link to this heading">#</a></h2>
+<h2>Apply Cui negative correlation method<a class="headerlink" href="#apply-cui-negative-correlation-method" title="Link to this heading">#</a></h2>
 <p>Here we apply the Cui signal enhancement technique.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_haemo</span> <span class="o">=</span> <a href="../../generated/mne_nirs.signal_enhancement.enhance_negative_correlation.html#mne_nirs.signal_enhancement.enhance_negative_correlation" title="mne_nirs.signal_enhancement.enhance_negative_correlation" class="sphx-glr-backref-module-mne_nirs-signal_enhancement sphx-glr-backref-type-py-function"><span class="n">mne_nirs</span><span class="o">.</span><span class="n">signal_enhancement</span><span class="o">.</span><span class="n">enhance_negative_correlation</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="extract-epochs">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Extract epochs</a><a class="headerlink" href="#extract-epochs" title="Link to this heading">#</a></h2>
+<h2>Extract epochs<a class="headerlink" href="#extract-epochs" title="Link to this heading">#</a></h2>
 <p>Now that the signal has been converted to relative haemoglobin concentration,
 and the unwanted heart rate component has been removed, we can extract epochs
 related to each of the experimental conditions.</p>
@@ -716,7 +702,7 @@ Using data from preloaded Raw for 90 events and 95 original time points ...
 </div>
 </section>
 <section id="plot-standard-fnirs-response-image">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Plot standard fNIRS response image</a><a class="headerlink" href="#plot-standard-fnirs-response-image" title="Link to this heading">#</a></h2>
+<h2>Plot standard fNIRS response image<a class="headerlink" href="#plot-standard-fnirs-response-image" title="Link to this heading">#</a></h2>
 <p>Next we generate the most common visualisation of fNIRS data: plotting
 both the HbO and HbR on the same figure to illustrate the relation between
 the two signals.</p>
@@ -739,7 +725,7 @@ the two signals.</p>
 </div>
 </section>
 <section id="summary">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Summary</a><a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Above is a waveform that has many of the characteristics that are expected
 from a haeomodynamic response.
 We see a baseline that is around zero, the oxyhaemoglobin is positive
@@ -770,7 +756,7 @@ approach, and the benefits of the GLM style of analysis
 <p class="admonition-title">Warning</p>
 <p>DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA</p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 8.582 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 8.747 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  10 MB</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-99-bad-py">
 <div class="binder-badge docutils container">
@@ -884,7 +870,7 @@ approach, and the benefits of the GLM style of analysis
   
     <div class="footer-items__start">
       
-        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2012–2024, MNE Developers. Last updated <time datetime="2024-02-02T18:41:16.621821+00:00" class="localized">2024-02-02 18:41 UTC</time>
+        <div class="footer-item"><p class="text-center text-muted small">&copy; Copyright 2012–2024, MNE Developers. Last updated <time datetime="2024-02-02T19:33:46.773314+00:00" class="localized">2024-02-02 19:33 UTC</time>
 <script type="text/javascript">$(function () { $("time.localized").each(function () { var el = $(this); el.text(new Date(el.attr("datetime")).toLocaleString([], {dateStyle: "medium", timeStyle: "long"})); }); } )</script></p></div>
       
     </div>

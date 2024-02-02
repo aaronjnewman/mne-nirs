@@ -68,11 +68,7 @@ Finally a mixed effects model is run on the group level dat.
    pipeline.formula = 'beta ~ -1 + cond + (1|Name)';
    group_stats = pipeline.run(subj_stats);
 
-.. contents:: Page contents
-   :local:
-   :depth: 2
-
-.. GENERATED FROM PYTHON SOURCE LINES 59-66
+.. GENERATED FROM PYTHON SOURCE LINES 54-61
 
 MNE equivalent of nirs-toolbox script
 =====================================
@@ -82,7 +78,7 @@ in :ref:`the group level tutorial <tut-fnirs-group>`.
 
 So this page will focus on the differences between the two approaches.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-74
+.. GENERATED FROM PYTHON SOURCE LINES 64-69
 
 Differences between toolboxes
 ---------------------------------------------
@@ -90,7 +86,7 @@ Differences between toolboxes
 MNE does not have iterative reweighting of the noise estimate
 in the GLM analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-84
+.. GENERATED FROM PYTHON SOURCE LINES 72-79
 
 Further analysis details
 ------------------------------------

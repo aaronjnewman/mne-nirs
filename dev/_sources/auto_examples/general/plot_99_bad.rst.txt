@@ -52,12 +52,7 @@ However, at the midpoint we replace the real data with noise and demonstrate
 that without careful attention to the analysis parameter it would still
 appear as if a fNIRS response is observed.
 
-
-.. contents:: Page contents
-   :local:
-   :depth: 2
-
-.. GENERATED FROM PYTHON SOURCE LINES 42-64
+.. GENERATED FROM PYTHON SOURCE LINES 36-58
 
 .. code-block:: Python
 
@@ -189,7 +184,7 @@ appear as if a fNIRS response is observed.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-72
+.. GENERATED FROM PYTHON SOURCE LINES 59-66
 
 Selecting channels appropriate for detecting neural responses
 -------------------------------------------------------------
@@ -199,7 +194,7 @@ detect a neural response (less than 1 cm distance between optodes).
 These short channels can be seen in the figure above.
 To achieve this we pick all the channels that are not considered to be short.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-83
+.. GENERATED FROM PYTHON SOURCE LINES 66-77
 
 .. code-block:: Python
 
@@ -228,18 +223,18 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f5501fb77f0>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7eff7732c940>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-88
+.. GENERATED FROM PYTHON SOURCE LINES 78-82
 
 Converting from raw intensity to optical density
 ------------------------------------------------
 
 The raw intensity values are then converted to optical density.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-93
+.. GENERATED FROM PYTHON SOURCE LINES 82-87
 
 .. code-block:: Python
 
@@ -262,11 +257,11 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f550330ac20>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7effa2ad2830>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-99
+.. GENERATED FROM PYTHON SOURCE LINES 88-93
 
 Converting from optical density to haemoglobin
 ----------------------------------------------
@@ -274,7 +269,7 @@ Converting from optical density to haemoglobin
 Next we convert the optical density data to haemoglobin concentration using
 the modified Beer-Lambert law.
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-104
+.. GENERATED FROM PYTHON SOURCE LINES 93-98
 
 .. code-block:: Python
 
@@ -297,11 +292,11 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f552d20e320>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7eff77f55ea0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-110
+.. GENERATED FROM PYTHON SOURCE LINES 99-104
 
 !!!!!!Replace real data with white noise!!!!!
 ----------------------------------------------
@@ -309,7 +304,7 @@ the modified Beer-Lambert law.
 Here we replace the signals with white noise.
 We make the HbR white noise 3 time smaller than HbO as is commonly observed.
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-116
+.. GENERATED FROM PYTHON SOURCE LINES 104-110
 
 .. code-block:: Python
 
@@ -326,7 +321,7 @@ We make the HbR white noise 3 time smaller than HbO as is commonly observed.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-123
+.. GENERATED FROM PYTHON SOURCE LINES 111-117
 
 Removing heart rate from signal (BAD DONT COPY)
 -----------------------------------------------
@@ -335,7 +330,7 @@ This analysis is BAD and is provided just as a demonstration.
 Do not do this!!
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-131
+.. GENERATED FROM PYTHON SOURCE LINES 117-125
 
 .. code-block:: Python
 
@@ -377,14 +372,14 @@ Do not do this!!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-136
+.. GENERATED FROM PYTHON SOURCE LINES 126-130
 
 Apply Cui negative correlation method
 -------------------------------------
 
 Here we apply the Cui signal enhancement technique.
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-140
+.. GENERATED FROM PYTHON SOURCE LINES 130-134
 
 .. code-block:: Python
 
@@ -399,7 +394,7 @@ Here we apply the Cui signal enhancement technique.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-150
+.. GENERATED FROM PYTHON SOURCE LINES 135-144
 
 Extract epochs
 --------------
@@ -411,7 +406,7 @@ related to each of the experimental conditions.
 First we extract the events of interest and visualise them to ensure they are
 correct.
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-158
+.. GENERATED FROM PYTHON SOURCE LINES 144-152
 
 .. code-block:: Python
 
@@ -435,13 +430,13 @@ correct.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 159-162
+.. GENERATED FROM PYTHON SOURCE LINES 153-156
 
 Next we define the range of our epochs, the rejection criteria,
 baseline correction, and extract the epochs. We visualise the log of which
 epochs were dropped.
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-182
+.. GENERATED FROM PYTHON SOURCE LINES 156-176
 
 .. code-block:: Python
 
@@ -484,7 +479,7 @@ epochs were dropped.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-189
+.. GENERATED FROM PYTHON SOURCE LINES 177-183
 
 Plot standard fNIRS response image
 ----------------------------------
@@ -493,7 +488,7 @@ Next we generate the most common visualisation of fNIRS data: plotting
 both the HbO and HbR on the same figure to illustrate the relation between
 the two signals.
 
-.. GENERATED FROM PYTHON SOURCE LINES 189-204
+.. GENERATED FROM PYTHON SOURCE LINES 183-198
 
 .. code-block:: Python
 
@@ -530,7 +525,7 @@ the two signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-238
+.. GENERATED FROM PYTHON SOURCE LINES 199-232
 
 Summary
 --------------
@@ -569,7 +564,7 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.582 seconds)
+   **Total running time of the script:** (0 minutes 8.747 seconds)
 
 **Estimated memory usage:**  10 MB
 

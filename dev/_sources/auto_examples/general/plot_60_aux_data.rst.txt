@@ -35,11 +35,7 @@ example and refer readers to the detailed description above.
 Instead, we focus on extracting the auxiliary data and how
 this can be incorporated in to your analysis.
 
-.. contents:: Page contents
-   :local:
-   :depth: 2
-
-.. GENERATED FROM PYTHON SOURCE LINES 24-45
+.. GENERATED FROM PYTHON SOURCE LINES 19-36
 
 .. code-block:: Python
 
@@ -49,20 +45,16 @@ this can be incorporated in to your analysis.
     #
     # License: BSD (3-clause)
 
-    import numpy as np
     import matplotlib.pyplot as plt
-    import pandas as pd
-
     import mne
-
-    from mne_nirs.experimental_design import make_first_level_design_matrix
-    from mne_nirs.channels import (get_long_channels,
-                                   get_short_channels)
-    from mne_nirs.io.snirf import read_snirf_aux_data
-    from mne_nirs.datasets.snirf_with_aux import data_path
-
+    import numpy as np
+    import pandas as pd
     from nilearn.plotting import plot_design_matrix
 
+    from mne_nirs.channels import get_long_channels, get_short_channels
+    from mne_nirs.datasets.snirf_with_aux import data_path
+    from mne_nirs.experimental_design import make_first_level_design_matrix
+    from mne_nirs.io.snirf import read_snirf_aux_data
 
 
 
@@ -71,7 +63,7 @@ this can be incorporated in to your analysis.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-51
+.. GENERATED FROM PYTHON SOURCE LINES 37-42
 
 Import raw NIRS data
 --------------------
@@ -79,7 +71,7 @@ Import raw NIRS data
 First we import the raw data. A different dataset is used from
 the previous GLM example that contains auxiliary data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-57
+.. GENERATED FROM PYTHON SOURCE LINES 42-48
 
 .. code-block:: Python
 
@@ -187,7 +179,7 @@ the previous GLM example that contains auxiliary data.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-64
+.. GENERATED FROM PYTHON SOURCE LINES 49-55
 
 Clean up annotations before analysis
 ------------------------------------
@@ -196,15 +188,15 @@ Next we update the annotations by assigning names to each trigger ID.
 Then we crop the recording to the section containing our
 experimental conditions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-72
+.. GENERATED FROM PYTHON SOURCE LINES 55-63
 
 .. code-block:: Python
 
 
-    raw_intensity.annotations.rename({'1': 'Control',
-                                      '2': 'Tapping_Left',
-                                      '3': 'Tapping_Right'})
-    raw_intensity.annotations.delete(raw_intensity.annotations.description == '15')
+    raw_intensity.annotations.rename(
+        {"1": "Control", "2": "Tapping_Left", "3": "Tapping_Right"}
+    )
+    raw_intensity.annotations.delete(raw_intensity.annotations.description == "15")
     raw_intensity.annotations.set_durations(5)
 
 
@@ -221,13 +213,13 @@ experimental conditions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-76
+.. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 Preprocess NIRS data
 --------------------
 Next we convert the raw data to haemoglobin concentration.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-81
+.. GENERATED FROM PYTHON SOURCE LINES 67-72
 
 .. code-block:: Python
 
@@ -243,13 +235,13 @@ Next we convert the raw data to haemoglobin concentration.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-85
+.. GENERATED FROM PYTHON SOURCE LINES 73-76
 
 We then split the data in to
 short channels which predominantly contain systemic responses and
 long channels which have both neural and systemic contributions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-91
+.. GENERATED FROM PYTHON SOURCE LINES 77-82
 
 .. code-block:: Python
 
@@ -265,7 +257,7 @@ long channels which have both neural and systemic contributions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-104
+.. GENERATED FROM PYTHON SOURCE LINES 83-95
 
 Create design matrix
 --------------------
@@ -280,16 +272,18 @@ Next we create a model to fit our data to.
 The model consists of various components to model different things we assume
 contribute to the measured signal.
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-112
+.. GENERATED FROM PYTHON SOURCE LINES 95-105
 
 .. code-block:: Python
 
 
-    design_matrix = make_first_level_design_matrix(raw_haemo,
-                                                   drift_model='cosine',
-                                                   high_pass=0.005,  # Must be specified per experiment
-                                                   hrf_model='spm',
-                                                   stim_dur=5.0)
+    design_matrix = make_first_level_design_matrix(
+        raw_haemo,
+        drift_model="cosine",
+        high_pass=0.005,  # Must be specified per experiment
+        hrf_model="spm",
+        stim_dur=5.0,
+    )
 
 
 
@@ -299,7 +293,7 @@ contribute to the measured signal.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-118
+.. GENERATED FROM PYTHON SOURCE LINES 106-111
 
 We also add the mean of the short channels to the design matrix.
 In theory these channels contain only systemic components, so including
@@ -307,39 +301,40 @@ them in the design matrix allows us to estimate the neural component
 related to each experimental condition
 uncontaminated by systemic effects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-127
+.. GENERATED FROM PYTHON SOURCE LINES 112-122
 
 .. code-block:: Python
 
 
-    design_matrix["ShortHbO"] = np.mean(short_chs.copy().pick(
-                                        picks="hbo").get_data(), axis=0)
+    design_matrix["ShortHbO"] = np.mean(
+        short_chs.copy().pick(picks="hbo").get_data(), axis=0
+    )
 
-    design_matrix["ShortHbR"] = np.mean(short_chs.copy().pick(
-                                        picks="hbr").get_data(), axis=0)
-
-
-
-
+    design_matrix["ShortHbR"] = np.mean(
+        short_chs.copy().pick(picks="hbr").get_data(), axis=0
+    )
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-131
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 123-126
 
 We can view the design matrix by printing the variable
 and we see that it includes the standard regressors, but does
 not yet contain any auxiliary data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-138
+.. GENERATED FROM PYTHON SOURCE LINES 127-132
 
 .. code-block:: Python
 
 
     fig, ax1 = plt.subplots(figsize=(10, 6), nrows=1, ncols=1)
     fig = plot_design_matrix(design_matrix, ax=ax1)
-
 
 
 
@@ -354,7 +349,7 @@ not yet contain any auxiliary data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-149
+.. GENERATED FROM PYTHON SOURCE LINES 133-143
 
 Load auxiliary data
 -------------------
@@ -367,7 +362,7 @@ different rate to the raw fNIRS data, so this function will
 conveniently resample the data to the same rate as the raw
 fNIRS data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-153
+.. GENERATED FROM PYTHON SOURCE LINES 143-147
 
 .. code-block:: Python
 
@@ -382,17 +377,17 @@ fNIRS data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-156
+.. GENERATED FROM PYTHON SOURCE LINES 148-150
 
 And you can verify the data looks reasonable by plotting
 individual fields.
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-163
+.. GENERATED FROM PYTHON SOURCE LINES 151-157
 
 .. code-block:: Python
 
 
-    plt.plot(raw_haemo.times, aux_df['HR'])
+    plt.plot(raw_haemo.times, aux_df["HR"])
     plt.xlabel("Time (s)")
     plt.ylabel("Heart Rate (bpm)")
 
@@ -415,7 +410,7 @@ individual fields.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-169
+.. GENERATED FROM PYTHON SOURCE LINES 158-163
 
 Include auxiliary data in design matrix
 ---------------------------------------
@@ -423,7 +418,7 @@ Include auxiliary data in design matrix
 Finally we append the auxiliary data to the design matrix
 so that these can be included as regressors in a GLM analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-174
+.. GENERATED FROM PYTHON SOURCE LINES 163-168
 
 .. code-block:: Python
 
@@ -439,12 +434,12 @@ so that these can be included as regressors in a GLM analysis.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-177
+.. GENERATED FROM PYTHON SOURCE LINES 169-171
 
 And we can visually display the design matrix and verify
 the data is included.
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-182
+.. GENERATED FROM PYTHON SOURCE LINES 172-176
 
 .. code-block:: Python
 
@@ -464,7 +459,7 @@ the data is included.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-193
+.. GENERATED FROM PYTHON SOURCE LINES 177-187
 
 Conclusion
 ----------
@@ -480,7 +475,7 @@ but this is beyond the scope of this tutorial.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.725 seconds)
+   **Total running time of the script:** (0 minutes 6.904 seconds)
 
 **Estimated memory usage:**  10 MB
 
