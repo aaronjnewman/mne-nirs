@@ -164,7 +164,7 @@ Note that they differ in their peak timing and undershoot.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f204d7d3b20>
+    <matplotlib.legend.Legend object at 0x7f6a3f4e72e0>
 
 
 
@@ -352,7 +352,7 @@ resulting regressor varies as a function of this parameter.
  .. code-block:: none
 
 
-    <matplotlib.colorbar.Colorbar object at 0x7f204d57edd0>
+    <matplotlib.colorbar.Colorbar object at 0x7f6b68d372b0>
 
 
 
@@ -770,7 +770,7 @@ This would be achieved by renaming the triggers.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 16.862 seconds)
+   **Total running time of the script:** (0 minutes 15.635 seconds)
 
 **Estimated memory usage:**  10 MB
 
