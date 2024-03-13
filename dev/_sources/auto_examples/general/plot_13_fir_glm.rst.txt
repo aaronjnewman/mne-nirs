@@ -70,7 +70,7 @@ This GLM analysis is a wrapper over the excellent
    See :ref:`data importing tutorial <tut-importing-fnirs-data>` to learn how
    to use your data with MNE-Python.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-83
+.. GENERATED FROM PYTHON SOURCE LINES 54-82
 
 .. code-block:: Python
 
@@ -79,7 +79,6 @@ This GLM analysis is a wrapper over the excellent
     # Authors: Robert Luke <mail@robertluke.net>
     #
     # License: BSD (3-clause)
-
 
     # Import common libraries
     # Import Plotting Library
@@ -110,7 +109,7 @@ This GLM analysis is a wrapper over the excellent
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-93
+.. GENERATED FROM PYTHON SOURCE LINES 83-92
 
 Define FIR analysis
 ---------------------------------------------------------------------
@@ -122,7 +121,7 @@ This results in values being estimated for 10 `delay` steps.
 Due to the chosen sample rate of 0.5 Hz, these delays
 correspond to 0, 2, 4... seconds from the onset of the stimulus.
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-143
+.. GENERATED FROM PYTHON SOURCE LINES 92-142
 
 .. code-block:: Python
 
@@ -183,7 +182,7 @@ correspond to 0, 2, 4... seconds from the onset of the stimulus.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-150
+.. GENERATED FROM PYTHON SOURCE LINES 143-149
 
 Run analysis
 ---------------------------------------------------------------------
@@ -192,7 +191,7 @@ The analysis is run on each individual subject measurement.
 The individual results are then appended to a dataframe for
 group-level analysis below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-170
+.. GENERATED FROM PYTHON SOURCE LINES 149-169
 
 .. code-block:: Python
 
@@ -233,7 +232,7 @@ group-level analysis below.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-177
+.. GENERATED FROM PYTHON SOURCE LINES 170-176
 
 Tidy the dataframe
 ---------------------------------------------------------------------
@@ -242,7 +241,7 @@ For simplicity we only examine the data from the right hand
 tapping condition. The code below retains only the relevant information
 from the dataframe and design matrix for the following statistical analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-198
+.. GENERATED FROM PYTHON SOURCE LINES 176-197
 
 .. code-block:: Python
 
@@ -274,7 +273,7 @@ from the dataframe and design matrix for the following statistical analysis.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-205
+.. GENERATED FROM PYTHON SOURCE LINES 198-204
 
 Run group-level model
 ---------------------------------------------------------------------
@@ -283,7 +282,7 @@ A linear mixed effects (LME) model is used to determine the effect
 of FIR delay for each chromophore on the evoked response with participant
 (ID) as a random variable.
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-212
+.. GENERATED FROM PYTHON SOURCE LINES 204-211
 
 .. code-block:: Python
 
@@ -301,7 +300,7 @@ of FIR delay for each chromophore on the evoked response with participant
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-220
+.. GENERATED FROM PYTHON SOURCE LINES 212-219
 
 Summarise group-level findings
 ---------------------------------------------------------------------
@@ -311,7 +310,7 @@ more convenient analysis below.
 A subset of the results is displayed, illustrating the estimated coefficients
 for oxyhaemoglobin (HbO) for the right hand tapping condition.
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-229
+.. GENERATED FROM PYTHON SOURCE LINES 219-228
 
 .. code-block:: Python
 
@@ -500,14 +499,14 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 230-234
+.. GENERATED FROM PYTHON SOURCE LINES 229-233
 
 Note in the output above that there are 10 FIR delays.
 A coefficient estimate has been calculated for each delay.
 These coefficients must be multiplied by the FIR function to obtain the
 morphology of the fNIRS response.
 
-.. GENERATED FROM PYTHON SOURCE LINES 236-251
+.. GENERATED FROM PYTHON SOURCE LINES 235-250
 
 Plot the response from a single condition
 ---------------------------------------------------------------------
@@ -525,7 +524,7 @@ The third facet illustrates the overall estimated response for each
 chromophore and is calculated by summing all the individual FIR components
 per chromophore (HbR not shown in first two facets).
 
-.. GENERATED FROM PYTHON SOURCE LINES 251-295
+.. GENERATED FROM PYTHON SOURCE LINES 250-294
 
 .. code-block:: Python
 
@@ -587,17 +586,17 @@ per chromophore (HbR not shown in first two facets).
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f20fb39b5e0>
+    <matplotlib.legend.Legend object at 0x7f001d4193c0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 296-299
+.. GENERATED FROM PYTHON SOURCE LINES 295-298
 
 Plot the response with confidence intervals
 ---------------------------------------------------------------------
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 299-337
+.. GENERATED FROM PYTHON SOURCE LINES 298-336
 
 .. code-block:: Python
 
@@ -660,7 +659,7 @@ Plot the response with confidence intervals
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 17.912 seconds)
+   **Total running time of the script:** (0 minutes 14.906 seconds)
 
 **Estimated memory usage:**  11 MB
 

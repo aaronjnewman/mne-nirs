@@ -50,7 +50,7 @@ Luke et. al. (2021)
    See :ref:`data importing tutorial <tut-importing-fnirs-data>` to learn how
    to use your data with MNE-Python.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-61
+.. GENERATED FROM PYTHON SOURCE LINES 34-60
 
 .. code-block:: Python
 
@@ -58,7 +58,6 @@ Luke et. al. (2021)
     # Authors: Robert Luke <mail@robertluke.net>
     #          Alexandre Gramfort <alexandre.gramfort@inria.fr>
     # License: BSD (3-clause)
-
 
     # Import common libraries
     import contextlib
@@ -88,7 +87,7 @@ Luke et. al. (2021)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-76
+.. GENERATED FROM PYTHON SOURCE LINES 61-75
 
 Set up directories
 ------------------
@@ -105,7 +104,7 @@ without manually specifying the trigger names etc.
 We first define where the root directory of our dataset is.
 In this example we use the example dataset ``audio_or_visual_speech``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-84
+.. GENERATED FROM PYTHON SOURCE LINES 75-83
 
 .. code-block:: Python
 
@@ -124,7 +123,7 @@ In this example we use the example dataset ``audio_or_visual_speech``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-94
+.. GENERATED FROM PYTHON SOURCE LINES 84-93
 
 Define individual analysis
 --------------------------
@@ -136,7 +135,7 @@ of this tutorial is to demonstrate the decoding pipeline.
 In this example only the epochs for the two conditions we wish to decode
 between are retained.
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-127
+.. GENERATED FROM PYTHON SOURCE LINES 93-126
 
 .. code-block:: Python
 
@@ -180,7 +179,7 @@ between are retained.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-140
+.. GENERATED FROM PYTHON SOURCE LINES 127-139
 
 Run analysis on all participants
 --------------------------------
@@ -195,7 +194,7 @@ comply with the scikit-learn data structure, and a logistic regression
 classifier was applied using the liblinear solver.
 This approach classifies the data within, rather than across, subjects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-169
+.. GENERATED FROM PYTHON SOURCE LINES 139-168
 
 .. code-block:: Python
 
@@ -242,7 +241,7 @@ This approach classifies the data within, rather than across, subjects.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-178
+.. GENERATED FROM PYTHON SOURCE LINES 169-177
 
 Conclusion
 ----------
@@ -253,7 +252,7 @@ than the HbR signal. For further discussion about the efficacy of fNIRS
 signals in decoding experimental condition see Luke et. al. (2021)
 :footcite:`Luke2021.11.19.469225`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-185
+.. GENERATED FROM PYTHON SOURCE LINES 180-184
 
 Bibliography
 -----------------------------------------------
@@ -263,7 +262,7 @@ Bibliography
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.796 seconds)
+   **Total running time of the script:** (0 minutes 5.755 seconds)
 
 **Estimated memory usage:**  10 MB
 
