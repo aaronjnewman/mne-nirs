@@ -97,7 +97,7 @@ The simulated signal is plotted below.
  .. code-block:: none
 
 
-    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f4a684d7760>
+    <mne_qt_browser._pg_figure.MNEQtBrowser object at 0x7f67fcabea70>
 
 
 
@@ -130,13 +130,6 @@ For more details on this procedure see :ref:`tut-fnirs-hrf`.
    :srcset: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_002.png
    :class: sphx-glr-single-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/circleci/python_env/lib/python3.10/site-packages/nilearn/plotting/matrix_plotting.py:503: UserWarning: The figure layout has changed to tight
-      plt.tight_layout()
 
 
 
@@ -453,7 +446,7 @@ model of the noise can improve the accuracy of the response estimate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.696 seconds)
+   **Total running time of the script:** (0 minutes 5.705 seconds)
 
 **Estimated memory usage:**  12 MB
 

@@ -477,13 +477,6 @@ The last columns illustrate the short channel signals.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/circleci/python_env/lib/python3.10/site-packages/nilearn/plotting/matrix_plotting.py:503: UserWarning: The figure layout has changed to tight
-      plt.tight_layout()
-
 
 
 
@@ -909,7 +902,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <Axes: xlabel='Condition', ylabel='Theta'>
+    <AxesSubplot: xlabel='Condition', ylabel='Theta'>
 
 
 
@@ -1046,7 +1039,7 @@ cortical surface
  .. code-block:: none
 
 
-    <mne.viz._brain._brain.Brain object at 0x7f4a25300df0>
+    <mne.viz._brain._brain.Brain object at 0x7f67c08dd0c0>
 
 
 
@@ -1562,9 +1555,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 16.855 seconds)
+   **Total running time of the script:** (0 minutes 17.632 seconds)
 
-**Estimated memory usage:**  248 MB
+**Estimated memory usage:**  277 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:
